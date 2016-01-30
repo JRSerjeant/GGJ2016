@@ -9,13 +9,16 @@ public class littleMenController : MonoBehaviour
     bool isColWithSlope;
     bool atEndPoint;
 
-    Vector2 nw;
+    public string direction;
+
+    Vector2 nw; //TODO: Rename 
 
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        //direction = "";
         isColWithSlope = false;
         atEndPoint = false;
     }
@@ -29,18 +32,36 @@ public class littleMenController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (transform.position.x < 0.0f)
+        if (direction == "L")
         {
-            Debug.Log(transform.position.x);
-            atEndPoint = true;
-        }
-        if (atEndPoint == true)
-        {
-            Debug.Log("Should Destroy");
-            Destroy(gameObject);
+            if (transform.position.x < 0.0f)
+            {
+                Debug.Log(transform.position.x);
+                atEndPoint = true;
+            }
+            if (atEndPoint == true)
+            {
+                Destroy(gameObject);
+            }
         }
 
-        nw = new Vector2(-1, 0);
+        if (direction == "R")
+        {
+            if (transform.position.x > 0.0f)
+            {
+                Debug.Log(transform.position.x);
+                atEndPoint = true;
+            }
+            if (atEndPoint == true)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        if (direction == "L")
+            nw = new Vector2(-1, 0);
+        if(direction == "R")
+            nw = new Vector2(1, 0);
 
         if (isColWithSlope == false)
         {
@@ -58,8 +79,13 @@ public class littleMenController : MonoBehaviour
 
         if (col.gameObject.name == "slope")
         {
-            Debug.Log("HELLO");
-            nw = new Vector2(-1, 1);
+
+            if (direction == "L")
+                nw = new Vector2(-1, 1);
+
+            if (direction == "R")
+                nw = new Vector2(1, 1);
+
             isColWithSlope = true;
             rb.velocity = nw.normalized;
             //rb.AddForce(new Vector2(0, 100));

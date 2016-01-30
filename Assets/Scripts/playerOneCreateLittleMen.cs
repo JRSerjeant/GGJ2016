@@ -4,24 +4,22 @@ using System.Collections;
 public class playerOneCreateLittleMen : MonoBehaviour
 {
     public GameObject men;
+    float lastFired;
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(Spawn());
+        lastFired = 0.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-        
-
-    public IEnumerator Spawn()
-    {
-        yield return new WaitForSeconds(1.0f);
-        Instantiate(men, new Vector2(8.0f, -1.3f), new Quaternion());
-        yield return new WaitForSeconds(1.0f);
+        if ((Time.time > lastFired + 1.0f))
+        {
+            GameObject go = (GameObject)Instantiate(men, new Vector2(8.0f, -1.41f), new Quaternion());
+            littleMenController ScriptReference = go.GetComponent<littleMenController>();
+            ScriptReference.direction = "L";
+            lastFired = Time.time;
+        }
     }
 }
