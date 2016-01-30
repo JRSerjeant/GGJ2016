@@ -51,7 +51,7 @@ public class littleMenController : MonoBehaviour
         {
             manVelocity = new Vector2(-1, 0);
             //If man has reached the top of the tower
-            if (transform.position.x < 0.0f)
+            if (transform.position.x < 0.1f)
             {
                 atEndPoint = true;
             }
@@ -65,7 +65,7 @@ public class littleMenController : MonoBehaviour
         {
             manVelocity = new Vector2(1, 0);
             //If man has reached the top of the tower
-            if (transform.position.x > 0.0f)
+            if (transform.position.x > -0.1f)
             {
                 atEndPoint = true;
             }
