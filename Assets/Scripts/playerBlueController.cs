@@ -5,6 +5,8 @@ public class playerBlueController : MonoBehaviour {
     public int speed;
     public GameObject blueTopArrow;
     public GameObject blueSideArrow;
+    public static Vector3 poistionTop;
+
     // Use this for initialization
     void Start () {
         speed = 5;
