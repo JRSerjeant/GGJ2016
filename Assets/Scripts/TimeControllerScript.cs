@@ -1,6 +1,7 @@
 ﻿using System;
 using Assets.Scripts;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeControllerScript : MonoBehaviour
@@ -32,7 +33,27 @@ public class TimeControllerScript : MonoBehaviour
         }
         else
         {
-            _textElement.text = "GAME OVER";
+            string winText = "";
+            if (scoreController.BluePlayerScore > scoreController.RedPlayerScore)
+            {
+                winText = "BLUE WINS!";
+            }
+            if (scoreController.RedPlayerScore> scoreController.BluePlayerScore)
+            {
+                winText = "RED WINS!";
+            }
+            else
+            {
+                winText = "DRAW!";
+            }
+            _textElement.text = "GAME OVER: " + winText;
+
+            // // doesn't do anything
+            foreach (var go in GameObject.FindGameObjectsWithTag("LittleMen"))
+            {
+                var component = go.GetComponent<Rigidbody2D>();
+                component.isKinematic = true;
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ public class littleMenController : MonoBehaviour
 
 
     Vector2 manVelocity; //TODO: Rename 
+    private Vector2 _manVelocityConfiguration = new Vector2(2, 0);
 
 
     // Use this for initialization
@@ -49,7 +50,8 @@ public class littleMenController : MonoBehaviour
     {
         if (direction == "L" && state == "running")
         {
-            manVelocity = new Vector2(-1, 0);
+            
+            manVelocity = _manVelocityConfiguration*-1;
             //If man has reached the top of the tower
             if (transform.position.x < 0.1f)
             {
@@ -63,7 +65,7 @@ public class littleMenController : MonoBehaviour
 
         if (direction == "R" && state == "running")
         {
-            manVelocity = new Vector2(1, 0);
+            manVelocity = _manVelocityConfiguration;
             //If man has reached the top of the tower
             if (transform.position.x > -0.1f)
             {
