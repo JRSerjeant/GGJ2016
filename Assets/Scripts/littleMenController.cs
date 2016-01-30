@@ -49,7 +49,6 @@ public class littleMenController : MonoBehaviour
         {
             if (transform.position.x > 0.0f)
             {
-                Debug.Log(transform.position.x);
                 atEndPoint = true;
             }
             if (atEndPoint == true)
