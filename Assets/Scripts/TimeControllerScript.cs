@@ -10,7 +10,8 @@ public class TimeControllerScript : MonoBehaviour
 
     public static float timeRemaining = _gameLengthSeconds;
 
-    public static bool IsGameOver = timeRemaining <= 0;
+    public static bool IsGameOver { get { return timeRemaining <= 0.0f; } }
+
     private Text _textElement;
     private float _startGameTime;
 
@@ -27,7 +28,11 @@ public class TimeControllerScript : MonoBehaviour
 
         if (!IsGameOver)
         {
-            _textElement.text = Math.Max(timeRemaining, 0f).ToString("00");
+            _textElement.text = "TIME REMAINING " + Math.Max(timeRemaining, 0f).ToString("00");
+        }
+        else
+        {
+            _textElement.text = "GAME OVER";
         }
     }
 }
