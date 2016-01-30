@@ -1,0 +1,232 @@
+fileFormatVersion: 2
+guid: 30f3d855cbd8c564ba0036849e782382
+timeCreated: 1454174391
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: charsetBlueanim_0
+    21300002: charsetBlueanim_1
+    21300004: charsetBlueanim_2
+    21300006: charsetBlueanim_3
+    21300008: charsetBlueanim_4
+    21300010: charsetBlueanim_5
+    21300012: charsetBlueanim_6
+    21300014: charsetBlueanim_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: charsetBlueanim_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -61, y: 113}
+        - {x: -91, y: 50}
+        - {x: -99, y: 36}
+        - {x: -99, y: -113}
+        - {x: 99, y: -113}
+        - {x: 99, y: 22}
+        - {x: 40, y: 113}
+    - name: charsetBlueanim_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -80, y: -113}
+        - {x: 42, y: -113}
+        - {x: 77, y: -68}
+        - {x: 77, y: 88}
+        - {x: 73, y: 100}
+        - {x: 33, y: 113}
+        - {x: -72, y: 113}
+        - {x: -80, y: 107}
+    - name: charsetBlueanim_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -70, y: 113}
+        - {x: -79, y: 107}
+        - {x: -79, y: -3}
+        - {x: -27, y: -113}
+        - {x: 41, y: -113}
+        - {x: 66, y: -46}
+        - {x: 66, y: 104}
+        - {x: 37, y: 113}
+    - name: charsetBlueanim_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 113}
+        - {x: -80, y: 75}
+        - {x: -80, y: 52}
+        - {x: -78, y: 48}
+        - {x: -39, y: -113}
+        - {x: 51, y: -113}
+        - {x: 78, y: -71}
+        - {x: 78, y: 62}
+        - {x: 46, y: 113}
+    - name: charsetBlueanim_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 113}
+        - {x: -33, y: 113}
+        - {x: -53, y: 107}
+        - {x: -81, y: 72}
+        - {x: -81, y: 54}
+        - {x: -79, y: 48}
+        - {x: -68, y: 52}
+        - {x: -38, y: 35}
+        - {x: -30, y: 35}
+        - {x: -26, y: 40}
+        - {x: -25, y: 45}
+        - {x: -25, y: 41}
+        - {x: -27, y: 38}
+        - {x: -28, y: 28}
+        - {x: -81, y: -86}
+        - {x: -81, y: -93}
+        - {x: -67, y: -110}
+        - {x: 92, y: -110}
+        - {x: 92, y: 45}
+        - {x: 51, y: 89}
+    - name: charsetBlueanim_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 113}
+        - {x: -80, y: 75}
+        - {x: -80, y: 52}
+        - {x: -78, y: 48}
+        - {x: -39, y: -113}
+        - {x: 51, y: -113}
+        - {x: 78, y: -71}
+        - {x: 78, y: 62}
+        - {x: 46, y: 113}
+    - name: charsetBlueanim_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 34, y: 113}
+        - {x: -35, y: 113}
+        - {x: -69, y: 99}
+        - {x: -79, y: 82}
+        - {x: -79, y: 1}
+        - {x: -19, y: -113}
+        - {x: 22, y: -113}
+        - {x: 66, y: -50}
+        - {x: 66, y: 73}
+        - {x: 63, y: 93}
+    - name: charsetBlueanim_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 200
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -81, y: -113}
+        - {x: 41, y: -113}
+        - {x: 76, y: -68}
+        - {x: 76, y: 88}
+        - {x: 72, y: 100}
+        - {x: 32, y: 113}
+        - {x: -73, y: 113}
+        - {x: -81, y: 107}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
