@@ -4,6 +4,8 @@ using System.Collections;
 public class playerOneCreateLittleMen : MonoBehaviour
 {
     public GameObject men;
+    public Sprite manRedSprites;
+
     float lastFired;
     // Use this for initialization
     void Start()
@@ -18,8 +20,11 @@ public class playerOneCreateLittleMen : MonoBehaviour
         {
             GameObject go = (GameObject)Instantiate(men, new Vector2(8.0f, -1.41f), new Quaternion());
             littleMenController ScriptReference = go.GetComponent<littleMenController>();
+            
             ScriptReference.direction = "L";
             ScriptReference.forplayer = "RED";
+            ScriptReference.GetComponent<SpriteRenderer>().sprite = manRedSprites;
+            //gameObject.GetComponent<SpriteRenderer>().sprite = manRedSprites;
             lastFired = Time.time;
         }
     }

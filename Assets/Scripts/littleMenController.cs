@@ -6,6 +6,9 @@ public class littleMenController : MonoBehaviour
     public Rigidbody2D rb;
     public EdgeCollider2D col;
 
+    public Sprite manBlueSprites;
+    public Sprite manRedSprites;
+
     bool isColWithSlope;
     bool atEndPoint;
 
@@ -26,6 +29,12 @@ public class littleMenController : MonoBehaviour
         //direction = "";
         isColWithSlope = false;
         atEndPoint = false;
+
+        if(forplayer == "RED")
+            gameObject.GetComponent<SpriteRenderer>().sprite = manRedSprites;
+        if(forplayer == "BLUE")
+            gameObject.GetComponent<SpriteRenderer>().sprite = manBlueSprites;
+
         state = "running";
     }
 
