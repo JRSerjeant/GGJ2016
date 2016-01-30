@@ -9,20 +9,28 @@ public class scoreController : MonoBehaviour {
     void Start () {
         redPlayerScore = 0;
         bluePlayerScore = 0;
+        LogScores();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        //Debug.ClearDeveloperConsole();
+	void Update ()
+	{
+	}
+
+    private static void LogScores()
+    {
         Debug.Log("Red: " + redPlayerScore);
         Debug.Log("Blue: " + bluePlayerScore);
-	}
+    }
+
     public static void addRedPlayerScore()
     {
         redPlayerScore ++;
+        LogScores();
     }
     public static void addBluePlayerScore()
     {
         bluePlayerScore++;
+        LogScores();
     }
 }

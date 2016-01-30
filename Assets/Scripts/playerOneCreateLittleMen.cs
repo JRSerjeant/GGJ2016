@@ -16,16 +16,19 @@ public class playerOneCreateLittleMen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Time.time > lastFired + 1.0f))
+        if (!TimeControllerScript.IsGameOver)
         {
-            GameObject go = (GameObject)Instantiate(men, new Vector2(8.0f, -1.41f), new Quaternion());
-            littleMenController ScriptReference = go.GetComponent<littleMenController>();
-            
-            ScriptReference.direction = "L";
-            ScriptReference.forplayer = "RED";
-            ScriptReference.GetComponent<SpriteRenderer>().sprite = manRedSprites;
-            //gameObject.GetComponent<SpriteRenderer>().sprite = manRedSprites;
-            lastFired = Time.time;
+            if ((Time.time > lastFired + 1.0f))
+            {
+                GameObject go = (GameObject) Instantiate(men, new Vector2(8.0f, -1.41f), new Quaternion());
+                littleMenController ScriptReference = go.GetComponent<littleMenController>();
+
+                ScriptReference.direction = "L";
+                ScriptReference.forplayer = "RED";
+                ScriptReference.GetComponent<SpriteRenderer>().sprite = manRedSprites;
+                //gameObject.GetComponent<SpriteRenderer>().sprite = manRedSprites;
+                lastFired = Time.time;
+            }
         }
     }
 }

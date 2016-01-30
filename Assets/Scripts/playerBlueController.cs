@@ -18,27 +18,30 @@ public class playerBlueController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKey("a"))
-        {
-            blueTopArrow.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
-        }
-        if (Input.GetKey("d"))
-        {
-            blueTopArrow.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-        }
-        if (Input.GetKey("w"))
-        {
-            blueSideArrow.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
-        }
-        if (Input.GetKey("s"))
-        {
-            blueSideArrow.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
-            createBall ScriptReference = go.GetComponent<createBall>();
-            ScriptReference.Initialize("RIGHT");
-        }
+	    if (!TimeControllerScript.IsGameOver)
+	    {
+	        if (Input.GetKey("a"))
+	        {
+	            blueTopArrow.transform.position += new Vector3(-speed, 0, 0)*Time.deltaTime;
+	        }
+	        if (Input.GetKey("d"))
+	        {
+	            blueTopArrow.transform.position += new Vector3(speed, 0, 0)*Time.deltaTime;
+	        }
+	        if (Input.GetKey("w"))
+	        {
+	            blueSideArrow.transform.position += new Vector3(0, speed, 0)*Time.deltaTime;
+	        }
+	        if (Input.GetKey("s"))
+	        {
+	            blueSideArrow.transform.position += new Vector3(0, -speed, 0)*Time.deltaTime;
+	        }
+	        if (Input.GetKeyDown(KeyCode.Keypad0))
+	        {
+	            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+	            createBall ScriptReference = go.GetComponent<createBall>();
+	            ScriptReference.Initialize("RIGHT");
+	        }
+	    }
     }
 }
