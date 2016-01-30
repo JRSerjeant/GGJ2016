@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
 public class blockController : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class blockController : MonoBehaviour
     public int bluePlayerBlockCount;
     public int blockCount;
     private float _lastBlockRefreshTime;
+    
 
     // Use this for initialization
     void Start()
     {
-        blockCount = 10;
+        blockCount = Configuration.InitialBlockCount;
         redPlayerBlockCount = 0;
         bluePlayerBlockCount = 0;
         _lastBlockRefreshTime = Time.time;
@@ -46,8 +48,7 @@ public class blockController : MonoBehaviour
 
     private void RefreshBlocks()
     {
-        const int refreshRateInSeconds = 2;
-        if (Time.time - _lastBlockRefreshTime >= refreshRateInSeconds)
+        if (Time.time - _lastBlockRefreshTime >= Configuration.BlockRegenerationPerSecond)
         {
             Debug.Log(string.Format("Block count incrementing from {0} to {1}", blockCount, ++blockCount));
             _lastBlockRefreshTime = Time.time;

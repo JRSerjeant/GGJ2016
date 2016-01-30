@@ -1,11 +1,12 @@
 ﻿using System;
+using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TimeControllerScript : MonoBehaviour
 {
 
-    private static readonly int _gameLengthSeconds = 60;
+    private static readonly int _gameLengthSeconds = Configuration.GameLengthInSeconds;
 
     public static float timeRemaining = _gameLengthSeconds;
 
