@@ -16,7 +16,7 @@ public class littleMenController : MonoBehaviour
     private int collisionCount;
 
 
-    Vector2 nw; //TODO: Rename 
+    Vector2 manVelocity; //TODO: Rename 
 
 
     // Use this for initialization
@@ -26,6 +26,7 @@ public class littleMenController : MonoBehaviour
         //direction = "";
         isColWithSlope = false;
         atEndPoint = false;
+        state = "running";
     }
 
     // Update is called once per frame
@@ -37,39 +38,47 @@ public class littleMenController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (direction == "L")
+        if (direction == "L" && state == "running")
         {
+            manVelocity = new Vector2(-1, 0);
+            //If man has reached the top of the tower
             if (transform.position.x < 0.0f)
             {
                 atEndPoint = true;
             }
             if (atEndPoint == true)
             {
-                Destroy(gameObject);
+                state = "raise";
             }
         }
 
-        if (direction == "R")
+        if (direction == "R" && state == "running")
         {
+            manVelocity = new Vector2(1, 0);
+            //If man has reached the top of the tower
             if (transform.position.x > 0.0f)
             {
                 atEndPoint = true;
             }
             if (atEndPoint == true)
             {
-                Destroy(gameObject);
+                state = "raise";
             }
         }
 
-        if (direction == "L")
-            nw = new Vector2(-1, 0);
+        /*if (direction == "L")
+            manVelocity = new Vector2(-1, 0);
         if (direction == "R")
-            nw = new Vector2(1, 0);
+            manVelocity = new Vector2(1, 0);*/
 
         if (isColWithSlope == false)
         {
-            rb.velocity = nw.normalized;
+            rb.velocity = manVelocity.normalized;
             //rb.AddForce(new Vector2(-10, 0));
+        }
+        if(state == "raise")
+        {
+            raiseToHeaven();
         }
     }
 
@@ -88,13 +97,13 @@ public class littleMenController : MonoBehaviour
         {
 
             if (direction == "L")
-                nw = new Vector2(-1, 1);
+                manVelocity = new Vector2(-1, 1);
 
             if (direction == "R")
-                nw = new Vector2(1, 1);
+                manVelocity = new Vector2(1, 1);
 
             isColWithSlope = true;
-            rb.velocity = nw.normalized;
+            rb.velocity = manVelocity.normalized;
             //rb.AddForce(new Vector2(0, 100));
         }
         /*if (col.gameObject.name == "slope")
@@ -114,5 +123,12 @@ public class littleMenController : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 10;
             //Physics2D.gravity = new Vector3(0, 10, 0);
         }
+    }
+
+    void raiseToHeaven()
+    {
+        GetComponent<Rigidbody2D>().isKinematic = true;
+        transform.position += new Vector3(0, 10, 0) * Time.deltaTime;
+        manVelocity = new Vector2(0, 1);
     }
 }

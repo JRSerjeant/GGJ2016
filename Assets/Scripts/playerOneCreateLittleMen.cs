@@ -19,6 +19,7 @@ public class playerOneCreateLittleMen : MonoBehaviour
             GameObject go = (GameObject)Instantiate(men, new Vector2(8.0f, -1.41f), new Quaternion());
             littleMenController ScriptReference = go.GetComponent<littleMenController>();
             ScriptReference.direction = "L";
+            ScriptReference.forplayer = "RED";
             lastFired = Time.time;
         }
     }
