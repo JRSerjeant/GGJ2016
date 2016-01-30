@@ -3,8 +3,11 @@ using System.Collections;
 
 public class playerBlueController : MonoBehaviour {
     public int speed;
+
     public GameObject blueTopArrow;
     public GameObject blueSideArrow;
+    public GameObject ball;
+
     public static Vector3 poistionTop;
 
     // Use this for initialization
@@ -30,6 +33,12 @@ public class playerBlueController : MonoBehaviour {
         if (Input.GetKey("s"))
         {
             blueSideArrow.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad0))
+        {
+            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+            createBall ScriptReference = go.GetComponent<createBall>();
+            ScriptReference.Initialize("RIGHT");
         }
     }
 }

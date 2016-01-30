@@ -6,6 +6,7 @@ public class playerRedController : MonoBehaviour {
     public int speed;
     public GameObject redTopArrow;
     public GameObject redSideArrow;
+    public GameObject ball;
     // Use this for initialization
     void Start()
     {
@@ -31,6 +32,12 @@ public class playerRedController : MonoBehaviour {
         if (Input.GetKey("down"))
         {
             redSideArrow.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+            createBall ScriptReference = go.GetComponent<createBall>();
+            ScriptReference.Initialize("LEFT");
         }
     }
 }
