@@ -330,6 +330,7 @@ GameObject:
   - 4: {fileID: 521566830}
   - 114: {fileID: 521566829}
   - 114: {fileID: 521566831}
+  - 114: {fileID: 521566832}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Untagged
@@ -375,6 +376,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   men: {fileID: 164050, guid: 719b8e58afdbf644aa135de364ca0ec2, type: 2}
   manBlueSprites: {fileID: 0}
+--- !u!114 &521566832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 521566828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b812a512e5ca0e45b813e2f00db897a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 0}
+  bluePlayerTop: {fileID: 189906018}
+  redPlayerTop: {fileID: 600674160}
 --- !u!1 &600674160
 GameObject:
   m_ObjectHideFlags: 0
