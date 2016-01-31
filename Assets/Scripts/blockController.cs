@@ -1,24 +1,77 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
-public class blockController : MonoBehaviour {
+public class blockController : MonoBehaviour
+{
     public GameObject block;
     public GameObject bluePlayerTop;
     public GameObject redPlayerTop;
+    public int redPlayerBlockCount;
+    public int bluePlayerBlockCount;
+    public int blockCount;
+    private float _lastBlockRefreshTime;
+    
+    public int getRedPlayerBlockCount
+    {
+        get
+        {
+            return redPlayerBlockCount;
+        }
+    }
+    public int getBluePlayerBlockCount
+    {
+        get
+        {
+            return bluePlayerBlockCount;
+        }
+    }
+    public int getBlockCount
+    {
+        get
+        {
+            return blockCount;
+        }
+    }
     // Use this for initialization
-    void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    void Start()
+    {
+        blockCount = Configuration.InitialBlockCount;
+        redPlayerBlockCount = 0;
+        bluePlayerBlockCount = 0;
+        _lastBlockRefreshTime = Time.time;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        RefreshBlocks();
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject go = Instantiate(block,bluePlayerTop.GetComponent<Renderer>().transform.position , new Quaternion()) as GameObject;
+            if (bluePlayerBlockCount < blockCount)
+            {
+                Debug.Log(string.Format("Blue player block count used {0}", ++bluePlayerBlockCount));
+                GameObject go = Instantiate(block, new Vector2(bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y -0.5f), new Quaternion()) as GameObject;
+
+            }
         }
-        if (Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.RightShift))
         {
-            GameObject go = Instantiate(block, redPlayerTop.GetComponent<Renderer>().transform.position, new Quaternion()) as GameObject;
+            if (redPlayerBlockCount < blockCount)
+            {
+                Debug.Log(string.Format("Red player block count used {0}", ++redPlayerBlockCount));
+                GameObject go = Instantiate(block, new Vector2(redPlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
+            }
+        }
+    }
+
+    private void RefreshBlocks()
+    {
+        if (Time.time - _lastBlockRefreshTime >= Configuration.BlockRegenerationPerSecond)
+        {
+            Debug.Log(string.Format("Block count incrementing from {0} to {1}", blockCount, ++blockCount));
+            _lastBlockRefreshTime = Time.time;
         }
     }
 }

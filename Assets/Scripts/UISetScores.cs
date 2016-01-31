@@ -1,0 +1,29 @@
+﻿using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+
+public class UISetScores : MonoBehaviour {
+    public Text blueBlock;
+    public Text blueBall;
+    public Text redBlock;
+    public Text redBall;
+
+    public blockController blockController;
+    // Use this for initialization
+    void Start () {
+        blueBall.text = "Balls \n 00";
+        blueBlock.text = "Blocks \n 00";
+        redBall.text = "Balls \n 00";
+        redBlock.text = "Blocks \n 00";
+
+    }
+	
+	// Update is called once per frame
+	void Update () {
+        blueBall.text = "Ball \n" ;
+        blueBlock.text = "Blocks\n" + (blockController.getBlockCount - blockController.getBluePlayerBlockCount);
+        redBall.text = "Balls \n";
+        redBlock.text = "Blocks\n "+ ( blockController.getBlockCount - blockController.getRedPlayerBlockCount);
+
+    }
+}

@@ -20,6 +20,7 @@ public class littleMenController : MonoBehaviour
 
 
     Vector2 manVelocity; //TODO: Rename 
+    private Vector2 _manVelocityConfiguration = new Vector2(2, 0);
 
 
     // Use this for initialization
@@ -49,7 +50,8 @@ public class littleMenController : MonoBehaviour
     {
         if (direction == "L" && state == "running")
         {
-            manVelocity = new Vector2(-1, 0);
+            
+            manVelocity = _manVelocityConfiguration*-1;
             //If man has reached the top of the tower
             if (transform.position.x < 0.1f)
             {
@@ -63,7 +65,7 @@ public class littleMenController : MonoBehaviour
 
         if (direction == "R" && state == "running")
         {
-            manVelocity = new Vector2(1, 0);
+            manVelocity = _manVelocityConfiguration;
             //If man has reached the top of the tower
             if (transform.position.x > -0.1f)
             {
@@ -113,15 +115,10 @@ public class littleMenController : MonoBehaviour
 
             isColWithSlope = true;
             rb.velocity = manVelocity.normalized;
-            //rb.AddForce(new Vector2(0, 100));
+
         }
-        /*if (col.gameObject.name == "slope")
-        {
-            Debug.Log("HELLO");
-            isColWithSlope = true;
-            rb.AddForce(new Vector2(0, 0));
-            rb.isKinematic = true;
-        }*/
+
+
     }
 
     void OnCollisionExit2D(Collision2D other)
@@ -130,7 +127,6 @@ public class littleMenController : MonoBehaviour
         if(collisionCount == 0)
         {
             GetComponent<Rigidbody2D>().gravityScale = 10;
-            //Physics2D.gravity = new Vector3(0, 10, 0);
         }
     }
 
