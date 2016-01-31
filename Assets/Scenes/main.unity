@@ -1006,7 +1006,6 @@ MonoBehaviour:
   redTopArrow: {fileID: 600674160}
   redSideArrow: {fileID: 1127867337}
   ball: {fileID: 0}
-  tower: {fileID: 0}
   Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
   Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!1 &619921673
@@ -2044,7 +2043,6 @@ MonoBehaviour:
   redTopArrow: {fileID: 600674160}
   redSideArrow: {fileID: 1127867337}
   ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
-  tower: {fileID: 106409015}
   Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
   Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!1 &1229437911

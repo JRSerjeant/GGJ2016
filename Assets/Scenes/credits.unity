@@ -340,9 +340,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Jack Serjeant - Programmer, Unity\r\nWilliam Lord - Programmer, Unity dogsbody\r\nSteffan
-    Le Prince - Audio, Unity dogsbody\r\nMario Klosowski - Artist, Animator\r\nPeter
-    Matossian - Artist, Animator"
+  m_Text: "Jack Serjeant - Programmer, Unity\r\nWilliam Lord - Programmer, Unity\r\nSteffan
+    Le Prince - Audio, Unity\r\nMario Klosowski - Artist, Animator\r\nPeter Matossian
+    - Artist, Animator"
 --- !u!222 &415871772
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -9,7 +9,6 @@ public class playerRedController : MonoBehaviour
     public GameObject redTopArrow;
     public GameObject redSideArrow;
     public GameObject ball;
-    public GameObject tower;
 	public AudioClip Canon1;
 	public AudioClip Canon2;
     // Use this for initialization
@@ -48,7 +47,7 @@ public class playerRedController : MonoBehaviour
                     redSideArrow.transform.position = new Vector2(redSideArrow.transform.position.x, -1.04f);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Keypad0))
+            if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.O))
             {
                 if (!BallRepository.IsRedPlayerBallsMax)
                 {
