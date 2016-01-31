@@ -87,7 +87,7 @@ public class blockController : MonoBehaviour
 
 	private void PlayBlockSound()
 	{
-
+		Completed.SoundManager.instance.RandomizeSfx (Create1, Create2, Create3);
 
 	}
 }
