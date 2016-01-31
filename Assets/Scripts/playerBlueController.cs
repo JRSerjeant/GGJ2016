@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
 public class playerBlueController : MonoBehaviour {
     public int speed;
@@ -46,9 +47,14 @@ public class playerBlueController : MonoBehaviour {
             }
 	        if (Input.GetKeyDown(KeyCode.E))
 	        {
-	            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
-	            createBall ScriptReference = go.GetComponent<createBall>();
-	            ScriptReference.Initialize("RIGHT");
+	            if (!BallRepository.IsBluePlayerBallsMax)
+	            {
+                    GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+                    createBall ScriptReference = go.GetComponent<createBall>();
+                    ScriptReference.Initialize("RIGHT");
+                    BallRepository.ConsumeBlueBall();
+	            }
+	            
 	        }
 	    }
     }

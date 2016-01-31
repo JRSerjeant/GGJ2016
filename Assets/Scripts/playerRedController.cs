@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
-public class playerRedController : MonoBehaviour {
+public class playerRedController : MonoBehaviour
+{
 
     public int speed;
     public GameObject redTopArrow;
@@ -44,12 +46,16 @@ public class playerRedController : MonoBehaviour {
                     redSideArrow.transform.position = new Vector2(redSideArrow.transform.position.x, -1.04f);
                 }
             }
-	        if (Input.GetKeyDown(KeyCode.Keypad0))
-	        {
-	            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
-	            createBall ScriptReference = go.GetComponent<createBall>();
-	            ScriptReference.Initialize("LEFT");
-	        }
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+            {
+                if (!BallRepository.IsRedPlayerBallsMax)
+                {
+                    GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+                    createBall ScriptReference = go.GetComponent<createBall>();
+                    ScriptReference.Initialize("LEFT");
+                    BallRepository.ConsumeBlueBall();
+                }
+            }
         }
-	}
+    }
 }
