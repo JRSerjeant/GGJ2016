@@ -599,7 +599,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1334799953
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f496fa721eb53f7488d3dced9b3e3d9e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -611,7 +611,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 189906018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.36, y: 2.24, z: 0}
+  m_LocalPosition: {x: -5.36, y: 2.525, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 94902389}
@@ -709,7 +709,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 63be1078798684603ab7e12e7a51554e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.14
+      value: -2.303
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 63be1078798684603ab7e12e7a51554e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -733,6 +733,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485148, guid: 63be1078798684603ab7e12e7a51554e, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21293226, guid: 63be1078798684603ab7e12e7a51554e, type: 2}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -954,7 +958,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1334799953
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 89e48dda75722f349a6bef08f576e64d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -966,7 +970,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 600674160}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.46, y: 2.24, z: 0}
+  m_LocalPosition: {x: 6.46, y: 2.543, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 114675161}
@@ -988,8 +992,8 @@ MonoBehaviour:
   redSideArrow: {fileID: 1127867337}
   ball: {fileID: 0}
   tower: {fileID: 0}
-  Canon1: {fileID: 0}
-  Canon2: {fileID: 0}
+  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!1 &619921673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,7 +1390,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458164, guid: 0d74ff5b5315e455dba3873cf3d77235, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.11
+      value: -2.291
       objectReference: {fileID: 0}
     - target: {fileID: 458164, guid: 0d74ff5b5315e455dba3873cf3d77235, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1410,6 +1414,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 458164, guid: 0d74ff5b5315e455dba3873cf3d77235, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21270550, guid: 0d74ff5b5315e455dba3873cf3d77235, type: 2}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
