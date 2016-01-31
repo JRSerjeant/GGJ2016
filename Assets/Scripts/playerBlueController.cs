@@ -55,7 +55,7 @@ public class playerBlueController : MonoBehaviour {
                     createBall ScriptReference = go.GetComponent<createBall>();
                     ScriptReference.Initialize("RIGHT");
                     BallRepository.ConsumeBlueBall();
-					Completed.SoundManager.instance.RandomizeSfx (Canon1,Canon2);
+					Completed.SoundManager.instance.RandomizeSfx(Canon1);
 	            }
 	            
 	        }

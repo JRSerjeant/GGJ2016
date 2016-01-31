@@ -57,7 +57,7 @@ public class playerRedController : MonoBehaviour
                     ScriptReference.Initialize("LEFT");
                     BallRepository.ConsumeRedBall();
 					//fire sound
-					Completed.SoundManager.instance.RandomizeSfx (Canon2);
+					Completed.SoundManager.instance.RandomizeSfx (Canon1,Canon2);
                 }
             }
         }
