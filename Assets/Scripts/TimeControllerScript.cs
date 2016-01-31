@@ -48,6 +48,7 @@ public class TimeControllerScript : MonoBehaviour
             }
             _textElement.text = "GAME OVER:\n " + winText;
 
+
             // // doesn't do anything
             foreach (var go in GameObject.FindGameObjectsWithTag("LittleMen"))
             {
