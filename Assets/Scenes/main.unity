@@ -827,7 +827,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   men: {fileID: 164050, guid: 719b8e58afdbf644aa135de364ca0ec2, type: 2}
   manRedSprites: {fileID: 21300000, guid: acf30879e75dbba41be6d3add7cbbc68, type: 3}
-  manRedAnimation: {fileID: 0}
+  manRedAnimation: {fileID: 9100000, guid: 6f74257d50cd24950bdcf25447ff45b5, type: 2}
 --- !u!4 &521566830
 Transform:
   m_ObjectHideFlags: 0
@@ -853,6 +853,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   men: {fileID: 164050, guid: 719b8e58afdbf644aa135de364ca0ec2, type: 2}
   manBlueSprites: {fileID: 0}
+  manBlueAnimation: {fileID: 9100000, guid: e7a4e2ea6d33d43359c832ec125e8b7f, type: 2}
 --- !u!114 &521566832
 MonoBehaviour:
   m_ObjectHideFlags: 0

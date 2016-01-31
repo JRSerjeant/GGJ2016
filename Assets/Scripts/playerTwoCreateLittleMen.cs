@@ -6,6 +6,7 @@ public class playerTwoCreateLittleMen : MonoBehaviour
     public GameObject men;
     float lastFired;
     public Sprite manBlueSprites;
+    public RuntimeAnimatorController manBlueAnimation;
 
     // Use this for initialization
     void Start()
@@ -24,7 +25,8 @@ public class playerTwoCreateLittleMen : MonoBehaviour
                 littleMenController ScriptReference = go.GetComponent<littleMenController>();
                 ScriptReference.direction = "R";
                 ScriptReference.forplayer = "BLUE";
-                ScriptReference.GetComponent<SpriteRenderer>().sprite = manBlueSprites;
+                ScriptReference.GetComponent<Animator>().runtimeAnimatorController = manBlueAnimation;
+                ScriptReference.
                 lastFired = Time.time;
             }
         }

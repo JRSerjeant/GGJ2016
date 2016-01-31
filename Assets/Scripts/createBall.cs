@@ -4,6 +4,7 @@ using System.Collections;
 public class createBall : MonoBehaviour {
     public Rigidbody2D rb;
     static string direction;
+    public static int numberofBalls;
 
     public void Initialize(string Direction)
     {
@@ -12,6 +13,7 @@ public class createBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        numberofBalls++;
     }
 	
 	// Update is called once per frame
@@ -38,6 +40,10 @@ public class createBall : MonoBehaviour {
             }
         }
 
+    }
+    void OnDestroy()
+    {
+        numberofBalls--;
     }
 
 }
