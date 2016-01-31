@@ -26,7 +26,6 @@ public class playerTwoCreateLittleMen : MonoBehaviour
                 ScriptReference.direction = "R";
                 ScriptReference.forplayer = "BLUE";
                 ScriptReference.GetComponent<Animator>().runtimeAnimatorController = manBlueAnimation;
-                ScriptReference.
                 lastFired = Time.time;
             }
         }
