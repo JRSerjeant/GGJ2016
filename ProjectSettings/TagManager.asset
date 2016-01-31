@@ -6,6 +6,7 @@ TagManager:
   tags:
   - block
   - LittleMen
+  - Ball
   layers:
   - Default
   - TransparentFX

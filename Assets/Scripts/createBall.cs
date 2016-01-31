@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
 public class createBall : MonoBehaviour {
     public Rigidbody2D rb;
@@ -12,6 +13,7 @@ public class createBall : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        BallRepository.ConsumeRedBall();
     }
 	
 	// Update is called once per frame

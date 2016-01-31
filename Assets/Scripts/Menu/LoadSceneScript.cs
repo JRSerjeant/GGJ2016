@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Assets.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +22,7 @@ public class LoadSceneScript : MonoBehaviour {
         if (string.Equals(sceneName, "main", StringComparison.CurrentCultureIgnoreCase))
         {
             TimeControllerScript._startGameTime = Time.time;
+            BallRepository.ResetAllBalls();
         }
     }
 }
