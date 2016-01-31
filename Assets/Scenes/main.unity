@@ -572,6 +572,8 @@ MonoBehaviour:
   blueTopArrow: {fileID: 189906018}
   blueSideArrow: {fileID: 1365795639}
   ball: {fileID: 0}
+  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!212 &189906020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -986,6 +988,8 @@ MonoBehaviour:
   redSideArrow: {fileID: 1127867337}
   ball: {fileID: 0}
   tower: {fileID: 0}
+  Canon1: {fileID: 0}
+  Canon2: {fileID: 0}
 --- !u!1 &619921673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1930,6 +1934,8 @@ MonoBehaviour:
   redSideArrow: {fileID: 1127867337}
   ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
   tower: {fileID: 106409015}
+  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!1 &1229437911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,6 +2186,8 @@ MonoBehaviour:
   blueTopArrow: {fileID: 189906018}
   blueSideArrow: {fileID: 1365795639}
   ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
+  Canon1: {fileID: 0}
+  Canon2: {fileID: 0}
 --- !u!212 &1365795641
 SpriteRenderer:
   m_ObjectHideFlags: 0

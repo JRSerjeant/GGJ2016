@@ -8,6 +8,8 @@ public class playerBlueController : MonoBehaviour {
     public GameObject blueTopArrow;
     public GameObject blueSideArrow;
     public GameObject ball;
+	public AudioClip Canon1;
+	public AudioClip Canon2;
 
     public static Vector3 poistionTop;
 
@@ -53,6 +55,7 @@ public class playerBlueController : MonoBehaviour {
                     createBall ScriptReference = go.GetComponent<createBall>();
                     ScriptReference.Initialize("RIGHT");
                     BallRepository.ConsumeBlueBall();
+					Completed.SoundManager.instance.RandomizeSfx (Canon1,Canon2);
 	            }
 	            
 	        }
