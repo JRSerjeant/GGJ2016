@@ -26,7 +26,7 @@ TextureImporter:
   cubemapConvolutionSteps: 7
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
-  textureFormat: 4
+  textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
     filterMode: 0
@@ -54,7 +54,7 @@ TextureImporter:
     - - {x: 2, y: 4}
       - {x: 3.732051, y: 0.9999999}
       - {x: 0.2679491, y: 1.0000002}
-  spritePackingTag: 
+  spritePackingTag: Other
   userData: 
   assetBundleName: 
   assetBundleVariant: 
