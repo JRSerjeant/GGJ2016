@@ -5,6 +5,7 @@ public class playerOneCreateLittleMen : MonoBehaviour
 {
     public GameObject men;
     public Sprite manRedSprites;
+    public Animation manRedAnimation;
 
     float lastFired;
     // Use this for initialization
@@ -25,7 +26,10 @@ public class playerOneCreateLittleMen : MonoBehaviour
 
                 ScriptReference.direction = "L";
                 ScriptReference.forplayer = "RED";
-                ScriptReference.GetComponent<SpriteRenderer>().sprite = manRedSprites;
+                //ScriptReference.GetComponent<SpriteRenderer>().sprite = manRedSprites;
+                ScriptReference.GetComponent<Animator>().Play("charsetRedanim");
+
+
                 //gameObject.GetComponent<SpriteRenderer>().sprite = manRedSprites;
                 lastFired = Time.time;
             }

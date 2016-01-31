@@ -12,7 +12,27 @@ public class blockController : MonoBehaviour
     public int blockCount;
     private float _lastBlockRefreshTime;
     
-
+    public int getRedPlayerBlockCount
+    {
+        get
+        {
+            return redPlayerBlockCount;
+        }
+    }
+    public int getBluePlayerBlockCount
+    {
+        get
+        {
+            return bluePlayerBlockCount;
+        }
+    }
+    public int getBlockCount
+    {
+        get
+        {
+            return blockCount;
+        }
+    }
     // Use this for initialization
     void Start()
     {

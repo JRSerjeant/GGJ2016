@@ -115,15 +115,10 @@ public class littleMenController : MonoBehaviour
 
             isColWithSlope = true;
             rb.velocity = manVelocity.normalized;
-            //rb.AddForce(new Vector2(0, 100));
+
         }
-        /*if (col.gameObject.name == "slope")
-        {
-            Debug.Log("HELLO");
-            isColWithSlope = true;
-            rb.AddForce(new Vector2(0, 0));
-            rb.isKinematic = true;
-        }*/
+
+
     }
 
     void OnCollisionExit2D(Collision2D other)
@@ -132,7 +127,6 @@ public class littleMenController : MonoBehaviour
         if(collisionCount == 0)
         {
             GetComponent<Rigidbody2D>().gravityScale = 10;
-            //Physics2D.gravity = new Vector3(0, 10, 0);
         }
     }
 
