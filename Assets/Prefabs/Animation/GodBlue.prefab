@@ -61,6 +61,8 @@ MonoBehaviour:
   speed: 0
   redTopArrow: {fileID: 0}
   redSideArrow: {fileID: 0}
+  ball: {fileID: 0}
+  tower: {fileID: 0}
 --- !u!212 &21270550
 SpriteRenderer:
   m_ObjectHideFlags: 1

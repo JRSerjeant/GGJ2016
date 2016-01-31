@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 485148}
   - 95: {fileID: 9546964}
-  - 111: {fileID: 11125462}
   - 212: {fileID: 21293226}
   - 114: {fileID: 11426186}
   m_Layer: 0
@@ -48,22 +47,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &11125462
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177746}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 0}
-  - {fileID: 0}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11426186
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,6 +61,8 @@ MonoBehaviour:
   speed: 0
   redTopArrow: {fileID: 0}
   redSideArrow: {fileID: 0}
+  ball: {fileID: 0}
+  tower: {fileID: 0}
 --- !u!212 &21293226
 SpriteRenderer:
   m_ObjectHideFlags: 1
