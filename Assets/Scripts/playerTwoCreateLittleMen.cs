@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts;
 
 public class playerTwoCreateLittleMen : MonoBehaviour
 {
@@ -19,7 +20,7 @@ public class playerTwoCreateLittleMen : MonoBehaviour
     {
         if (!TimeControllerScript.IsGameOver)
         {
-            if ((Time.time > lastFired + 0.2f))
+            if ((Time.time > lastFired + 1/Configuration.PeoplePerSecond))
             {
                 GameObject go = Instantiate(men, new Vector2(-10f, -1.4f), new Quaternion()) as GameObject;
                 littleMenController ScriptReference = go.GetComponent<littleMenController>();

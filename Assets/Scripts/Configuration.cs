@@ -2,9 +2,10 @@
 {
     public static class Configuration
     {
-        public static readonly int InitialBlockCount = 50;
-        public static readonly int BlockRegenerationPerSecond = 1;
+        public static readonly int InitialBlockCount = 25;
+        public static readonly int BlockRegenerationPerSecond = 2;
         public static readonly int GameLengthInSeconds = 40;
         public static readonly int MaxBalls = 10;
+        public const float PeoplePerSecond = 2f;
     }
 }

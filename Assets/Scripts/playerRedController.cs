@@ -34,9 +34,9 @@ public class playerRedController : MonoBehaviour
             if (Input.GetKey("up"))
             {
                 redSideArrow.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
-                if (redSideArrow.transform.position.y > 0.4f)
+                if (redSideArrow.transform.position.y > 1.8f)
                 {
-                    redSideArrow.transform.position = new Vector2(redSideArrow.transform.position.x, 0.39f);
+                    redSideArrow.transform.position = new Vector2(redSideArrow.transform.position.x, 1.79f);
                 }
             }
             if (Input.GetKey("down"))
