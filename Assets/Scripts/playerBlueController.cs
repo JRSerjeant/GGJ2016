@@ -32,9 +32,9 @@ public class playerBlueController : MonoBehaviour {
 	        if (Input.GetKey("w"))
 	        {
 	            blueSideArrow.transform.position += new Vector3(0, speed, 0)*Time.deltaTime;
-                if (blueSideArrow.transform.position.y > 0.4f)
+                if (blueSideArrow.transform.position.y > 0.45f)
                 {
-                    blueSideArrow.transform.position = new Vector2(blueSideArrow.transform.position.x, 0.39f);
+                    blueSideArrow.transform.position = new Vector2(blueSideArrow.transform.position.x, 0.44f);
                 }
             }
 	        if (Input.GetKey("s"))

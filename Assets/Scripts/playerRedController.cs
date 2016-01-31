@@ -53,7 +53,7 @@ public class playerRedController : MonoBehaviour
                     GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
                     createBall ScriptReference = go.GetComponent<createBall>();
                     ScriptReference.Initialize("LEFT");
-                    BallRepository.ConsumeBlueBall();
+                    BallRepository.ConsumeRedBall();
                 }
             }
         }
