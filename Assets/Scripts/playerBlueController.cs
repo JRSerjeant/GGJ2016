@@ -31,12 +31,20 @@ public class playerBlueController : MonoBehaviour {
 	        if (Input.GetKey("w"))
 	        {
 	            blueSideArrow.transform.position += new Vector3(0, speed, 0)*Time.deltaTime;
-	        }
+                if (blueSideArrow.transform.position.y > 0.4f)
+                {
+                    blueSideArrow.transform.position = new Vector2(blueSideArrow.transform.position.x, 0.39f);
+                }
+            }
 	        if (Input.GetKey("s"))
 	        {
-	            blueSideArrow.transform.position += new Vector3(0, -speed, 0)*Time.deltaTime;
-	        }
-	        if (Input.GetKeyDown(KeyCode.Keypad0))
+                blueSideArrow.transform.position += new Vector3(0, -speed, 0)*Time.deltaTime;
+                if (blueSideArrow.transform.position.y < -1.05f)
+                {
+                    blueSideArrow.transform.position = new Vector2(blueSideArrow.transform.position.x, -1.04f);
+                }
+            }
+	        if (Input.GetKeyDown(KeyCode.E))
 	        {
 	            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
 	            createBall ScriptReference = go.GetComponent<createBall>();

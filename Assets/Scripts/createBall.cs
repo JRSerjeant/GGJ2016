@@ -22,4 +22,22 @@ public class createBall : MonoBehaviour {
         if (direction == "RIGHT")
             rb.AddForce(new Vector2(10, 0));
 	}
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "block")
+        {
+            Destroy(coll.gameObject);
+        }
+        if(coll.gameObject.tag == "LittleMen")
+        {
+            int r = Random.Range(0, 6);
+            Debug.Log(r);
+            if(r == 1)
+            {
+                Destroy(coll.gameObject);
+            }
+        }
+
+    }
+
 }
