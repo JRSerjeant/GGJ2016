@@ -11,7 +11,16 @@ public class blockController : MonoBehaviour
     public int bluePlayerBlockCount;
     public int blockCount;
     private float _lastBlockRefreshTime;
-    
+	public AudioClip Create1;
+	public AudioClip Create2;
+	public AudioClip Create3;
+	public AudioClip Thud1;
+	public AudioClip Thud2;
+	public AudioClip Squash1;
+	public AudioClip Squash2;
+	public AudioClip Scream1;
+	public AudioClip Scream2;
+
     public int getRedPlayerBlockCount
     {
         get
@@ -53,7 +62,7 @@ public class blockController : MonoBehaviour
             {
                 Debug.Log(string.Format("Blue player block count used {0}", ++bluePlayerBlockCount));
                 GameObject go = Instantiate(block, new Vector2(bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y -0.5f), new Quaternion()) as GameObject;
-
+				PlayBlockSound ();
             }
         }
         if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.RightShift))
@@ -62,6 +71,7 @@ public class blockController : MonoBehaviour
             {
                 Debug.Log(string.Format("Red player block count used {0}", ++redPlayerBlockCount));
                 GameObject go = Instantiate(block, new Vector2(redPlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
+				PlayBlockSound ();
             }
         }
     }
@@ -74,4 +84,10 @@ public class blockController : MonoBehaviour
             _lastBlockRefreshTime = Time.time;
         }
     }
+
+	private void PlayBlockSound()
+	{
+
+
+	}
 }
