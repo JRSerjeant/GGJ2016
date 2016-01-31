@@ -20,7 +20,7 @@ public class playerOneCreateLittleMen : MonoBehaviour
         {
             if ((Time.time > lastFired + 1.0f))
             {
-                GameObject go = (GameObject) Instantiate(men, new Vector2(8.0f, -1.41f), new Quaternion());
+                GameObject go = (GameObject) Instantiate(men, new Vector2(10f, -1.4f), new Quaternion());
                 littleMenController ScriptReference = go.GetComponent<littleMenController>();
 
                 ScriptReference.direction = "L";
