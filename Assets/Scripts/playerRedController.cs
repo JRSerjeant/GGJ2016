@@ -10,6 +10,8 @@ public class playerRedController : MonoBehaviour
     public GameObject redSideArrow;
     public GameObject ball;
     public GameObject tower;
+	public AudioClip Canon1;
+	public AudioClip Canon2;
     // Use this for initialization
     void Start()
     {
@@ -54,6 +56,8 @@ public class playerRedController : MonoBehaviour
                     createBall ScriptReference = go.GetComponent<createBall>();
                     ScriptReference.Initialize("LEFT");
                     BallRepository.ConsumeRedBall();
+					//fire sound
+					Completed.SoundManager.instance.RandomizeSfx (Canon2);
                 }
             }
         }
