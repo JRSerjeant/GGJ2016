@@ -60,18 +60,24 @@ public class blockController : MonoBehaviour
         {
             if (bluePlayerBlockCount < blockCount)
             {
-                Debug.Log(string.Format("Blue player block count used {0}", ++bluePlayerBlockCount));
-                GameObject go = Instantiate(block, new Vector2(bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y -0.5f), new Quaternion()) as GameObject;
-				PlayBlockSound ();
+                if (!(bluePlayerTop.transform.position.x > -0.70f && bluePlayerTop.transform.position.x < 0.70f))
+                {
+                    Debug.Log(string.Format("Blue player block count used {0}", ++bluePlayerBlockCount));
+                    GameObject go = Instantiate(block, new Vector2(bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
+                    PlayBlockSound();
+                }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.P))
         {
             if (redPlayerBlockCount < blockCount)
             {
-                Debug.Log(string.Format("Red player block count used {0}", ++redPlayerBlockCount));
-                GameObject go = Instantiate(block, new Vector2(redPlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
-				PlayBlockSound ();
+                if (!(redPlayerTop.transform.position.x > -0.70f && redPlayerTop.transform.position.x < 0.70f))
+                {
+                    Debug.Log(string.Format("Red player block count used {0}", ++redPlayerBlockCount));
+                    GameObject go = Instantiate(block, new Vector2(redPlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
+                    PlayBlockSound();
+                }
             }
         }
     }
