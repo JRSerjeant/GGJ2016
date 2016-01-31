@@ -41,7 +41,7 @@ public class blockController : MonoBehaviour
             if (redPlayerBlockCount < blockCount)
             {
                 Debug.Log(string.Format("Red player block count used {0}", ++redPlayerBlockCount));
-                GameObject go = Instantiate(block, (bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
+                GameObject go = Instantiate(block, new Vector2(bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
             }
         }
     }
