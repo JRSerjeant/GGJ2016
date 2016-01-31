@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,5 +18,9 @@ public class LoadSceneScript : MonoBehaviour {
         yield return new WaitForSeconds(audioSource.clip.length);
 
         SceneManager.LoadScene(sceneName);
+        if (string.Equals(sceneName, "main", StringComparison.CurrentCultureIgnoreCase))
+        {
+            TimeControllerScript._startGameTime = Time.time;
+        }
     }
 }
