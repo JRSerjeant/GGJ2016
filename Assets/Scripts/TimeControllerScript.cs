@@ -14,7 +14,7 @@ public class TimeControllerScript : MonoBehaviour
     public static bool IsGameOver { get { return timeRemaining <= 0.0f; } }
 
     private Text _textElement;
-    private float _startGameTime;
+    public static float _startGameTime;
 
 
     void Start()
@@ -25,7 +25,7 @@ public class TimeControllerScript : MonoBehaviour
 
     void Update()
     {
-        timeRemaining = _gameLengthSeconds - Time.time - _startGameTime;
+        timeRemaining = _gameLengthSeconds - (Time.time - _startGameTime);
 
         if (!IsGameOver)
         {
