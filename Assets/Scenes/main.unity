@@ -355,6 +355,7 @@ GameObject:
   - 224: {fileID: 183783607}
   - 222: {fileID: 183783609}
   - 114: {fileID: 183783608}
+  - 114: {fileID: 183783610}
   m_Layer: 5
   m_Name: Blue Balls
   m_TagString: Untagged
@@ -376,7 +377,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 176, y: -23}
+  m_AnchoredPosition: {x: 207, y: -71}
   m_SizeDelta: {x: 161, y: 67}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &183783608
@@ -418,6 +419,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183783606}
+--- !u!114 &183783610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 183783606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &184498858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1019,7 @@ GameObject:
   - 224: {fileID: 619921674}
   - 222: {fileID: 619921676}
   - 114: {fileID: 619921675}
+  - 114: {fileID: 619921677}
   m_Layer: 5
   m_Name: Instruction Red Player
   m_TagString: Untagged
@@ -1073,6 +1089,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 619921673}
+--- !u!114 &619921677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619921673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &639264902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,6 +1113,7 @@ GameObject:
   - 224: {fileID: 639264903}
   - 222: {fileID: 639264905}
   - 114: {fileID: 639264904}
+  - 114: {fileID: 639264906}
   m_Layer: 5
   m_Name: Red Balls
   m_TagString: Untagged
@@ -1104,7 +1135,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -171, y: 0}
+  m_AnchoredPosition: {x: -221, y: -70}
   m_SizeDelta: {x: 162, y: 67}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &639264904
@@ -1119,7 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45588237, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1146,6 +1177,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 639264902}
+--- !u!114 &639264906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639264902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &687987968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1156,6 +1201,7 @@ GameObject:
   - 224: {fileID: 687987969}
   - 222: {fileID: 687987971}
   - 114: {fileID: 687987970}
+  - 114: {fileID: 687987972}
   m_Layer: 5
   m_Name: Blue Blocks
   m_TagString: Untagged
@@ -1177,7 +1223,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 77, y: -71}
   m_SizeDelta: {x: 160, y: 67}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &687987970
@@ -1219,6 +1265,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 687987968}
+--- !u!114 &687987972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 687987968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &688911268
 Prefab:
   m_ObjectHideFlags: 0
@@ -1271,6 +1331,7 @@ GameObject:
   - 224: {fileID: 806017594}
   - 222: {fileID: 806017596}
   - 114: {fileID: 806017595}
+  - 114: {fileID: 806017597}
   m_Layer: 5
   m_Name: Instruction Blue Player
   m_TagString: Untagged
@@ -1342,6 +1403,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 806017593}
+--- !u!114 &806017597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806017593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &836117604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +1683,7 @@ GameObject:
   - 222: {fileID: 942558735}
   - 114: {fileID: 942558734}
   - 114: {fileID: 942558736}
+  - 114: {fileID: 942558737}
   m_Layer: 5
   m_Name: Time
   m_TagString: Untagged
@@ -1682,6 +1758,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e1b353580bc3740ac672abfa5b47ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &942558737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 942558732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1014136921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,6 +1863,7 @@ GameObject:
   - 224: {fileID: 1053310433}
   - 222: {fileID: 1053310435}
   - 114: {fileID: 1053310434}
+  - 114: {fileID: 1053310436}
   m_Layer: 5
   m_Name: Red Blocks
   m_TagString: Untagged
@@ -1794,7 +1885,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -99, y: -71}
   m_SizeDelta: {x: 160, y: 67}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1053310434
@@ -1809,7 +1900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.45588237, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1836,6 +1927,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1053310432}
+--- !u!114 &1053310436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1053310432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1097255913
 GameObject:
   m_ObjectHideFlags: 0
