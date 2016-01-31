@@ -5,6 +5,7 @@ using Assets.Scripts;
 public class createBall : MonoBehaviour {
     public Rigidbody2D rb;
     static string direction;
+    public static int numberofBalls;
 
     public void Initialize(string Direction)
     {
@@ -14,6 +15,7 @@ public class createBall : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         BallRepository.ConsumeRedBall();
+        numberofBalls++;
     }
 	
 	// Update is called once per frame
@@ -40,6 +42,10 @@ public class createBall : MonoBehaviour {
             }
         }
 
+    }
+    void OnDestroy()
+    {
+        numberofBalls--;
     }
 
 }

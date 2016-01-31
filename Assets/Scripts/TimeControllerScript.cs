@@ -29,7 +29,7 @@ public class TimeControllerScript : MonoBehaviour
 
         if (!IsGameOver)
         {
-            _textElement.text = "TIME REMAINING \n" + Math.Max(timeRemaining, 0f).ToString("00");
+            _textElement.text = Math.Max(timeRemaining, 0f).ToString("00");
         }
         else
         {
