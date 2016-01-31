@@ -17,8 +17,9 @@ public class createBall : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
         if (direction == "LEFT")
-            rb.AddForce(new Vector2(10, 0));
-        if (direction == "RIGHT")
+            //rb.velocity = new Vector2(-10, 0);
             rb.AddForce(new Vector2(-10, 0));
+        if (direction == "RIGHT")
+            rb.AddForce(new Vector2(10, 0));
 	}
 }

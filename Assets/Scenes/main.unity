@@ -776,7 +776,7 @@ MonoBehaviour:
   speed: 0
   redTopArrow: {fileID: 600674160}
   redSideArrow: {fileID: 1127867337}
-  ball: {fileID: 0}
+  ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
 --- !u!1 &1258236414
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,7 +853,7 @@ MonoBehaviour:
   speed: 0
   blueTopArrow: {fileID: 189906018}
   blueSideArrow: {fileID: 1365795639}
-  ball: {fileID: 0}
+  ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
 --- !u!212 &1365795641
 SpriteRenderer:
   m_ObjectHideFlags: 0
