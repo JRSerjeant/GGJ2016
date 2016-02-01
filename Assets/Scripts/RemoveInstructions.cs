@@ -13,12 +13,12 @@ public class RemoveInstructions : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Time.timeSinceLevelLoad > 10)
+        /*if(Time.timeSinceLevelLoad > 10)
         {
             Instructions.enabled = false;
             InstructionsBlue.enabled = false;
             InstructionsRed.enabled = false;
-        }
+        }*/
 	
 	}
 }
