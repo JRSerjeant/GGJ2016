@@ -22,15 +22,15 @@ public class playerRedController : MonoBehaviour
     {
         if (!TimeControllerScript.IsGameOver)
         {
-            if (Input.GetKey("left"))
+            if (Input.GetKey(KeyCode.J))
             {
                 redTopArrow.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
             }
-            if (Input.GetKey("right"))
+            if (Input.GetKey(KeyCode.L))
             {
                 redTopArrow.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
             }
-            if (Input.GetKey("up"))
+            if (Input.GetKey(KeyCode.I))
             {
                 redSideArrow.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
                 if (redSideArrow.transform.position.y > 1.8f)
@@ -38,16 +38,15 @@ public class playerRedController : MonoBehaviour
                     redSideArrow.transform.position = new Vector2(redSideArrow.transform.position.x, 1.79f);
                 }
             }
-            if (Input.GetKey("down"))
+            if (Input.GetKey(KeyCode.K))
             {
-                redSideArrow.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
                 redSideArrow.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
                 if (redSideArrow.transform.position.y < -1.05f)
                 {
                     redSideArrow.transform.position = new Vector2(redSideArrow.transform.position.x, -1.04f);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Keypad0) || Input.GetKeyDown(KeyCode.O))
+            if (Input.GetKeyDown(KeyCode.O))
             {
                 if (!BallRepository.IsRedPlayerBallsMax)
                 {

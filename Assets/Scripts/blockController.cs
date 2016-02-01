@@ -56,7 +56,7 @@ public class blockController : MonoBehaviour
     {
         RefreshBlocks();
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (bluePlayerBlockCount < blockCount)
             {
@@ -68,7 +68,7 @@ public class blockController : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKeyDown(KeyCode.Keypad1) || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.U))
         {
             if (redPlayerBlockCount < blockCount)
             {
