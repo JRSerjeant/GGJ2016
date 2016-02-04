@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class TimeControllerScript : MonoBehaviour
 {
 
@@ -16,6 +17,9 @@ public class TimeControllerScript : MonoBehaviour
     private Text _textElement;
     public static float _startGameTime;
 
+	//public AudioSource musicSource; 
+	//public AudioClip SacrificialDrums;
+
 
     void Start()
     {
@@ -25,6 +29,28 @@ public class TimeControllerScript : MonoBehaviour
 
     void Update()
     {
+
+		if (timeRemaining == 40)
+		{
+			//musicSource.pitch = (2);
+			Completed.SoundManager.instance.RestartMusic();
+
+		}
+
+		if (timeRemaining <= 5)
+		{
+		//musicSource.pitch = (2);
+		Completed.SoundManager.instance.SpeedUpMusic();
+
+		}
+
+		if (timeRemaining <= 0)
+		{
+
+			Completed.SoundManager.instance.StopMusic();
+
+		}
+
         timeRemaining = _gameLengthSeconds - (Time.time - _startGameTime);
 
         if (!IsGameOver)

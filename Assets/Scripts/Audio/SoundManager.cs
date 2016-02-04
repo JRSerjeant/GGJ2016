@@ -10,11 +10,17 @@ namespace Completed
 		public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
 		public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 		public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
+		public AudioClip SacrificialDrumLoop;
 
 
 		void Awake ()
 		{
+			//musicSource.time = (0);
+			musicSource.clip = (SacrificialDrumLoop);
+			//musicSource.time = (0);
+			//musicSource.Play ();
 			//Check if there is already an instance of SoundManager
+
 			if (instance == null)
 				//if not, set it to this.
 				instance = this;
@@ -24,7 +30,7 @@ namespace Completed
 				Destroy (gameObject);
 
 			//Set SoundManager to DontDestroyOnLoad so that it won't be destroyed when reloading our scene.
-		//	DontDestroyOnLoad (gameObject);
+			//DontDestroyOnLoad (gameObject);
 		}
 
 
@@ -37,6 +43,8 @@ namespace Completed
 			//Play the clip.
 			efxSource.Play ();
 		}
+
+
 
 
 		//RandomizeSfx chooses randomly between various audio clips and slightly changes their pitch.
@@ -57,5 +65,33 @@ namespace Completed
 			//Play the clip.
 			efxSource.Play();
 		}
+
+		public void SpeedUpMusic (params AudioClip[] clips)
+		{
+
+			musicSource.pitch = (2);
+
+		}
+
+		public void StopMusic (params AudioClip[] clips)
+		{
+
+			//Destroy (gameObject);
+			//musicSource.volume = (0);
+			musicSource.Stop ();
+
+		}
+
+		public void RestartMusic (params AudioClip[] clips)
+		{
+
+			musicSource.time = (0);
+			musicSource.Play ();
+			//musicSource.volume = (1);
+			musicSource.pitch = (1);
+			//musicSource.time = (0);
+
+		}
+
 	}
 }
