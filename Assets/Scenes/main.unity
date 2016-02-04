@@ -541,7 +541,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 418922, guid: 1eeaf28ca7a00404e94f177a644ee605, type: 2}
       propertyPath: m_RootOrder
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 11407054, guid: 1eeaf28ca7a00404e94f177a644ee605, type: 2}
       propertyPath: blueSideArrow
@@ -967,7 +967,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410430, guid: 717de448d1e944c4c94778736ad0e2a8, type: 2}
       propertyPath: m_RootOrder
-      value: 18
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 11452444, guid: 717de448d1e944c4c94778736ad0e2a8, type: 2}
       propertyPath: redSideArrow
