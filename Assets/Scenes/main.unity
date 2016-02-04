@@ -629,8 +629,8 @@ MonoBehaviour:
   blueTopArrow: {fileID: 189906018}
   blueSideArrow: {fileID: 1365795639}
   ball: {fileID: 0}
-  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
-  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
+  Canon1: {fileID: 0}
+  Canon2: {fileID: 0}
 --- !u!212 &189906020
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1138,8 +1138,8 @@ MonoBehaviour:
   redTopArrow: {fileID: 600674160}
   redSideArrow: {fileID: 1127867337}
   ball: {fileID: 0}
-  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
-  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
+  Canon1: {fileID: 0}
+  Canon2: {fileID: 0}
 --- !u!1 &619921673
 GameObject:
   m_ObjectHideFlags: 0
@@ -2081,7 +2081,7 @@ GameObject:
   - 212: {fileID: 1127867338}
   - 114: {fileID: 1127867340}
   m_Layer: 0
-  m_Name: arrow_red_Side
+  m_Name: canon_red_Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2330,7 +2330,7 @@ GameObject:
   - 212: {fileID: 1365795641}
   - 114: {fileID: 1365795640}
   m_Layer: 0
-  m_Name: arrow_blue_Side
+  m_Name: canon_blue_Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2351,8 +2351,8 @@ MonoBehaviour:
   blueTopArrow: {fileID: 189906018}
   blueSideArrow: {fileID: 1365795639}
   ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
-  Canon1: {fileID: 0}
-  Canon2: {fileID: 0}
+  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!212 &1365795641
 SpriteRenderer:
   m_ObjectHideFlags: 0
