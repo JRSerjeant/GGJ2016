@@ -11,6 +11,7 @@ namespace Completed
 		public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 		public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 		public AudioClip SacrificialDrumLoop;
+		public float LoadTime = 0.0f;
 
 
 		void Awake ()
@@ -84,11 +85,14 @@ namespace Completed
 
 		public void RestartMusic (params AudioClip[] clips)
 		{
-
-			musicSource.time = (0);
 			musicSource.Play ();
-			//musicSource.volume = (1);
 			musicSource.pitch = (1);
+			//musicSource.volume = (1);
+			musicSource.time = (LoadTime);
+			//musicSource.Stop ();
+			//musicSource.Play ();
+			//musicSource.volume = (1);
+			//musicSource.volume = (1);
 			//musicSource.time = (0);
 
 		}
