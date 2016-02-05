@@ -37,7 +37,7 @@ public class TimeControllerScript : MonoBehaviour
 
 		}
 
-		if (timeRemaining <= 5)
+		if (timeRemaining <= 6)
 		{
 		//musicSource.pitch = (2);
 		Completed.SoundManager.instance.SpeedUpMusic();

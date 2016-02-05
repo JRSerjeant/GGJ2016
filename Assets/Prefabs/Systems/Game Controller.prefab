@@ -56,8 +56,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 186572, guid: 9b95cca220cae9d479df930ed9f2c842, type: 2}
-  bluePlayerTop: {fileID: 162308, guid: 4a10519faa8bd6b42a96bde1df8f416e, type: 2}
-  redPlayerTop: {fileID: 121338, guid: 3a35c49eb0124a0409ff846c4c245479, type: 2}
+  bluePlayerTop: {fileID: 172026, guid: 1eeaf28ca7a00404e94f177a644ee605, type: 2}
+  redPlayerTop: {fileID: 180702, guid: 717de448d1e944c4c94778736ad0e2a8, type: 2}
   redPlayerBlockCount: 0
   bluePlayerBlockCount: 0
   blockCount: 0
@@ -94,11 +94,11 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: bluePlayerTop
       value: 
-      objectReference: {fileID: 162308, guid: 4a10519faa8bd6b42a96bde1df8f416e, type: 2}
+      objectReference: {fileID: 172026, guid: 1eeaf28ca7a00404e94f177a644ee605, type: 2}
     - target: {fileID: 0}
       propertyPath: redPlayerTop
       value: 
-      objectReference: {fileID: 121338, guid: 3a35c49eb0124a0409ff846c4c245479, type: 2}
+      objectReference: {fileID: 180702, guid: 717de448d1e944c4c94778736ad0e2a8, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173986}
