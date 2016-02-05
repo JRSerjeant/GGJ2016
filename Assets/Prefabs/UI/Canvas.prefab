@@ -291,7 +291,7 @@ MonoBehaviour:
   blueBall: {fileID: 11446762}
   redBlock: {fileID: 11451860}
   redBall: {fileID: 11421374}
-  blockController: {fileID: 11495030, guid: 54a8e6d2034e41c44b1c303848671064, type: 2}
+  blockController: {fileID: 0}
 --- !u!114 &11407752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11480024, guid: ebdbf3d584f31044f85d62675318aad1, type: 2}
         m_MethodName: ChangeScene
         m_Mode: 5
         m_Arguments:
@@ -822,7 +822,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11429396, guid: ebdbf3d584f31044f85d62675318aad1, type: 2}
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -1265,6 +1265,15 @@ Prefab:
       value: 
       objectReference: {fileID: 11495030, guid: 54a8e6d2034e41c44b1c303848671064,
         type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11429396, guid: ebdbf3d584f31044f85d62675318aad1,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117844}
