@@ -9,6 +9,7 @@ public class UISetScores : MonoBehaviour {
     public Text redBall;
 
     public blockController blockController;
+
     // Use this for initialization
     void Start () {
         blueBall.text = "Balls \n 00";

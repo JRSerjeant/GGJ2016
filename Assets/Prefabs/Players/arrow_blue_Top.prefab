@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   blueTopArrow: {fileID: 172026}
-  blueSideArrow: {fileID: 0}
+  blueSideArrow: {fileID: 146618, guid: 2f0e338326617344f9daca2e73c5320a, type: 2}
   ball: {fileID: 0}
   Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
   Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
@@ -195,7 +195,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172026}
