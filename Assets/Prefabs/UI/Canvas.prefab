@@ -291,7 +291,7 @@ MonoBehaviour:
   blueBall: {fileID: 11446762}
   redBlock: {fileID: 11451860}
   redBall: {fileID: 11421374}
-  blockController: {fileID: 11482814, guid: df9789e697ee34611bba36d753a0e1e5, type: 2}
+  blockController: {fileID: 0}
 --- !u!114 &11407752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1263,7 +1263,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: blockController
       value: 
-      objectReference: {fileID: 11482814, guid: df9789e697ee34611bba36d753a0e1e5,
+      objectReference: {fileID: 11495030, guid: 54a8e6d2034e41c44b1c303848671064,
         type: 2}
     - target: {fileID: 0}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

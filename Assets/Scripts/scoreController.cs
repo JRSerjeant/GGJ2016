@@ -9,7 +9,7 @@ public class scoreController : MonoBehaviour {
     void Start () {
         RedPlayerScore = 0;
         BluePlayerScore = 0;
-        //LogScores();
+        LogScores();
 	}
 	
 	// Update is called once per frame
@@ -28,7 +28,7 @@ public class scoreController : MonoBehaviour {
         if (!TimeControllerScript.IsGameOver)
         {
             RedPlayerScore ++;
-            //LogScores();
+            LogScores();
         }
     }
     public static void addBluePlayerScore()
@@ -36,7 +36,7 @@ public class scoreController : MonoBehaviour {
         if (!TimeControllerScript.IsGameOver)
         {
             BluePlayerScore++;
-            //LogScores();
+            LogScores();
         }
     }
 }
