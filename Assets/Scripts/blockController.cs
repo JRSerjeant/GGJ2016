@@ -60,9 +60,11 @@ public class blockController : MonoBehaviour
         {
             if (bluePlayerBlockCount < blockCount)
             {
+                Debug.Log("bluePlayerBlockCount=" + bluePlayerBlockCount);
+                Debug.Log("block Coutn=" + blockCount);
                 if (!(bluePlayerTop.transform.position.x > -0.70f && bluePlayerTop.transform.position.x < 0.70f))
                 {
-                    Debug.Log(string.Format("Blue player block count used {0}", ++bluePlayerBlockCount));
+                    //Debug.Log(string.Format("Blue player block count used {0}", ++bluePlayerBlockCount));
                     GameObject go = Instantiate(block, new Vector2(bluePlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
                     PlayBlockSound();
                 }
@@ -70,12 +72,14 @@ public class blockController : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.U))
         {
+            Debug.Log("redPlayerBlockCount=" + redPlayerBlockCount);
+            Debug.Log("block Coutn=" + blockCount);
             if (redPlayerBlockCount < blockCount)
             {
                 if (!(redPlayerTop.transform.position.x > -0.70f && redPlayerTop.transform.position.x < 0.70f))
                 {
                     Debug.Log(string.Format("Red player block count used {0}", ++redPlayerBlockCount));
-                    GameObject go = Instantiate(block, new Vector2(redPlayerTop.GetComponent<Renderer>().transform.position.x, bluePlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
+                    GameObject go = Instantiate(block, new Vector2(redPlayerTop.GetComponent<Renderer>().transform.position.x, redPlayerTop.GetComponent<Renderer>().transform.position.y - 0.5f), new Quaternion()) as GameObject;
                     PlayBlockSound();
                 }
             }
@@ -86,7 +90,7 @@ public class blockController : MonoBehaviour
     {
         if (Time.time - _lastBlockRefreshTime >= Configuration.BlockRegenerationPerSecond)
         {
-            Debug.Log(string.Format("Block count incrementing from {0} to {1}", blockCount, ++blockCount));
+            //Debug.Log(string.Format("Block count incrementing from {0} to {1}", blockCount, ++blockCount));
             _lastBlockRefreshTime = Time.time;
         }
     }
