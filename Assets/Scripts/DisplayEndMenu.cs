@@ -17,6 +17,11 @@ public class DisplayEndMenu : MonoBehaviour {
             restartButton.SetActive(true);
             exitButton.SetActive(true);
         }
+        if(!TimeControllerScript.IsGameOver)
+        {
+            restartButton.SetActive(false);
+            exitButton.SetActive(false);
+        }
 	
 	}
 }
