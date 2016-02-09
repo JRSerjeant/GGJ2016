@@ -28,7 +28,7 @@ GameObject:
   - 4: {fileID: 418922}
   - 212: {fileID: 21258378}
   - 50: {fileID: 5094838}
-  - 114: {fileID: 11491950}
+  - 114: {fileID: 11437430}
   m_Layer: 0
   m_Name: arrow_blue_Top
   m_TagString: Untagged
@@ -95,6 +95,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11437430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 172026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d9eed2efb18f748831537fb60b7cee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  blueTopArrow: {fileID: 172026}
+  blueSideArrow: {fileID: 146618, guid: 2f0e338326617344f9daca2e73c5320a, type: 2}
+  ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
+  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+  Canon2: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
 --- !u!114 &11484538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -112,23 +129,6 @@ MonoBehaviour:
   ball: {fileID: 0}
   Canon1: {fileID: 0}
   Canon2: {fileID: 0}
---- !u!114 &11491950
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 172026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7f83a507f1d324bba9b70fea310919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveRightKey: 106
-  moveLeftKey: 108
-  moveUpKey: 105
-  moveDownKey: 107
-  fireCannon: 117
-  myCannon: {fileID: 0}
 --- !u!212 &21258378
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -204,6 +204,26 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: blueTopArrow
+      value: 
+      objectReference: {fileID: 172026}
+    - target: {fileID: 0}
+      propertyPath: blueSideArrow
+      value: 
+      objectReference: {fileID: 146618, guid: 2f0e338326617344f9daca2e73c5320a, type: 2}
+    - target: {fileID: 0}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Canon1
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+    - target: {fileID: 0}
+      propertyPath: Canon2
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172026}
