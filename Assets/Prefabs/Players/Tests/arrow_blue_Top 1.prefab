@@ -128,7 +128,7 @@ MonoBehaviour:
   moveUpKey: 105
   moveDownKey: 107
   fireCannon: 117
-  dropBlock: 0
+  dropBlock: 105
   myCannon: {fileID: 0}
 --- !u!212 &21258378
 SpriteRenderer:
@@ -204,6 +204,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dropBlock
+      value: 105
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
