@@ -30,7 +30,7 @@ GameObject:
   - 50: {fileID: 5094838}
   - 114: {fileID: 11491950}
   m_Layer: 0
-  m_Name: arrow_blue_Top
+  m_Name: arrow_blue_Top 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   moveUpKey: 105
   moveDownKey: 107
   fireCannon: 117
+  dropBlock: 0
   myCannon: {fileID: 0}
 --- !u!212 &21258378
 SpriteRenderer:

@@ -215,7 +215,7 @@ Transform:
   - {fileID: 104799276}
   - {fileID: 1432225489}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
 --- !u!1001 &220259996
 Prefab:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ Transform:
   m_Children:
   - {fileID: 1972735014}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!1001 &393754708
 Prefab:
   m_ObjectHideFlags: 0
@@ -516,10 +516,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 23a9a90e094d4dc4d883a62e33c7e729, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &802456082 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 121338, guid: 3a35c49eb0124a0409ff846c4c245479, type: 2}
-  m_PrefabInternal: {fileID: 1887970194}
 --- !u!4 &802456085 stripped
 Transform:
   m_PrefabParentObject: {fileID: 405296, guid: 3a35c49eb0124a0409ff846c4c245479, type: 2}
@@ -649,7 +645,7 @@ Transform:
   - {fileID: 418583500}
   - {fileID: 340991746}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
 --- !u!4 &1117488125 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402560, guid: 3991b26a9f50e7e4baaca22444524227, type: 2}
@@ -747,10 +743,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11407054, guid: 1eeaf28ca7a00404e94f177a644ee605, type: 2}
-      propertyPath: blueSideArrow
-      value: 
-      objectReference: {fileID: 1843062615}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1eeaf28ca7a00404e94f177a644ee605, type: 2}
   m_IsPrefabParent: 0
@@ -1096,10 +1088,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e72e3bd9f1140bc4db33404064a65a96, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1843062615 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 162308, guid: 4a10519faa8bd6b42a96bde1df8f416e, type: 2}
-  m_PrefabInternal: {fileID: 961305722}
 --- !u!4 &1843062618 stripped
 Transform:
   m_PrefabParentObject: {fileID: 482518, guid: 4a10519faa8bd6b42a96bde1df8f416e, type: 2}
@@ -1372,10 +1360,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11452444, guid: 717de448d1e944c4c94778736ad0e2a8, type: 2}
-      propertyPath: redSideArrow
-      value: 
-      objectReference: {fileID: 802456082}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 717de448d1e944c4c94778736ad0e2a8, type: 2}
   m_IsPrefabParent: 0
@@ -1410,4 +1394,4 @@ Transform:
   - {fileID: 463788764}
   - {fileID: 1587045318}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 6
