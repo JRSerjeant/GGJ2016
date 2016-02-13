@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 444236}
   - 212: {fileID: 21211436}
-  - 114: {fileID: 11436166}
   m_Layer: 0
   m_Name: arrow_red_Side
   m_TagString: Untagged
@@ -29,23 +28,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11436166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 119990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0642ad0f6f539cb4b8286f54096b8b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  redTopArrow: {fileID: 0}
-  redSideArrow: {fileID: 119990}
-  ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
-  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
-  Canon2: {fileID: 8300000, guid: 72b6beefc3ce95d448ddee5ae654b100, type: 3}
 --- !u!212 &21211436
 SpriteRenderer:
   m_ObjectHideFlags: 1

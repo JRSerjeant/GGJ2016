@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour {
         }
         if (Input.GetKey(moveUpKey))
         {
-            this.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
+            //this.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
             //TODO: Sort out how to stop cannons moving up to far now we only have one player controller script
             /*if (blueSideArrow.transform.position.y > 1.8f)
             {
@@ -42,7 +42,7 @@ public class playerController : MonoBehaviour {
         }
         if (Input.GetKey(moveDownKey))
         {
-            this.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+            //this.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
             //TODO: Sort out how to stop cannons moving up to far now we only have one player controller script
             /*if (blueSideArrow.transform.position.y < -1.05f)
             {
@@ -64,9 +64,8 @@ public class playerController : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(dropBlock))
-        {
-
+        {            
+            objectFactory.createBlock(this.transform.position);
         }
-
-        }
+    }
 }

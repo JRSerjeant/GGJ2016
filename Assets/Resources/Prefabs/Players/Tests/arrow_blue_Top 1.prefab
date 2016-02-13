@@ -9,7 +9,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 465162}
   - 212: {fileID: 21260526}
-  - 114: {fileID: 11484538}
   - 95: {fileID: 9550750}
   m_Layer: 0
   m_Name: GodBlue
@@ -43,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3299513, y: 2.4969141, z: 0}
+  m_LocalPosition: {x: -5.073902, y: 2.5065682, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 465162}
@@ -95,23 +94,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11484538
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0642ad0f6f539cb4b8286f54096b8b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  redTopArrow: {fileID: 0}
-  redSideArrow: {fileID: 0}
-  ball: {fileID: 0}
-  Canon1: {fileID: 0}
-  Canon2: {fileID: 0}
 --- !u!114 &11491950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7f83a507f1d324bba9b70fea310919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRightKey: 106
-  moveLeftKey: 108
+  moveRightKey: 108
+  moveLeftKey: 106
   moveUpKey: 105
   moveDownKey: 107
   fireCannon: 117

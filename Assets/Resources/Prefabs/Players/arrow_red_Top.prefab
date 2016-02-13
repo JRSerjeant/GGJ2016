@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 438292}
   - 95: {fileID: 9519112}
   - 212: {fileID: 21255434}
-  - 114: {fileID: 11431260}
   m_Layer: 0
   m_Name: GodRed
   m_TagString: Untagged
@@ -28,7 +27,7 @@ GameObject:
   - 4: {fileID: 410430}
   - 212: {fileID: 21261358}
   - 50: {fileID: 5094406}
-  - 114: {fileID: 11442316}
+  - 114: {fileID: 11430098}
   m_Layer: 0
   m_Name: arrow_red_Top
   m_TagString: Untagged
@@ -95,24 +94,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11431260
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0642ad0f6f539cb4b8286f54096b8b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  redTopArrow: {fileID: 0}
-  redSideArrow: {fileID: 0}
-  ball: {fileID: 0}
-  Canon1: {fileID: 0}
-  Canon2: {fileID: 0}
---- !u!114 &11442316
+--- !u!114 &11430098
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -120,15 +102,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 180702}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0642ad0f6f539cb4b8286f54096b8b02, type: 3}
+  m_Script: {fileID: 11500000, guid: cd7f83a507f1d324bba9b70fea310919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  redTopArrow: {fileID: 180702}
-  redSideArrow: {fileID: 119990, guid: 804da258c418a4c49b98bbbe3906addd, type: 2}
-  ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
-  Canon1: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
-  Canon2: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+  moveRightKey: 100
+  moveLeftKey: 97
+  moveUpKey: 119
+  moveDownKey: 115
+  fireCannon: 113
+  dropBlock: 101
+  myCannon: {fileID: 121338, guid: 3a35c49eb0124a0409ff846c4c245479, type: 2}
 --- !u!212 &21255434
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -228,6 +211,30 @@ Prefab:
       propertyPath: Canon2
       value: 
       objectReference: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+    - target: {fileID: 0}
+      propertyPath: moveRightKey
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveLeftKey
+      value: 97
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveUpKey
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: moveDownKey
+      value: 115
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fireCannon
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: dropBlock
+      value: 101
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 180702}
