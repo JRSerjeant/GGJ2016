@@ -63,6 +63,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &132982
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 422834}
+  - 68: {fileID: 6887910}
+  - 114: {fileID: 11450746}
+  m_Layer: 0
+  m_Name: Destroyer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &143756
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +184,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 454182}
   m_RootOrder: 6
+--- !u!4 &422834
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.08999634, z: -9.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 454182}
+  m_RootOrder: 8
 --- !u!4 &431858
 Transform:
   m_ObjectHideFlags: 1
@@ -198,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 105324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.24647605, y: -0.7876522, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496148}
@@ -209,6 +238,7 @@ Transform:
   - {fileID: 460120}
   - {fileID: 418506}
   - {fileID: 431858}
+  - {fileID: 422834}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &457912
@@ -259,6 +289,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 454182}
   m_RootOrder: 0
+--- !u!68 &6887910
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -10.173288, y: 9.692588}
+  - {x: 10.29712, y: 9.698349}
+  - {x: 10.222085, y: -5.5836535}
+  - {x: -10.269162, y: -5.580108}
+  - {x: -10.302471, y: 9.941004}
+  - {x: 10.080386, y: 9.888665}
+--- !u!114 &11450746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 132982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e6f31393c141c7468a28e8f83b7584e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21202322
 SpriteRenderer:
   m_ObjectHideFlags: 1

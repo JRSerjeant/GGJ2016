@@ -7,6 +7,7 @@ public class UISetScores : MonoBehaviour {
     public Text blueBall;
     public Text redBlock;
     public Text redBall;
+    public Text score;
 
     public blockController blockController;
 
@@ -16,6 +17,7 @@ public class UISetScores : MonoBehaviour {
         blueBlock.text = "Blocks \n 00";
         redBall.text = "Balls \n 00";
         redBlock.text = "Blocks \n 00";
+        score.text = "";
 
     }
 	
@@ -25,6 +27,6 @@ public class UISetScores : MonoBehaviour {
         blueBlock.text = "Blocks\n" + (blockController.getBlockCount - blockController.getBluePlayerBlockCount);
         redBall.text = "Balls \n" + createBall.numberofBalls;
         redBlock.text = "Blocks\n "+ ( blockController.getBlockCount - blockController.getRedPlayerBlockCount);
-
+        score.text = "Blue: " + scoreController.BluePlayerScore + "\nRed: " + scoreController.RedPlayerScore;
     }
 }
