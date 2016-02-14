@@ -16,6 +16,9 @@ public class scr_littleMan : MonoBehaviour {
     public Sprite BlueSprite;
     public Sprite RedSprite;
 
+    public RuntimeAnimatorController manBlueAnimation;
+    public RuntimeAnimatorController manRedAnimation;
+
     bool stateRunning;
     bool stateRaising;
     bool stateDead;
@@ -90,14 +93,15 @@ public class scr_littleMan : MonoBehaviour {
         }
 
     }
-        void setManRedorBlue()
+
+    void setManRedorBlue()
     {
         if (!scr_LittleManGenerator.LastWasBlue)
         {
             Isblue = true;
 
             //set up position,sprite,ani,etc
-            setManProperties(blueManStartPosition,BlueSprite,blueDirectionValue);
+            setManProperties(blueManStartPosition,BlueSprite,blueDirectionValue,manBlueAnimation);
             
 
             scr_LittleManGenerator.LastWasBlue = true;
@@ -109,7 +113,7 @@ public class scr_littleMan : MonoBehaviour {
             IsRed = true;
 
             //set up position,sprite,ani,etc
-            setManProperties(redManStartPosition, RedSprite, redDirectionValue);
+            setManProperties(redManStartPosition, RedSprite, redDirectionValue, manRedAnimation);
 
             scr_LittleManGenerator.LastWasRed = true;
             scr_LittleManGenerator.LastWasBlue = false;
@@ -117,11 +121,13 @@ public class scr_littleMan : MonoBehaviour {
         }
     }
 
-    void setManProperties(Vector2 p, Sprite s, float d)
+    void setManProperties(Vector2 p, Sprite s, float d, RuntimeAnimatorController a)
     {
         this.transform.position = p;
+        this.GetComponent<Animator>().runtimeAnimatorController = a;
         this.GetComponent<SpriteRenderer>().sprite = s;
         directionValue = d;
+        
     }
 
     void addToScore()
