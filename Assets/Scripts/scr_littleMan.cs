@@ -65,6 +65,9 @@ public class scr_littleMan : MonoBehaviour {
 
 	void FixedUpdate () {
 
+
+        this.transform.rotation = new Quaternion();
+
 	    if(stateRunning)
         {
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue,0.0f);
@@ -124,8 +127,9 @@ public class scr_littleMan : MonoBehaviour {
     void setManProperties(Vector2 p, Sprite s, float d, RuntimeAnimatorController a)
     {
         this.transform.position = p;
-        this.GetComponent<Animator>().runtimeAnimatorController = a;
         this.GetComponent<SpriteRenderer>().sprite = s;
+        this.GetComponent<Animator>().runtimeAnimatorController = a;
+        
         directionValue = d;
         
     }

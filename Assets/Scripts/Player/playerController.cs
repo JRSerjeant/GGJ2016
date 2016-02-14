@@ -12,6 +12,7 @@ public class playerController : MonoBehaviour {
     public KeyCode dropBlock;
 
     public GameObject myCannon;
+    public GameObject ball;
 
     private int speed;
 
@@ -33,33 +34,30 @@ public class playerController : MonoBehaviour {
         }
         if (Input.GetKey(moveUpKey))
         {
-            //this.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
+            myCannon.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
             //TODO: Sort out how to stop cannons moving up to far now we only have one player controller script
-            /*if (blueSideArrow.transform.position.y > 1.8f)
+            if(myCannon.transform.position.y > 1.8f)
             {
-                blueSideArrow.transform.position = new Vector2(blueSideArrow.transform.position.x, 1.79f);
-            }*/
+                myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.79f);
+            }
         }
         if (Input.GetKey(moveDownKey))
         {
-            //this.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+            myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
             //TODO: Sort out how to stop cannons moving up to far now we only have one player controller script
-            /*if (blueSideArrow.transform.position.y < -1.05f)
+            if (myCannon.transform.position.y < -1.05f)
             {
-                blueSideArrow.transform.position = new Vector2(blueSideArrow.transform.position.x, -1.04f);
-            }*/
+                myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
+            }
         }
         if (Input.GetKeyDown(fireCannon))
-        {
-            //TODO: Add fire cannon 
-            /*if (!BallRepository.IsBluePlayerBallsMax)
-            {
-                GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
-                createBall ScriptReference = go.GetComponent<createBall>();
-                ScriptReference.Initialize("RIGHT");
-                BallRepository.ConsumeBlueBall();
-                Completed.SoundManager.instance.RandomizeSfx(Canon1, Canon2);
-            }*/
+        {   
+            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+            createBall ScriptReference = go.GetComponent<createBall>();
+            ScriptReference.Initialize("RIGHT");
+            BallRepository.ConsumeBlueBall();
+            //Completed.SoundManager.instance.RandomizeSfx(Canon1, Canon2);
+            
 
         }
 

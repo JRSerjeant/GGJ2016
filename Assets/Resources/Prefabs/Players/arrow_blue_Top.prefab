@@ -111,7 +111,7 @@ MonoBehaviour:
   moveDownKey: 107
   fireCannon: 117
   dropBlock: 111
-  myCannon: {fileID: 162308, guid: 4a10519faa8bd6b42a96bde1df8f416e, type: 2}
+  myCannon: {fileID: 0}
 --- !u!212 &21258378
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -207,6 +207,10 @@ Prefab:
       propertyPath: Canon2
       value: 
       objectReference: {fileID: 8300000, guid: 1d1ee8c2e4890654cae045899830c883, type: 3}
+    - target: {fileID: 0}
+      propertyPath: myCannon
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 172026}
