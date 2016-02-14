@@ -52,7 +52,7 @@ public class playerController : MonoBehaviour {
         }
         if (Input.GetKeyDown(fireCannon))
         {   
-            GameObject go = (GameObject)Instantiate(ball, transform.position, new Quaternion());
+            GameObject go = (GameObject)Instantiate(ball, myCannon.transform.position, new Quaternion());
             createBall ScriptReference = go.GetComponent<createBall>();
             ScriptReference.Initialize("RIGHT");
             BallRepository.ConsumeBlueBall();
