@@ -64,8 +64,18 @@ public class playerController : MonoBehaviour {
         }
 
         if (Input.GetKeyDown(dropBlock))
-        {            
-            objectFactory.createBlock(this.transform.position);
+        {
+            if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
+            {
+                objectFactory.createBlock(this.transform.position);
+                PlayBlockSound();
+            }
         }
+    }
+
+    private void PlayBlockSound()
+    {
+        Completed.SoundManager.instance.RandomizeSfx(audioFactory.Create1, audioFactory.Create2, audioFactory.Create3);
+
     }
 }

@@ -13,8 +13,9 @@ GameObject:
   - 114: {fileID: 11487424}
   - 58: {fileID: 5890016}
   - 95: {fileID: 9562648}
+  - 114: {fileID: 11430490}
   m_Layer: 0
-  m_Name: littleMen
+  m_Name: pfb_littleMan
   m_TagString: LittleMen
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,6 +81,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11430490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2342c14ac593d44381ba02e2c41f30f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlueSprite: {fileID: 21300000, guid: 9c6aa86ee1938114186727990ab92ecd, type: 3}
+  RedSprite: {fileID: 21300000, guid: acf30879e75dbba41be6d3add7cbbc68, type: 3}
 --- !u!114 &11487424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -181,6 +195,16 @@ Prefab:
       propertyPath: m_TagString
       value: LittleMen
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BlueSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9c6aa86ee1938114186727990ab92ecd,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: RedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: acf30879e75dbba41be6d3add7cbbc68,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 164050}

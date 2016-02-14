@@ -12,6 +12,7 @@ public class littleMenController : MonoBehaviour
     bool isColWithSlope;
     bool atEndPoint;
 
+
     public string direction;
     public string forplayer;
     public string state;
