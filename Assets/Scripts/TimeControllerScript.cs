@@ -21,20 +21,21 @@ public class TimeControllerScript : MonoBehaviour
     private Text _textElement;
     public static float _startGameTime;
 
-	public int TimesPlayed = 0;
+	public static int TimesPlayed = 0;
 	 
 	//public AudioClip SacrificialDrums;
 
 
     void Start()
     {
+		//TimesPlayed = 0;
         _startGameTime = Time.time;
         _textElement = GetComponent<Text>();
     }
 
     void Update()
     {
-
+		
 		//if (timeRemaining == 40)
 		//{
 
@@ -71,6 +72,7 @@ public class TimeControllerScript : MonoBehaviour
 		{
 
 			Completed.SoundManager.instance.StopMusic();
+			TimesPlayed = (TimesPlayed + 1);
 			//add gong sound.
 			PlayGongSound();
 
@@ -117,14 +119,16 @@ public class TimeControllerScript : MonoBehaviour
 	void PlayGongSound()
 	{
 
-		TimesPlayed = (TimesPlayed + 1);
 
-		if (TimesPlayed == 1)
+
+		if (TimesPlayed == 1 & !IsGameOver)  //and gameover = false?
 		{
 
 			Completed.SoundManager.instance.RandomizeSfx(audioFactory.Gong);
+			//TimesPlayed = (TimesPlayed + 1);
+			//TimesPlayed = 0;
 			//audioFactory.Gong.
-			//Completed.SoundManager.instance.musicSource.Pla
+			//Completed.SoundManager.instance.musicSource.Play
 
 		}
 

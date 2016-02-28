@@ -23,6 +23,7 @@ public class LoadSceneScript : MonoBehaviour {
 
         if (string.Equals(sceneName, "main", StringComparison.CurrentCultureIgnoreCase))
         {
+			TimeControllerScript.TimesPlayed = 0;
             TimeControllerScript._startGameTime = Time.time;
             BallRepository.ResetAllBalls();
 			//Completed.SoundManager.instance.RestartMusic();
