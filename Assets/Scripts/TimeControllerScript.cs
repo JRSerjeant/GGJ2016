@@ -7,6 +7,10 @@ using UnityEngine.UI;
 
 public class TimeControllerScript : MonoBehaviour
 {
+	//public AudioClip Drum;
+	//public AudioClip Gong;
+
+	public float LoadTime = 1.5f;
 
     private static readonly int _gameLengthSeconds = Configuration.GameLengthInSeconds;
 
@@ -17,7 +21,8 @@ public class TimeControllerScript : MonoBehaviour
     private Text _textElement;
     public static float _startGameTime;
 
-	//public AudioSource musicSource; 
+	public int TimesPlayed = 0;
+	 
 	//public AudioClip SacrificialDrums;
 
 
@@ -30,24 +35,44 @@ public class TimeControllerScript : MonoBehaviour
     void Update()
     {
 
-		if (timeRemaining == 40)
+		//if (timeRemaining == 40)
+		//{
+
+			//Completed.SoundManager.instance.RestartMusic();
+
+		//}
+
+		if (timeRemaining == _gameLengthSeconds)
 		{
-			//musicSource.pitch = (2);
+			//Completed.SoundManager.instance.PlaySingle (audioFactory.Drum);
+			//Completed.SoundManager.instance.PlaySingle (Drum);
+			//Completed.SoundManager.instance.musicSource.time = (LoadTime);
 			Completed.SoundManager.instance.RestartMusic();
+			TimesPlayed = 0;
+
+			//Completed.SoundManager.instance.musicSource.volume = (0);
+			//Completed.SoundManager.instance.musicSource.Play ();
+			//Completed.SoundManager.instance.realmusicSource.Play ();
 
 		}
 
-		if (timeRemaining <= 6)
+		if (timeRemaining < 5.5)
 		{
-		//musicSource.pitch = (2);
-		Completed.SoundManager.instance.SpeedUpMusic();
+			//Completed.SoundManager.instance.PlaySingle (audioFactory.Drum);
+			//Completed.SoundManager.instance.PlaySingle (Drum);
+		//Completed.SoundManager.instance.musicSource.Play ();
+		//Completed.SoundManager.instance.musicSource.volume = (1);
 
+		Completed.SoundManager.instance.SpeedUpMusic();
+		//Completed.SoundManager.instance.musicSource.volume = (1);
 		}
 
-		if (timeRemaining <= 0)
+		if (timeRemaining < 0.5)
 		{
 
 			Completed.SoundManager.instance.StopMusic();
+			//add gong sound.
+			PlayGongSound();
 
 		}
 
@@ -59,6 +84,7 @@ public class TimeControllerScript : MonoBehaviour
         }
         else
         {
+			
             string winText = "";
             if (scoreController.BluePlayerScore > scoreController.RedPlayerScore)
             {
@@ -72,7 +98,11 @@ public class TimeControllerScript : MonoBehaviour
             {
                 winText = "DRAW!";
             }
+
             _textElement.text = "GAME OVER:\n " + winText;
+
+
+
 
 
             // // doesn't do anything
@@ -83,4 +113,21 @@ public class TimeControllerScript : MonoBehaviour
             }
         }
     }
+
+	void PlayGongSound()
+	{
+
+		TimesPlayed = (TimesPlayed + 1);
+
+		if (TimesPlayed == 1)
+		{
+
+			Completed.SoundManager.instance.RandomizeSfx(audioFactory.Gong);
+			//audioFactory.Gong.
+			//Completed.SoundManager.instance.musicSource.Pla
+
+		}
+
+
+	}
 }

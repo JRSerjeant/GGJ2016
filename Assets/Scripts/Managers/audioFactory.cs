@@ -12,6 +12,8 @@ public class audioFactory : MonoBehaviour
     public static AudioClip Squash2;
     public static AudioClip Scream1;
     public static AudioClip Scream2;
+	public static AudioClip Drum;
+	public static AudioClip Gong;
 
     void Start()
     {
@@ -24,5 +26,8 @@ public class audioFactory : MonoBehaviour
         Squash2 = (AudioClip)Resources.Load("Audio/Squash2");
         Scream1 = (AudioClip)Resources.Load("Audio/Scream1");
         Scream2 = (AudioClip)Resources.Load("Audio/Scream2");
+
+		Gong = (AudioClip)Resources.Load("Audio/Gong");
+		//Drum = (AudioClip)Resources.Load("Audio/SacrificalDrumLoop120BPM");
     }
 }

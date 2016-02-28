@@ -7,10 +7,12 @@ namespace Completed
 	{
 		public AudioSource efxSource;                   //Drag a reference to the audio source which will play the sound effects.
 		public AudioSource musicSource;                 //Drag a reference to the audio source which will play the music.
+		public AudioSource realmusicSource;
 		public static SoundManager instance = null;     //Allows other scripts to call functions from SoundManager.             
 		public float lowPitchRange = .95f;              //The lowest a sound effect will be randomly pitched.
 		public float highPitchRange = 1.05f;            //The highest a sound effect will be randomly pitched.
 		public AudioClip SacrificialDrumLoop;
+		//public AudioClip MayanMusic;
 		public float LoadTime = 1.5f;
 
 
@@ -18,9 +20,12 @@ namespace Completed
 		{
 			//musicSource.time = (0);
 			musicSource.clip = (SacrificialDrumLoop);
-			musicSource.time = (LoadTime);
-			//musicSource.time = (0);
 			//musicSource.Play ();
+			musicSource.time = (LoadTime);
+
+			//realmusicSource.clip = (MayanMusic);
+			//musicSource.time = (0);
+			//realmusicSource.Play ();
 			//Check if there is already an instance of SoundManager
 
 			if (instance == null)
@@ -70,9 +75,9 @@ namespace Completed
 
 		public void SpeedUpMusic (params AudioClip[] clips)
 		{
-
+			//musicSource.Play ();
 			musicSource.pitch = (2);
-
+			musicSource.volume = (1);
 		}
 
 		public void StopMusic (params AudioClip[] clips)
@@ -81,20 +86,20 @@ namespace Completed
 			//Destroy (gameObject);
 			//musicSource.volume = (0);
 			musicSource.Stop ();
+			//efxSource.Stop ();
+			realmusicSource.Stop ();
 
 		}
 
 		public void RestartMusic (params AudioClip[] clips)
 		{
-			musicSource.time = (LoadTime);
-			musicSource.Play ();
-			musicSource.pitch = (1);
-			//musicSource.volume = (1);
-			//musicSource.Stop ();
-			//musicSource.Play ();
-			//musicSource.volume = (1);
-			//musicSource.volume = (1);
+			//musicSource.time = (LoadTime);
+			musicSource.pitch = (2);
+
+			musicSource.volume = (0);
 			//musicSource.time = (0);
+			musicSource.Play ();
+			realmusicSource.Play ();
 
 		}
 

@@ -11,6 +11,7 @@ public class playerRedController : MonoBehaviour
     public GameObject ball;
 	public AudioClip Canon1;
 	public AudioClip Canon2;
+	//public AudioClip Drum;
     // Use this for initialization
     void Start()
     {
@@ -56,6 +57,7 @@ public class playerRedController : MonoBehaviour
                     BallRepository.ConsumeRedBall();
 					//fire sound
 					Completed.SoundManager.instance.RandomizeSfx (Canon1,Canon2);
+					//Completed.SoundManager.instance.PlaySingle (Drum);
                 }
             }
         }
