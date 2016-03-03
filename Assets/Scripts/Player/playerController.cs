@@ -10,6 +10,8 @@ public class playerController : MonoBehaviour {
     public KeyCode moveDownKey;
     public KeyCode fireCannon;
     public KeyCode dropBlock;
+    public enum playerColourEnum {Red,Blue};
+    public playerColourEnum playerColour;
 
     public GameObject myCannon;
     public GameObject ball;
@@ -54,7 +56,13 @@ public class playerController : MonoBehaviour {
         {   
             GameObject go = (GameObject)Instantiate(ball, myCannon.transform.position, new Quaternion());
             createBall ScriptReference = go.GetComponent<createBall>();
-            ScriptReference.Initialize("RIGHT");
+            if (playerColour == playerColourEnum.Red)
+            {
+                ScriptReference.Initialize("LEFT");
+            }else if(playerColour == playerColourEnum.Blue)
+            {
+                ScriptReference.Initialize("RIGHT");
+            }
             BallRepository.ConsumeBlueBall();
             //Completed.SoundManager.instance.RandomizeSfx(Canon1, Canon2);
             
