@@ -14,10 +14,11 @@ public class objectFactory : MonoBehaviour
         pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
     }
 
-    public static void createBlock(Vector3 position)
+    public static GameObject createBlock(Vector3 position)
     {
         GameObject newBlock = Instantiate(pfb_Block) as GameObject;
         newBlock.transform.position = new Vector3(position.x, position.y);
+        return newBlock;
     }
 
     public static void createlittleMan()

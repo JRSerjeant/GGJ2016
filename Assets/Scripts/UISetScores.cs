@@ -24,9 +24,9 @@ public class UISetScores : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         blueBall.text = "Ball \n" + createBall.numberofBalls;
-        blueBlock.text = "Blocks\n" + (blockController.getBlockCount - blockController.getBluePlayerBlockCount);
+        //blueBlock.text = "Blocks\n" + (blockController.getBlockCount - blockController.getBluePlayerBlockCount);
         redBall.text = "Balls \n" + createBall.numberofBalls;
-        redBlock.text = "Blocks\n "+ ( blockController.getBlockCount - blockController.getRedPlayerBlockCount);
+        //redBlock.text = "Blocks\n "+ ( blockController.getBlockCount - blockController.getRedPlayerBlockCount);
         score.text = "Blue: " + scoreController.BluePlayerScore + "\nRed: " + scoreController.RedPlayerScore;
     }
 }

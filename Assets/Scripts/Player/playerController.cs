@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Assets.Scripts;
+using System.Collections.Generic;
 using System.Collections;
 
 public class playerController : MonoBehaviour {
@@ -10,23 +11,26 @@ public class playerController : MonoBehaviour {
     public KeyCode moveDownKey;
     public KeyCode fireCannon;
     public KeyCode dropBlock;
+
     public enum playerColourEnum {Red,Blue};
     public playerColourEnum playerColour;
 
     public GameObject myCannon;
     public GameObject ball;
+    private blockController blockC;
 
     private int speed;
-
+   
     // Use this for initialization
     void Start () {
         speed = Configuration.PlayerSpeed;
-	}
+        blockC = GetComponent<blockController>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	    
-        if(Input.GetKey(moveLeftKey))
+
+        if (Input.GetKey(moveLeftKey))
         {
             this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
@@ -73,8 +77,7 @@ public class playerController : MonoBehaviour {
         {
             if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
             {
-                objectFactory.createBlock(this.transform.position);
-                PlayBlockSound();
+                blockC.generateBlock(this.transform.position);
             }
         }
     }
