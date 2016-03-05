@@ -25,8 +25,6 @@ public class LoadSceneScript : MonoBehaviour {
         {
 			TimeControllerScript.TimesPlayed = 0;
             TimeControllerScript._startGameTime = Time.time;
-            BallRepository.ResetAllBalls();
-			//Completed.SoundManager.instance.RestartMusic();
         }
     }
 }
