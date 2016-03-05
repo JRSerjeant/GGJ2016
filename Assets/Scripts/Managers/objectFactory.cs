@@ -6,12 +6,14 @@ public class objectFactory : MonoBehaviour
 
     public static GameObject pfb_Block;
     public static GameObject pfb_littleMan;
+    public static GameObject pfb_Ball;
 
 
     void Start()
     {
         pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
         pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
+        pfb_Ball = (GameObject)Resources.Load("Prefabs/Objects/Ball");
     }
 
     public static GameObject createBlock(Vector3 position)
@@ -20,6 +22,14 @@ public class objectFactory : MonoBehaviour
         newBlock.transform.position = new Vector3(position.x, position.y);
         return newBlock;
     }
+
+    public static void createBall(Vector3 position, string ballDirection)
+    {
+        GameObject newBall = Instantiate(pfb_Ball,position,new Quaternion()) as GameObject;
+        createBall createBallScriptReference = newBall.GetComponent<createBall>();
+        createBallScriptReference.Initialize(ballDirection);
+    }
+
 
     public static void createlittleMan()
     {

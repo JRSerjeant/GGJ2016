@@ -8,7 +8,7 @@ namespace Assets.Scripts
         public static readonly int GameLengthInSeconds = 30;
         public static readonly int MaxBalls = 10;
         public static readonly int PlayerSpeed = 5;
-
+        public static readonly int ballVelosity = 10;
         public const float PeoplePerSecond = 2f;
 
     }

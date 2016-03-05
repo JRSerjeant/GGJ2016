@@ -37,7 +37,7 @@ public class blockController : MonoBehaviour
 
 	private void PlayBlockSound()
 	{
-		//Completed.SoundManager.instance.RandomizeSfx (Create1, Create2, Create3);
+		Completed.SoundManager.instance.RandomizeSfx (audioFactory.Create1, audioFactory.Create2, audioFactory.Create3);
 
 	}
 }

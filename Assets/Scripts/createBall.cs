@@ -7,6 +7,8 @@ public class createBall : MonoBehaviour {
     static string direction;
     public static int numberofBalls;
 
+    private int ballVelocity;
+
     public void Initialize(string Direction)
     {
         direction = Direction;
@@ -16,15 +18,16 @@ public class createBall : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         //BallRepository.ConsumeRedBall();
         numberofBalls++;
+        ballVelocity = Configuration.ballVelosity;
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if (direction == "LEFT")
+        if (direction == "Red")
             //rb.velocity = new Vector2(-10, 0);
-            rb.AddForce(new Vector2(-10, 0));
-        if (direction == "RIGHT")
-            rb.AddForce(new Vector2(10, 0));
+            rb.AddForce(new Vector2(-ballVelocity, 0));
+        if (direction == "Blue")
+            rb.AddForce(new Vector2(ballVelocity, 0));
 	}
     void OnCollisionEnter2D(Collision2D coll)
     {
@@ -35,7 +38,6 @@ public class createBall : MonoBehaviour {
         if(coll.gameObject.tag == "LittleMen")
         {
             int r = Random.Range(0, 6);
-            Debug.Log(r);
             if(r == 1)
             {
                 Destroy(coll.gameObject);

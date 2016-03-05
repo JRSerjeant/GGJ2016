@@ -15,16 +15,16 @@ public class playerController : MonoBehaviour {
     public enum playerColourEnum {Red,Blue};
     public playerColourEnum playerColour;
 
+
     public GameObject myCannon;
-    public GameObject ball;
-    private blockController blockC;
+    private blockController blockController;
 
     private int speed;
-   
+       
     // Use this for initialization
     void Start () {
         speed = Configuration.PlayerSpeed;
-        blockC = GetComponent<blockController>();
+        blockController = GetComponent<blockController>();
     }
 	
 	// Update is called once per frame
@@ -41,7 +41,6 @@ public class playerController : MonoBehaviour {
         if (Input.GetKey(moveUpKey))
         {
             myCannon.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
-            //TODO: Sort out how to stop cannons moving up to far now we only have one player controller script
             if(myCannon.transform.position.y > 1.8f)
             {
                 myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.79f);
@@ -50,41 +49,22 @@ public class playerController : MonoBehaviour {
         if (Input.GetKey(moveDownKey))
         {
             myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-            //TODO: Sort out how to stop cannons moving up to far now we only have one player controller script
             if (myCannon.transform.position.y < -1.05f)
             {
                 myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
             }
         }
         if (Input.GetKeyDown(fireCannon))
-        {   
-            GameObject go = (GameObject)Instantiate(ball, myCannon.transform.position, new Quaternion());
-            createBall ScriptReference = go.GetComponent<createBall>();
-            if (playerColour == playerColourEnum.Red)
-            {
-                ScriptReference.Initialize("LEFT");
-            }else if(playerColour == playerColourEnum.Blue)
-            {
-                ScriptReference.Initialize("RIGHT");
-            }
-            BallRepository.ConsumeBlueBall();
-            //Completed.SoundManager.instance.RandomizeSfx(Canon1, Canon2);
-            
-
+        {
+            objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
         }
 
         if (Input.GetKeyDown(dropBlock))
         {
             if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
             {
-                blockC.generateBlock(this.transform.position);
+                blockController.generateBlock(this.transform.position);
             }
         }
-    }
-
-    private void PlayBlockSound()
-    {
-		Completed.SoundManager.instance.RandomizeSfx(audioFactory.Create1, audioFactory.Create2, audioFactory.Create3);
-
     }
 }
