@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//
+// Description
+// Simply loads in the audio files in one play as static fields for use in other scripts. 
+//
+
 public class audioFactory : MonoBehaviour
 {
     public static AudioClip Create1;
@@ -26,7 +31,6 @@ public class audioFactory : MonoBehaviour
         Squash2 = (AudioClip)Resources.Load("Audio/Squash2");
         Scream1 = (AudioClip)Resources.Load("Audio/Scream1");
         Scream2 = (AudioClip)Resources.Load("Audio/Scream2");
-
 		Gong = (AudioClip)Resources.Load("Audio/Gong");
 		//Drum = (AudioClip)Resources.Load("Audio/SacrificalDrumLoop120BPM");
     }
