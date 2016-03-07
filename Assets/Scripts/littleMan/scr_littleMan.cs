@@ -57,11 +57,11 @@ public class scr_littleMan : MonoBehaviour {
         stateRunning = true;
         stateRaising = false;
         stateDead = false;
+        this.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
         setManRedorBlue();
         
     }
-	
 
 	void FixedUpdate () {
 
