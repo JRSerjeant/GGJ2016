@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 493234}
   - 212: {fileID: 21238602}
   m_Layer: 0
-  m_Name: DaCannonTowerRed
+  m_Name: pfb_CannonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

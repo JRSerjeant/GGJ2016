@@ -125,7 +125,6 @@ MonoBehaviour:
   dropBlock: 111
   playerColour: 1
   myCannon: {fileID: 0}
-  ball: {fileID: 0}
 --- !u!212 &21258378
 SpriteRenderer:
   m_ObjectHideFlags: 1
