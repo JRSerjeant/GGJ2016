@@ -47,8 +47,8 @@ public class scr_littleMan : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
-        redManStartPosition = new Vector3(10f, -1.4f);
-        blueManStartPosition = new Vector3(-10f, -1.4f);
+        redManStartPosition = new Vector3(9f, -1.4f);
+        blueManStartPosition = new Vector3(-9f, -1.4f);
         gameHeight = 5.5f;
         redEndPoint = -0.1f;
         blueEndPoint = 0.1f;

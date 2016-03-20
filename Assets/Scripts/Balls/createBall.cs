@@ -43,7 +43,7 @@ public class createBall : MonoBehaviour {
         {
             //destroy the block.
             Destroy(otherObject.gameObject);
-        }
+            Destroy(this.gameObject);        }
 
         //check if the object collied with has the tag of "LittleMen"
         if (otherObject.gameObject.tag == "LittleMen")
