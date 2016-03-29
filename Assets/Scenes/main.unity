@@ -306,23 +306,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 183904, guid: e3163c3199ae74c64833a124e2a11757, type: 2}
   m_PrefabInternal: {fileID: 1423969709}
---- !u!95 &311296815
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 311296814}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 820918b326d344a08aeb60f8003fdbfc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!4 &340991746 stripped
 Transform:
   m_PrefabParentObject: {fileID: 416326, guid: ebdbf3d584f31044f85d62675318aad1, type: 2}
@@ -471,6 +454,10 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 482100, guid: d3999036c4eaf46c3b794f9618313908, type: 2}
   m_PrefabInternal: {fileID: 1317925501}
+--- !u!1 &605910044 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100966, guid: e3163c3199ae74c64833a124e2a11757, type: 2}
+  m_PrefabInternal: {fileID: 1423969709}
 --- !u!1001 &609572922
 Prefab:
   m_ObjectHideFlags: 0
@@ -692,6 +679,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9519112, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c28497acd822445a8a64018615786d75, type: 2}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: myCog
+      value: 
+      objectReference: {fileID: 605910044}
     - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
       propertyPath: myCannon
       value: 

@@ -7,12 +7,6 @@ public class floorFactory : MonoBehaviour {
     float gridBlockScale = -0.27f;
     GameObject[][] gridOfGameObjects;
 
-
-    Vector3 topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
-    Vector3 topRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
-    Vector3 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
-    Vector3 bottomRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
-
     // Use this for initialization
     void Start () {
         gridSize = new Vector2(70, 15);

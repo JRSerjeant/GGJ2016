@@ -15,7 +15,7 @@ public class playerController : MonoBehaviour {
     public enum playerColourEnum {Red,Blue};
     public playerColourEnum playerColour;
 
-
+    public GameObject myCog;
     public GameObject myCannon;
     private blockController blockController;
 
@@ -45,7 +45,9 @@ public class playerController : MonoBehaviour {
             {
                 myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.79f);
             }
+            myCog.GetComponent<cogAniControl>().direction = "up";
         }
+
         if (Input.GetKey(moveDownKey))
         {
             myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
@@ -53,6 +55,12 @@ public class playerController : MonoBehaviour {
             {
                 myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
             }
+            myCog.GetComponent<cogAniControl>().direction = "down";
+            
+        }
+        if (!Input.GetKey(moveDownKey) && !Input.GetKey(moveUpKey))
+        {
+            myCog.GetComponent<cogAniControl>().direction = "";
         }
         if (Input.GetKeyDown(fireCannon))
         {

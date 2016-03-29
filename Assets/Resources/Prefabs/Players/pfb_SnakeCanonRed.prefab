@@ -9,6 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 452004}
   - 212: {fileID: 21226224}
+  - 95: {fileID: 9518784}
+  - 114: {fileID: 11492600}
   m_Layer: 0
   m_Name: pfb_CogRed
   m_TagString: Untagged
@@ -25,6 +27,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 470936}
   - 212: {fileID: 21263906}
+  - 95: {fileID: 9591546}
   m_Layer: 0
   m_Name: pfb_SnakeCanonRed
   m_TagString: Untagged
@@ -57,6 +60,51 @@ Transform:
   - {fileID: 452004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!95 &9518784
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d77562397373be42886eb0a46dc7521, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9591546
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 183904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 820918b326d344a08aeb60f8003fdbfc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11492600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cfddda52dc2004f81cc5d8d92b7eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21226224
 SpriteRenderer:
   m_ObjectHideFlags: 1
