@@ -127,6 +127,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fe6e613400ce354aabca71e46c48b1e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &41894582 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 141938, guid: 90d0082602406484bab7acfd4dbbb89f, type: 2}
+  m_PrefabInternal: {fileID: 1640231664}
 --- !u!1 &118705944
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +341,7 @@ Transform:
   m_Children:
   - {fileID: 1972735014}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &418583499
 Prefab:
   m_ObjectHideFlags: 0
@@ -814,6 +818,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9550750, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 032e9fd6e42c6436cabc0881fdaf7d51, type: 2}
+    - target: {fileID: 11491950, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
+      propertyPath: myCog
+      value: 
+      objectReference: {fileID: 41894582}
     - target: {fileID: 11491950, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
       propertyPath: myCannon
       value: 

@@ -87,7 +87,7 @@ Animator:
   m_GameObject: {fileID: 152016}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 032e9fd6e42c6436cabc0881fdaf7d51, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   fireCannon: 117
   dropBlock: 111
   playerColour: 1
+  myCog: {fileID: 0}
   myCannon: {fileID: 0}
 --- !u!212 &21258378
 SpriteRenderer:
