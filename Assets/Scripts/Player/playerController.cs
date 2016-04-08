@@ -28,7 +28,7 @@ public class playerController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
         if (Input.GetKey(moveLeftKey))
         {
@@ -41,40 +41,52 @@ public class playerController : MonoBehaviour {
         if (Input.GetKey(moveUpKey))
         {
             myCannon.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
-            if(myCannon.transform.position.y > 1.8f)
+            if (myCannon.transform.position.y > 1.8f)
             {
                 myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.79f);
             }
             myCog.GetComponent<cogAniControl>().direction = "up";
         }
-
-        if (Input.GetKey(moveDownKey))
+        else if (myCog.transform.position.y > -1.0f)
         {
             myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-            if (myCannon.transform.position.y < -1.05f)
-            {
-                myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
-            }
             myCog.GetComponent<cogAniControl>().direction = "down";
-            
         }
-        if (!Input.GetKey(moveDownKey) && !Input.GetKey(moveUpKey))
+
+        if (myCog.transform.position.y <= -1.0f)
         {
             myCog.GetComponent<cogAniControl>().direction = "";
         }
 
 
-        if (Input.GetKeyDown(fireCannon))
+
+            //if (Input.GetKey(moveDownKey))
+            //{
+            //    myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+            //    if (myCannon.transform.position.y < -1.05f)
+            //    {
+            //        myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
+            //    }
+            //    myCog.GetComponent<cogAniControl>().direction = "down";
+
+            //}
+            //if (!Input.GetKey(moveDownKey) && !Input.GetKey(moveUpKey))
+            //{
+            //    myCog.GetComponent<cogAniControl>().direction = "";
+            //}
+
+
+            if (Input.GetKeyDown(fireCannon))
         {
             objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
         }
 
-        if (Input.GetKeyDown(dropBlock))
-        {
-            if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
-            {
-                blockController.generateBlock(this.transform.position);
-            }
-        }
+        //if (Input.GetKeyDown(dropBlock))
+        //{
+        //    if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
+        //    {
+        //        blockController.generateBlock(this.transform.position);
+        //    }
+        //}
     }
 }
