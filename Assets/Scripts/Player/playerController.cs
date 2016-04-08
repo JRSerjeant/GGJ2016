@@ -62,6 +62,8 @@ public class playerController : MonoBehaviour {
         {
             myCog.GetComponent<cogAniControl>().direction = "";
         }
+
+
         if (Input.GetKeyDown(fireCannon))
         {
             objectFactory.createBall(myCannon.transform.position, playerColour.ToString());

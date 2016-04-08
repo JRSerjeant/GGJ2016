@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21205842}
   - 50: {fileID: 5095356}
   - 60: {fileID: 6054912}
+  - 114: {fileID: 11420602}
   m_Layer: 0
   m_Name: pfb_Block
   m_TagString: block
@@ -74,6 +75,18 @@ PolygonCollider2D:
       - {x: 0.09705882, y: -0.13764705}
       - {x: 0.12882352, y: -0.114117645}
       - {x: 0.13705882, y: -0.090588234}
+--- !u!114 &11420602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a35cb72fa345c54eb14afff27aa0951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockLife: 0
 --- !u!212 &21205842
 SpriteRenderer:
   m_ObjectHideFlags: 1
