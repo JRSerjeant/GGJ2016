@@ -26,8 +26,13 @@ public class playerController : MonoBehaviour {
         speed = Configuration.PlayerSpeed;
         blockController = GetComponent<blockController>();
     }
-	
-	// Update is called once per frame
+
+    void Update() {
+        if (Input.GetKeyUp(moveUpKey))
+        {
+            objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
+        }
+    }
 	void FixedUpdate () {
 
         if (Input.GetKey(moveLeftKey))
@@ -53,10 +58,13 @@ public class playerController : MonoBehaviour {
             myCog.GetComponent<cogAniControl>().direction = "down";
         }
 
+
+
         if (myCog.transform.position.y <= -1.0f)
         {
             myCog.GetComponent<cogAniControl>().direction = "";
         }
+
 
 
 
@@ -76,10 +84,10 @@ public class playerController : MonoBehaviour {
             //}
 
 
-            if (Input.GetKeyDown(fireCannon))
-        {
-            objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
-        }
+        //    if (Input.GetKeyDown(fireCannon))
+        //{
+        //    objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
+        //}
 
         //if (Input.GetKeyDown(dropBlock))
         //{
