@@ -19,12 +19,16 @@ public class playerController : MonoBehaviour {
     public GameObject myCannon;
     private blockController blockController;
 
+    private float myCannonRotationSpeed;
+
     private int speed;
        
     // Use this for initialization
     void Start () {
         speed = Configuration.PlayerSpeed;
+        myCannonRotationSpeed = Configuration.CannonRotationSpeed;
         blockController = GetComponent<blockController>();
+
     }
 
     void Update() {
@@ -49,39 +53,72 @@ public class playerController : MonoBehaviour {
             if (myCannon.transform.position.y > 1.8f)
             {
                 myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.79f);
+                
             }
-            myCog.GetComponent<cogAniControl>().direction = "up";
+            if(myCannon.transform.position != new Vector3(myCannon.transform.position.x, 1.79f))
+            {
+                switch (playerColour)
+                {
+                    case playerColourEnum.Red:
+                        myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+                        break;
+                    case playerColourEnum.Blue:
+                        myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                        break;
+                    default:
+                        break;
+                }
+                
+                myCog.GetComponent<cogAniControl>().direction = "up";
+            }
+            
+
         }
         else if (myCog.transform.position.y > -1.0f)
         {
             myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+           
             myCog.GetComponent<cogAniControl>().direction = "down";
+
+            switch (playerColour)
+            {
+                case playerColourEnum.Red:
+                    myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                    break;
+                case playerColourEnum.Blue:
+                    myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+                    break;
+                default:
+                    break;
+            }
+
         }
 
 
 
         if (myCog.transform.position.y <= -1.0f)
         {
+            myCannon.transform.rotation = new Quaternion(0, 0, 0, 0);
             myCog.GetComponent<cogAniControl>().direction = "";
         }
 
 
 
 
-            //if (Input.GetKey(moveDownKey))
-            //{
-            //    myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-            //    if (myCannon.transform.position.y < -1.05f)
-            //    {
-            //        myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
-            //    }
-            //    myCog.GetComponent<cogAniControl>().direction = "down";
+        //if (Input.GetKey(moveDownKey))
+        //{
+        //    myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
+        //    if (myCannon.transform.position.y < -1.05f)
+        //    {
+        //        myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
+        //    }
+        //    myCog.GetComponent<cogAniControl>().direction = "down";
 
-            //}
-            //if (!Input.GetKey(moveDownKey) && !Input.GetKey(moveUpKey))
-            //{
-            //    myCog.GetComponent<cogAniControl>().direction = "";
-            //}
+        //}
+        //if (!Input.GetKey(moveDownKey) && !Input.GetKey(moveUpKey))
+        //{
+        //    myCog.GetComponent<cogAniControl>().direction = "";
+        //}
 
 
         //    if (Input.GetKeyDown(fireCannon))
@@ -89,12 +126,12 @@ public class playerController : MonoBehaviour {
         //    objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
         //}
 
-        //if (Input.GetKeyDown(dropBlock))
-        //{
-        //    if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
-        //    {
-        //        blockController.generateBlock(this.transform.position);
-        //    }
-        //}
+        if (Input.GetKeyDown(dropBlock))
+        {
+            if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
+            {
+                blockController.generateBlock(this.transform.position);
+            }
+        }
     }
 }

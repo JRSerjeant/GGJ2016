@@ -11,6 +11,7 @@ namespace Assets.Scripts
         public static readonly int BallLife = 3;
         public static readonly int PlayerSpeed = 2;
         public static readonly int ballForce = 500;
+        public static readonly float CannonRotationSpeed = 20;
         public const float PeoplePerSecond = 2f;
 
     }
