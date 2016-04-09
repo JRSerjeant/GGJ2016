@@ -61,12 +61,12 @@ public class playerController : MonoBehaviour {
         if (Input.GetKey(moveUpKey))
         {
             myCannon.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
-            if (myCannon.transform.position.y > 1.8f)
+            if (myCannon.transform.position.y > 1.6f)
             {
-                myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.79f);
+                myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.59f);
                 
             }
-            if(myCannon.transform.position != new Vector3(myCannon.transform.position.x, 1.79f))
+            if(myCannon.transform.position != new Vector3(myCannon.transform.position.x, 1.59f))
             {
                 switch (playerColour)
                 {
