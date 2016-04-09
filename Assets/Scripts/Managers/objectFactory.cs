@@ -23,7 +23,7 @@ public class objectFactory : MonoBehaviour
         return newBlock;
     }
 
-    public static void createBall(Vector3 position, string ballDirection)
+    public static void createBall(Vector3 position, string ballDirection, float rotation = 0.0f)
     {
         GameObject newBall = Instantiate(pfb_Ball,position,new Quaternion()) as GameObject;
         createBall createBallScriptReference = newBall.GetComponent<createBall>();

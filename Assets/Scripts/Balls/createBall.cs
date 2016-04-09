@@ -11,13 +11,15 @@ public class createBall : MonoBehaviour {
 
     public Rigidbody2D ballRigidbody2D; //Rigidbody2D of the ball.prefab
     static string direction; //Used to set direction of the balls force
+    private float rotation;
     private int ballForce; //Reference to ball force.
     private int ballLife; 
 
     //This needs to be called when creating a new ball to get its direction 
-    public void Initialize(string Direction)
+    public void Initialize(string Direction, float Rotation = 0.0f)
     {
         direction = Direction;//Set local direction from Direction passed as parameter. 
+        rotation = Rotation * 100f;
     }
 
 	// Use this for initialization
@@ -25,14 +27,16 @@ public class createBall : MonoBehaviour {
         ballRigidbody2D = GetComponent<Rigidbody2D>(); //get the reference to Rigidbody2D of the ball.prefab
         ballForce = Configuration.ballForce; //Get the ball fore from the 
         ballLife = Configuration.BallLife;
-                                             //set direction if player is red
+        
+        //set direction if player is red
         if (direction == "Red")
             //ballRigidbody2D.velocity = new Vector2(-ballForce, 0);
-            ballRigidbody2D.AddForce(new Vector2(-ballForce, 0));
+ 
+        ballRigidbody2D.AddForce(new Vector3(-500,250 + rotation,0));
         //set direction if player is blue
         if (direction == "Blue")
             //ballRigidbody2D.velocity = new Vector2(ballForce, 0);
-            ballRigidbody2D.AddForce(new Vector2(ballForce, 0));
+            ballRigidbody2D.AddForce(new Vector3(500, 250 + rotation, 0));
         StartCoroutine(DestroyBall());
     }
 	

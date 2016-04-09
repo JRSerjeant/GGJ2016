@@ -34,7 +34,18 @@ public class playerController : MonoBehaviour {
     void Update() {
         if (Input.GetKeyUp(moveUpKey))
         {
-            objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
+            switch(playerColour)
+                {
+                    case playerColourEnum.Red:
+                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation.z);
+                        break;
+                    case playerColourEnum.Blue:
+                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation.z);
+                        break;
+                    default:
+                    break;
+            }
+            
         }
     }
 	void FixedUpdate () {
