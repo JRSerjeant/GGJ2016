@@ -8,14 +8,17 @@ public class objectFactory : MonoBehaviour
     public static GameObject pfb_littleMan;
     public static GameObject pfb_Ball;
     public static GameObject pfb_Cog;
-
-
-    void Start()
+    void Awake()
     {
         pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
         pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
         pfb_Ball = (GameObject)Resources.Load("Prefabs/Objects/Ball");
         pfb_Cog = (GameObject)Resources.Load("Prefabs/Players/pfb_Cog");
+    }
+
+    void Start()
+    {
+
     }
 
     public static GameObject createBlock(Vector3 position)

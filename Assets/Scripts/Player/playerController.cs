@@ -34,6 +34,18 @@ public class playerController : MonoBehaviour {
         SnakeCanon_Script = myCannon.GetComponent<scr_SnakeCanon>();
         myCog = SnakeCanon_Script.myCog;
 
+        switch (playerColour)
+        {
+            case playerColourEnum.Red:
+                myCog.transform.position = new Vector3(myCannon.transform.position.x + 0.088f, myCannon.transform.position.y + 0.03399998f);
+                myCog.GetComponent<SpriteRenderer>().flipX = true;
+                break;
+            case playerColourEnum.Blue:
+                myCog.transform.position = new Vector3(myCannon.transform.position.x - 0.066f, myCannon.transform.position.y + 0.013f);
+                break;
+            default:
+                break;
+        }
 
     }
 
@@ -53,7 +65,18 @@ public class playerController : MonoBehaviour {
                     default:
                     break;
             }
-            
+        }
+
+        switch (playerColour)
+        {
+            case playerColourEnum.Red:
+                myCog.transform.position = new Vector3(myCannon.transform.position.x + 0.088f, myCannon.transform.position.y + 0.03399998f);
+                break;
+            case playerColourEnum.Blue:
+                myCog.transform.position = new Vector3(myCannon.transform.position.x - 0.066f, myCannon.transform.position.y + 0.013f);
+                break;
+            default:
+                break;
         }
     }
 	void FixedUpdate () {
@@ -92,7 +115,7 @@ if (Input.GetKey(moveLeftKey))
             
 
         }
-        else if (myCog.transform.position.y > -1.0f)
+        else if (myCannon.transform.position.y > -1.0f)
             //myCog.transform.position.y > -1.0f)
         {
             myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
@@ -115,7 +138,7 @@ if (Input.GetKey(moveLeftKey))
 
 
 
-        if (myCog.transform.position.y <= -1.0f)
+        if (myCannon.transform.position.y <= -1.0f)
         {
             myCannon.transform.rotation = new Quaternion(0, 0, 0, 0);
             myCog.GetComponent<cogAniControl>().direction = "";

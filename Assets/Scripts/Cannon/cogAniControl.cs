@@ -30,7 +30,7 @@ public class cogAniControl : MonoBehaviour {
                 break;
         }
 
-        transform.rotation = Quaternion.Euler(0, 0, zRotation);
+        //transform.rotation = Quaternion.Euler(0, 0, zRotation);
 
     }
     void LateUpdate()
