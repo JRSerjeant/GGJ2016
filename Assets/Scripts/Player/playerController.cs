@@ -15,6 +15,8 @@ public class playerController : MonoBehaviour {
     public enum playerColourEnum {Red,Blue};
     public playerColourEnum playerColour;
 
+    public scr_SnakeCanon SnakeCanon_Script;
+
     public GameObject myCog;
     public GameObject myCannon;
     private blockController blockController;
@@ -28,6 +30,10 @@ public class playerController : MonoBehaviour {
         speed = Configuration.PlayerSpeed;
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
         blockController = GetComponent<blockController>();
+
+        SnakeCanon_Script = myCannon.GetComponent<scr_SnakeCanon>();
+        myCog = SnakeCanon_Script.myCog;
+
 
     }
 
@@ -80,14 +86,14 @@ if (Input.GetKey(moveLeftKey))
                         break;
                     default:
                         break;
-                }
-                
+                }                
                 myCog.GetComponent<cogAniControl>().direction = "up";
             }
             
 
         }
         else if (myCog.transform.position.y > -1.0f)
+            //myCog.transform.position.y > -1.0f)
         {
             myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
            

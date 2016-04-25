@@ -5,7 +5,13 @@ public class cogAniControl : MonoBehaviour {
 
     public string direction;
     Quaternion rotation;
-    Vector3 vRotation;
+    Quaternion fixedRotation;
+    private float zRotation = 0.0f;
+
+    //void Awake()
+    //{
+    //    Quaternion fixedRotation = transform.localRotation;
+    //}
 
     // Update is called once per frame
     void Update () {
@@ -23,12 +29,15 @@ public class cogAniControl : MonoBehaviour {
                 this.GetComponent<Animator>().Play("New State");
                 break;
         }
+
+        transform.rotation = Quaternion.Euler(0, 0, zRotation);
+
     }
     void LateUpdate()
     {
-        //if (transform.rotation != Quaternion.Euler(0, 0, 0))
-        //{
-        //    transform.rotation = Quaternion.Euler(0, 0, 0);
-        //}
+        //transform.localRotation = fixedRotation;
     }
+
+
+
 }

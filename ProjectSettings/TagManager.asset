@@ -7,6 +7,8 @@ TagManager:
   - block
   - LittleMen
   - Ball
+  - SnakeCanonBlue
+  - SnakeCanonRed
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class objectFactory : MonoBehaviour
     public static GameObject pfb_Block;
     public static GameObject pfb_littleMan;
     public static GameObject pfb_Ball;
+    public static GameObject pfb_Cog;
 
 
     void Start()
@@ -14,6 +15,7 @@ public class objectFactory : MonoBehaviour
         pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
         pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
         pfb_Ball = (GameObject)Resources.Load("Prefabs/Objects/Ball");
+        pfb_Cog = (GameObject)Resources.Load("Prefabs/Players/pfb_Cog");
     }
 
     public static GameObject createBlock(Vector3 position)
@@ -35,5 +37,12 @@ public class objectFactory : MonoBehaviour
     public static void createlittleMan()
     {
         GameObject newLittleMan = Instantiate(pfb_littleMan) as GameObject;
+    }
+
+    public static GameObject createCog()
+    {
+        GameObject obj_Cog = Instantiate(pfb_Cog) as GameObject;
+        return obj_Cog;
+
     }
 }
