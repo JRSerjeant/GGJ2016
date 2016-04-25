@@ -30,9 +30,7 @@ public class playerController : MonoBehaviour {
         speed = Configuration.PlayerSpeed;
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
         blockController = GetComponent<blockController>();
-
-        SnakeCanon_Script = myCannon.GetComponent<scr_SnakeCanon>();
-        myCog = SnakeCanon_Script.myCog;
+        myCog = objectFactory.createCog();
 
         switch (playerColour)
         {
@@ -135,8 +133,6 @@ if (Input.GetKey(moveLeftKey))
             }
 
         }
-
-
 
         if (myCannon.transform.position.y <= -1.0f)
         {

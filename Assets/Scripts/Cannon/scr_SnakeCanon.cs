@@ -8,7 +8,7 @@ public class scr_SnakeCanon : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        myCog = objectFactory.createCog();
+        //myCog = objectFactory.createCog();
         //myCog.transform.position = new Vector3(transform.position.x - 0.084f, transform.position.y + 0.027f);
     }
 
