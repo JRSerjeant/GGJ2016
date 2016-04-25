@@ -11,12 +11,17 @@ public class scr_block : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void Update () {
         if (blockLife <= 0)
-            Destroy(this.gameObject);
+            StartCoroutine(DestroyBlock());
 	}
     public void removeLife()
     {
         blockLife--;
+    }
+    IEnumerator DestroyBlock()
+    {
+        yield return 0;
+        Destroy(this.gameObject);
     }
 }

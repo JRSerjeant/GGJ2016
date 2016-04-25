@@ -19,8 +19,8 @@ public class scoreController : MonoBehaviour {
 
     private static void LogScores()
     {
-        Debug.Log("Red: " + RedPlayerScore);
-        Debug.Log("Blue: " + BluePlayerScore);
+        //Debug.Log("Red: " + RedPlayerScore);
+        //Debug.Log("Blue: " + BluePlayerScore);
     }
 
     public static void addRedPlayerScore()

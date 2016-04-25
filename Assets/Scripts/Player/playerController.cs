@@ -37,11 +37,13 @@ public class playerController : MonoBehaviour {
             switch(playerColour)
                 {
                     case playerColourEnum.Red:
-                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation.z);
+                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation);
+                    Debug.Log("Cannon Rotation: " + myCannon.transform.eulerAngles);
                         break;
                     case playerColourEnum.Blue:
-                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation.z);
-                        break;
+                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                    Debug.Log("Cannon Rotation: " + myCannon.transform.eulerAngles);
+                    break;
                     default:
                     break;
             }
@@ -49,11 +51,11 @@ public class playerController : MonoBehaviour {
         }
     }
 	void FixedUpdate () {
-
-        if (Input.GetKey(moveLeftKey))
+if (Input.GetKey(moveLeftKey))
         {
             this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
+        
         if (Input.GetKey(moveRightKey))
         {
             this.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
