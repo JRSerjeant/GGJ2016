@@ -115,7 +115,6 @@ MonoBehaviour:
   playerColour: 0
   myCog: {fileID: 0}
   myCannon: {fileID: 0}
-  myPivot: {fileID: 0}
 --- !u!114 &11482646
 MonoBehaviour:
   m_ObjectHideFlags: 1
