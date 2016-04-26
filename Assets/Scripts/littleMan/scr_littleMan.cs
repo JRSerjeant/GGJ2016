@@ -16,6 +16,7 @@ public class scr_littleMan : MonoBehaviour {
     public Sprite BlueSprite;
     public Sprite RedSprite;
 
+    //public RuntimeAnimatorController manAnimation;
     public RuntimeAnimatorController manBlueAnimation;
     public RuntimeAnimatorController manRedAnimation;
 
