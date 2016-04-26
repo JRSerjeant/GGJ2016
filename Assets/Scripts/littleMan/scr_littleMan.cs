@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
+using Assets.Scripts;
 using System.Collections;
 
 public class scr_littleMan : MonoBehaviour {
 
-    Vector3 redManStartPosition;
-    Vector3 blueManStartPosition;
+    //Vector3 redManStartPosition;
+    //Vector3 blueManStartPosition;
 
     float redEndPoint;
     float blueEndPoint;
     float redDirectionValue;
     float blueDirectionValue;
-    float directionValue;
+    public float directionValue;
     float gameHeight;
 
     public Sprite BlueSprite;
     public Sprite RedSprite;
+
+    public Configuration.playerColourEnum manColour;
 
     //public RuntimeAnimatorController manAnimation;
     public RuntimeAnimatorController manBlueAnimation;
@@ -25,7 +28,7 @@ public class scr_littleMan : MonoBehaviour {
     bool stateDead;
     bool stateColWithSlope;
     bool stateAtEndPoint;
-
+    /*
     bool isRed;
     public bool IsRed
     {
@@ -42,25 +45,25 @@ public class scr_littleMan : MonoBehaviour {
         {
             isBlue = true;
         }
-    } 
+    } */
 
 
 
     // Use this for initialization
     void Awake() {
-        redManStartPosition = new Vector3(9f, -1.4f);
-        blueManStartPosition = new Vector3(-9f, -1.4f);
+        //redManStartPosition = new Vector3(9f, -1.4f);
+        //blueManStartPosition = new Vector3(-9f, -1.4f);
         gameHeight = 5.5f;
         redEndPoint = -0.1f;
         blueEndPoint = 0.1f;
-        redDirectionValue = -2.0f;
-        blueDirectionValue = 2.0f;
+        redDirectionValue = 2.0f;
+        blueDirectionValue = -2.0f;
         stateRunning = true;
         stateRaising = false;
         stateDead = false;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
 
-        setManRedorBlue();
+        //setManRedorBlue();
         
     }
 
@@ -97,54 +100,70 @@ public class scr_littleMan : MonoBehaviour {
 
     }
 
-    void setManRedorBlue()
+    public void Initialize(Configuration.playerColourEnum ManColour)
     {
-        if (!scr_LittleManGenerator.LastWasBlue)
+        this.manColour = ManColour;
+
+        switch (manColour)
         {
-            Isblue = true;
-
-            //set up position,sprite,ani,etc
-            setManProperties(blueManStartPosition,BlueSprite,blueDirectionValue,manBlueAnimation);
-            
-
-            scr_LittleManGenerator.LastWasBlue = true;
-            scr_LittleManGenerator.LastWasRed = false;
-            return;
-        }
-        if (!scr_LittleManGenerator.LastWasRed)
-        {
-            IsRed = true;
-
-            //set up position,sprite,ani,etc
-            setManProperties(redManStartPosition, RedSprite, redDirectionValue, manRedAnimation);
-
-            scr_LittleManGenerator.LastWasRed = true;
-            scr_LittleManGenerator.LastWasBlue = false;
-            return;
+            case Configuration.playerColourEnum.Red:
+                setManProperties(BlueSprite, blueDirectionValue, manBlueAnimation);
+                GetComponent<SpriteRenderer>().flipX = true;
+                break;
+            case Configuration.playerColourEnum.Blue:
+                setManProperties(RedSprite, redDirectionValue, manRedAnimation);
+                break;
+            default:
+                break;
         }
     }
 
-    void setManProperties(Vector2 p, Sprite s, float d, RuntimeAnimatorController a)
+    //void setManRedorBlue()
+    //{
+    //    if (!scr_LittleManGenerator.LastWasBlue)
+    //    {
+    //        //Isblue = true;
+
+    //        //set up position,sprite,ani,etc
+    //        setManProperties(BlueSprite,blueDirectionValue,manBlueAnimation);
+            
+
+    //        scr_LittleManGenerator.LastWasBlue = true;
+    //        scr_LittleManGenerator.LastWasRed = false;
+    //        return;
+    //    }
+    //    if (!scr_LittleManGenerator.LastWasRed)
+    //    {
+    //        //IsRed = true;
+
+    //        //set up position,sprite,ani,etc
+    //        setManProperties(RedSprite, redDirectionValue, manRedAnimation);
+
+    //        scr_LittleManGenerator.LastWasRed = true;
+    //        scr_LittleManGenerator.LastWasBlue = false;
+    //        return;
+    //    }
+    //}
+
+    void setManProperties(Sprite s, float d, RuntimeAnimatorController a)
     {
-        this.transform.position = p;
+        //this.transform.position = p;
         this.GetComponent<SpriteRenderer>().sprite = s;
         this.GetComponent<Animator>().runtimeAnimatorController = a;
-        this.
-        
-        directionValue = d;
+        this.directionValue = d;
         
     }
 
     void addToScore()
     {
-        if(isBlue)
-        {
-            scoreController.addBluePlayerScore();
-        }
-        if(isRed)
-        {
-            scoreController.addRedPlayerScore();
-        }
+        //if(isBlue)
+        //{
+        //    scoreController.addBluePlayerScore();
+        //}
+        //if(isRed)
+        //{
+        //    scoreController.addRedPlayerScore();
+        //}
 
     }
 

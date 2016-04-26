@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Assets.Scripts;
 using System.Collections;
 
 public class objectFactory : MonoBehaviour
@@ -39,9 +40,10 @@ public class objectFactory : MonoBehaviour
     }
 
 
-    public static void createlittleMan()
+    public static void createlittleMan(Vector3 Position, Configuration.playerColourEnum manColour)
     {
-        GameObject newLittleMan = Instantiate(pfb_littleMan) as GameObject;
+        GameObject newLittleMan = Instantiate(pfb_littleMan,Position,new Quaternion()) as GameObject;
+        newLittleMan.GetComponent<scr_littleMan>().Initialize(manColour);
     }
 
     public static GameObject createCog()

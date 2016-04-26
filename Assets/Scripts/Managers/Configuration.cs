@@ -13,6 +13,7 @@ namespace Assets.Scripts
         public static readonly int ballForce = 600;
         public static readonly float CannonRotationSpeed = 60;
         public const float PeoplePerSecond = 2f;
+        public  enum playerColourEnum { Red, Blue };
 
     }
 }

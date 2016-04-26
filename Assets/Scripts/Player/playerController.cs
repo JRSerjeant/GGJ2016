@@ -12,8 +12,8 @@ public class playerController : MonoBehaviour {
     public KeyCode fireCannon;
     public KeyCode dropBlock;
 
-    public enum playerColourEnum {Red,Blue};
-    public playerColourEnum playerColour;
+    //public enum Configuration.playerColourEnum {Red,Blue};
+    public Configuration.playerColourEnum playerColour;
 
     public scr_SnakeCanon SnakeCanon_Script;
 
@@ -34,11 +34,11 @@ public class playerController : MonoBehaviour {
 
         switch (playerColour)
         {
-            case playerColourEnum.Red:
+            case Configuration.playerColourEnum.Red:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x + 0.088f, myCannon.transform.position.y + 0.03399998f);
                 myCog.GetComponent<SpriteRenderer>().flipX = true;
                 break;
-            case playerColourEnum.Blue:
+            case Configuration.playerColourEnum.Blue:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x - 0.066f, myCannon.transform.position.y + 0.013f);
                 break;
             default:
@@ -52,11 +52,11 @@ public class playerController : MonoBehaviour {
         {
             switch(playerColour)
                 {
-                    case playerColourEnum.Red:
+                    case Configuration.playerColourEnum.Red:
                         objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation);
                     Debug.Log("Cannon Rotation: " + myCannon.transform.eulerAngles);
                         break;
-                    case playerColourEnum.Blue:
+                    case Configuration.playerColourEnum.Blue:
                         objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
                     Debug.Log("Cannon Rotation: " + myCannon.transform.eulerAngles);
                     break;
@@ -67,10 +67,10 @@ public class playerController : MonoBehaviour {
 
         switch (playerColour)
         {
-            case playerColourEnum.Red:
+            case Configuration.playerColourEnum.Red:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x + 0.088f, myCannon.transform.position.y + 0.03399998f);
                 break;
-            case playerColourEnum.Blue:
+            case Configuration.playerColourEnum.Blue:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x - 0.066f, myCannon.transform.position.y + 0.013f);
                 break;
             default:
@@ -99,10 +99,10 @@ if (Input.GetKey(moveLeftKey))
             {
                 switch (playerColour)
                 {
-                    case playerColourEnum.Red:
+                    case Configuration.playerColourEnum.Red:
                         myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
                         break;
-                    case playerColourEnum.Blue:
+                    case Configuration.playerColourEnum.Blue:
                         myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
                         break;
                     default:
@@ -122,10 +122,10 @@ if (Input.GetKey(moveLeftKey))
 
             switch (playerColour)
             {
-                case playerColourEnum.Red:
+                case Configuration.playerColourEnum.Red:
                     myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
                     break;
-                case playerColourEnum.Blue:
+                case Configuration.playerColourEnum.Blue:
                     myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
                     break;
                 default:

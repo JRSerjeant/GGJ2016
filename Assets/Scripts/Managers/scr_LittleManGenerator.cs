@@ -7,6 +7,8 @@ public class scr_LittleManGenerator : MonoBehaviour
 
     float lastFired;
 
+    Vector3 redManStartPosition;
+    Vector3 blueManStartPosition;
 
     public static bool lastWasRed;
     public static bool LastWasRed
@@ -42,6 +44,9 @@ public class scr_LittleManGenerator : MonoBehaviour
         LastWasBlue = false;
         LastWasRed = false;
 
+        redManStartPosition = new Vector3(9f, -1.4f);
+        blueManStartPosition = new Vector3(-9f, -1.4f);
+
     }
 
     // Update is called once per frame
@@ -51,7 +56,8 @@ public class scr_LittleManGenerator : MonoBehaviour
         {
             if ((Time.time > lastFired + 1 / Configuration.PeoplePerSecond))
             {
-                objectFactory.createlittleMan();
+                objectFactory.createlittleMan(redManStartPosition, Configuration.playerColourEnum.Red);
+                objectFactory.createlittleMan(blueManStartPosition, Configuration.playerColourEnum.Blue);
                 lastFired = Time.time;
             }
         }
