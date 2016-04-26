@@ -129,6 +129,7 @@ public class scr_littleMan : MonoBehaviour {
         this.transform.position = p;
         this.GetComponent<SpriteRenderer>().sprite = s;
         this.GetComponent<Animator>().runtimeAnimatorController = a;
+        this.
         
         directionValue = d;
         
