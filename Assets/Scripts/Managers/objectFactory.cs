@@ -8,12 +8,14 @@ public class objectFactory : MonoBehaviour
     public static GameObject pfb_littleMan;
     public static GameObject pfb_Ball;
     public static GameObject pfb_Cog;
+    public static GameObject pfb_bloodParticle;
     void Awake()
     {
         pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
         pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
         pfb_Ball = (GameObject)Resources.Load("Prefabs/Objects/Ball");
         pfb_Cog = (GameObject)Resources.Load("Prefabs/Players/pfb_Cog");
+        pfb_bloodParticle = (GameObject)Resources.Load("Particles/pfb_bloodParticle");
     }
 
     void Start()
@@ -47,5 +49,11 @@ public class objectFactory : MonoBehaviour
         GameObject obj_Cog = Instantiate(pfb_Cog) as GameObject;
         return obj_Cog;
 
+    }
+    public static void createbloodParticle(Vector3 position)
+    {
+        GameObject obj_bloodParticle = Instantiate(pfb_bloodParticle) as GameObject;
+        obj_bloodParticle.transform.position = position;
+        obj_bloodParticle.layer = 0;
     }
 }

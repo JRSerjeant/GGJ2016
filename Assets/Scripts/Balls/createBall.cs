@@ -70,13 +70,14 @@ public class createBall : MonoBehaviour {
         if (otherObject.gameObject.tag == "LittleMen")
         {
             //get random number between 0 and 6
-            int r = Random.Range(0, 6);
+            //int r = Random.Range(0, 6);
             // if random number = 1 
-            if(r == 1)
-            {
-                //detsroy the "LittleMen"
-                Destroy(otherObject.gameObject);
-            }
+            //if(r == 1)
+            //{
+            //detsroy the "LittleMen"
+            objectFactory.createbloodParticle(transform.position);
+            Destroy(otherObject.gameObject);
+            //}
         }  
     }
 

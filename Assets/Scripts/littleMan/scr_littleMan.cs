@@ -85,7 +85,6 @@ public class scr_littleMan : MonoBehaviour {
                
 	}
 
-
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.name == "RaiseZone")
