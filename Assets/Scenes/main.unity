@@ -243,7 +243,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 401528, guid: 227690794d3b1764c877d733f0c52f8c, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 21248484, guid: 227690794d3b1764c877d733f0c52f8c, type: 2}
       propertyPath: m_FlipX
@@ -537,7 +537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 493234, guid: 77ce2de132fd14cf1b4176627a1f08e4, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 21238602, guid: 77ce2de132fd14cf1b4176627a1f08e4, type: 2}
       propertyPath: m_FlipX
@@ -734,6 +734,30 @@ Prefab:
       propertyPath: myCannon
       value: 
       objectReference: {fileID: 311296814}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: moveRightKey
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: moveLeftKey
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: moveUpKey
+      value: 105
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: moveDownKey
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: fireCannon
+      value: 117
+      objectReference: {fileID: 0}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: dropBlock
+      value: 111
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8246917c94ccc504a9643202999f54af, type: 2}
   m_IsPrefabParent: 0
@@ -857,18 +881,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9550750, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 032e9fd6e42c6436cabc0881fdaf7d51, type: 2}
-    - target: {fileID: 11491950, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
-      propertyPath: myCog
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 11491950, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
       propertyPath: myCannon
       value: 
       objectReference: {fileID: 940499481}
+    - target: {fileID: 9550750, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 032e9fd6e42c6436cabc0881fdaf7d51, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
   m_IsPrefabParent: 0
