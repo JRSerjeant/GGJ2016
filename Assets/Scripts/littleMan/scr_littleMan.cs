@@ -56,8 +56,8 @@ public class scr_littleMan : MonoBehaviour {
         gameHeight = 5.5f;
         redEndPoint = -0.1f;
         blueEndPoint = 0.1f;
-        redDirectionValue = 2.0f;
-        blueDirectionValue = -2.0f;
+        redDirectionValue = Configuration.menVelocity;
+        blueDirectionValue = -Configuration.menVelocity;
         stateRunning = true;
         stateRaising = false;
         stateDead = false;
