@@ -66,11 +66,13 @@ public class scr_littleMan : MonoBehaviour {
         //setManRedorBlue();
         
     }
+    void Update()
+    {
+        //Stop men from rotating 
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+    }
 
 	void FixedUpdate () {
-
-
-        this.transform.rotation = new Quaternion();
 
 	    if(stateRunning)
         {
