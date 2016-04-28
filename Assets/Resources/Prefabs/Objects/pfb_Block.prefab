@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 491946}
   - 212: {fileID: 21205842}
   - 50: {fileID: 5095356}
-  - 60: {fileID: 6054912}
   - 114: {fileID: 11420602}
+  - 61: {fileID: 6125190}
   m_Layer: 0
   m_Name: pfb_Block
   m_TagString: block
@@ -48,8 +48,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6054912
-PolygonCollider2D:
+--- !u!61 &6125190
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -60,21 +60,8 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: 0.13705882, y: 0.098823525}
-      - {x: 0.106470585, y: 0.13529411}
-      - {x: 0.092352934, y: 0.13764705}
-      - {x: -0.09470588, y: 0.13764705}
-      - {x: -0.11588235, y: 0.13294117}
-      - {x: -0.13705882, y: 0.09529411}
-      - {x: -0.13705882, y: -0.090588234}
-      - {x: -0.12764706, y: -0.112941176}
-      - {x: -0.10411764, y: -0.13058823}
-      - {x: -0.089999996, y: -0.13764705}
-      - {x: 0.09705882, y: -0.13764705}
-      - {x: 0.12882352, y: -0.114117645}
-      - {x: 0.13705882, y: -0.090588234}
+  serializedVersion: 2
+  m_Size: {x: 0.27411765, y: 0.27529413}
 --- !u!114 &11420602
 MonoBehaviour:
   m_ObjectHideFlags: 1

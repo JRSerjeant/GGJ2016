@@ -46,7 +46,6 @@ public class playerController : MonoBehaviour {
         }
 
     }
-
     void Update() {
         if (Input.GetKeyUp(moveUpKey))
         {
@@ -78,7 +77,7 @@ public class playerController : MonoBehaviour {
         }
     }
 	void FixedUpdate () {
-if (Input.GetKey(moveLeftKey))
+    if (Input.GetKey(moveLeftKey))
         {
             this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
         }
@@ -172,4 +171,6 @@ if (Input.GetKey(moveLeftKey))
             }
         }
     }
+
+
 }

@@ -168,53 +168,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2111130042}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &775871620
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 20457137}
-    m_Modifications:
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &2111130042 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 462638, guid: 0d65deb78b21d9145b2b2cc7f4bf4b91, type: 2}
-  m_PrefabInternal: {fileID: 775871620}

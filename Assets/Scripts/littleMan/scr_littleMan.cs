@@ -76,7 +76,8 @@ public class scr_littleMan : MonoBehaviour {
 
 	    if(stateRunning)
         {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue,0.0f);
+            //this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue,0.0f);
+            this.transform.position += new Vector3(directionValue, 0, 0) * Time.deltaTime;
         }
         if(stateRaising)
         {
@@ -109,11 +110,11 @@ public class scr_littleMan : MonoBehaviour {
         switch (manColour)
         {
             case Configuration.playerColourEnum.Red:
-                setManProperties(BlueSprite, blueDirectionValue, manAnimation);
+                setManProperties(BlueSprite, blueDirectionValue);
                 GetComponent<SpriteRenderer>().flipX = true;
                 break;
             case Configuration.playerColourEnum.Blue:
-                setManProperties(RedSprite, redDirectionValue, manAnimation);
+                setManProperties(RedSprite, redDirectionValue);
                 break;
             default:
                 break;
@@ -147,11 +148,11 @@ public class scr_littleMan : MonoBehaviour {
     //    }
     //}
 
-    void setManProperties(Sprite s, float d, RuntimeAnimatorController a)
+    void setManProperties(Sprite s, float d /*, RuntimeAnimatorController a*/)
     {
         //this.transform.position = p;
         this.GetComponent<SpriteRenderer>().sprite = s;
-        this.GetComponent<Animator>().runtimeAnimatorController = a;
+        //this.GetComponent<Animator>().runtimeAnimatorController = a;
         this.directionValue = d;
         
     }

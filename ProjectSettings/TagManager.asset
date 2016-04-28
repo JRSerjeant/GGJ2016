@@ -9,6 +9,8 @@ TagManager:
   - Ball
   - SnakeCanonBlue
   - SnakeCanonRed
+  - LeftExit
+  - RightExit
   layers:
   - Default
   - TransparentFX
