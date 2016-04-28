@@ -215,7 +215,7 @@ Prefab:
       propertyPath: m_TagString
       value: LeftExit
       objectReference: {fileID: 0}
-    - target: {fileID: 6176304, guid: 1ff5efa9f8e261f4996cbc0f93a9673a, type: 2}
+    - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
@@ -780,42 +780,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 9519112, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c28497acd822445a8a64018615786d75, type: 2}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: myCog
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
       propertyPath: myCannon
       value: 
       objectReference: {fileID: 311296814}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: moveRightKey
-      value: 108
-      objectReference: {fileID: 0}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: moveLeftKey
-      value: 106
-      objectReference: {fileID: 0}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: moveUpKey
-      value: 105
-      objectReference: {fileID: 0}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: moveDownKey
-      value: 107
-      objectReference: {fileID: 0}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: fireCannon
-      value: 117
-      objectReference: {fileID: 0}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: dropBlock
-      value: 111
-      objectReference: {fileID: 0}
+    - target: {fileID: 9519112, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c28497acd822445a8a64018615786d75, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8246917c94ccc504a9643202999f54af, type: 2}
   m_IsPrefabParent: 0
@@ -1346,11 +1318,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 482634, guid: 1ff5efa9f8e261f4996cbc0f93a9673a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 6.1305757
+      value: 9.08
       objectReference: {fileID: 0}
     - target: {fileID: 482634, guid: 1ff5efa9f8e261f4996cbc0f93a9673a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.9469644
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 482634, guid: 1ff5efa9f8e261f4996cbc0f93a9673a, type: 2}
       propertyPath: m_LocalPosition.z

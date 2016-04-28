@@ -11,6 +11,8 @@ TagManager:
   - SnakeCanonRed
   - LeftExit
   - RightExit
+  - RedPlayer
+  - BluePlayer
   layers:
   - Default
   - TransparentFX
