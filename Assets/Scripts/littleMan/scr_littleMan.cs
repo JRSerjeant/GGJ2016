@@ -19,9 +19,9 @@ public class scr_littleMan : MonoBehaviour {
 
     public Configuration.playerColourEnum manColour;
 
-    //public RuntimeAnimatorController manAnimation;
-    public RuntimeAnimatorController manBlueAnimation;
-    public RuntimeAnimatorController manRedAnimation;
+    public RuntimeAnimatorController manAnimation;
+    //public RuntimeAnimatorController manBlueAnimation;
+    //public RuntimeAnimatorController manRedAnimation;
 
     bool stateRunning;
     bool stateRaising;
@@ -109,11 +109,11 @@ public class scr_littleMan : MonoBehaviour {
         switch (manColour)
         {
             case Configuration.playerColourEnum.Red:
-                setManProperties(BlueSprite, blueDirectionValue, manBlueAnimation);
+                setManProperties(BlueSprite, blueDirectionValue, manAnimation);
                 GetComponent<SpriteRenderer>().flipX = true;
                 break;
             case Configuration.playerColourEnum.Blue:
-                setManProperties(RedSprite, redDirectionValue, manRedAnimation);
+                setManProperties(RedSprite, redDirectionValue, manAnimation);
                 break;
             default:
                 break;

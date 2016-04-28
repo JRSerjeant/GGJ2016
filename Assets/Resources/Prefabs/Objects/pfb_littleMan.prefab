@@ -11,8 +11,8 @@ GameObject:
   - 212: {fileID: 21209804}
   - 50: {fileID: 5091258}
   - 58: {fileID: 5890016}
-  - 95: {fileID: 9562648}
   - 114: {fileID: 11430490}
+  - 95: {fileID: 9565332}
   m_Layer: 0
   m_Name: pfb_littleMan
   m_TagString: LittleMen
@@ -63,7 +63,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.08
---- !u!95 &9562648
+--- !u!95 &9565332
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -72,7 +72,7 @@ Animator:
   m_GameObject: {fileID: 164050}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a9595d74887a4c143a2d1affa78d5e78, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -95,8 +95,7 @@ MonoBehaviour:
   BlueSprite: {fileID: 21300000, guid: 9c6aa86ee1938114186727990ab92ecd, type: 3}
   RedSprite: {fileID: 21300000, guid: acf30879e75dbba41be6d3add7cbbc68, type: 3}
   manColour: 0
-  manBlueAnimation: {fileID: 9100000, guid: e7a4e2ea6d33d43359c832ec125e8b7f, type: 2}
-  manRedAnimation: {fileID: 9100000, guid: 6f74257d50cd24950bdcf25447ff45b5, type: 2}
+  manAnimation: {fileID: 9100000, guid: a2fafc6a459d6074dae753a6688b993d, type: 2}
 --- !u!212 &21209804
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -171,7 +170,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9100000, guid: a9595d74887a4c143a2d1affa78d5e78, type: 2}
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 1
@@ -197,7 +196,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: manAnimation
       value: 
-      objectReference: {fileID: 9100000, guid: e7a4e2ea6d33d43359c832ec125e8b7f, type: 2}
+      objectReference: {fileID: 9100000, guid: a2fafc6a459d6074dae753a6688b993d, type: 2}
     - target: {fileID: 0}
       propertyPath: manBlueAnimation
       value: 
