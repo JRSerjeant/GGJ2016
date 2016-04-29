@@ -66,15 +66,13 @@ public class createBall : MonoBehaviour {
             otherObject.gameObject.GetComponent<scr_block>().removeLife(); 
         }
 
+        if (otherObject.gameObject.tag == "ground")
+        {
+            otherObject.gameObject.GetComponent<scr_ground>().GroundHP = 0;
+        }
         //check if the object collied with has the tag of "LittleMen"
         if (otherObject.gameObject.tag == "LittleMen")
         {
-            //get random number between 0 and 6
-            //int r = Random.Range(0, 6);
-            // if random number = 1 
-            //if(r == 1)
-            //{
-            //detsroy the "LittleMen"
             objectFactory.createbloodParticle(transform.position);
             Destroy(otherObject.gameObject);
             //}

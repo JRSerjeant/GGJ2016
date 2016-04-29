@@ -13,7 +13,6 @@ public class scr_bloodParticle : MonoBehaviour {
 	void Update () {
         if (!PS.IsAlive())
         {
-            Debug.Log("Destroying Blood");
             Destroy(gameObject);
         }
 	

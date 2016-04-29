@@ -53,11 +53,9 @@ public class playerController : MonoBehaviour {
                 {
                     case Configuration.playerColourEnum.Red:
                         objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation);
-                    Debug.Log("Cannon Rotation: " + myCannon.transform.eulerAngles);
                         break;
                     case Configuration.playerColourEnum.Blue:
                         objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
-                    Debug.Log("Cannon Rotation: " + myCannon.transform.eulerAngles);
                     break;
                     default:
                     break;
