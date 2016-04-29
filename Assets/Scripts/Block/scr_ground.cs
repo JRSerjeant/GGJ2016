@@ -5,6 +5,7 @@ using Assets.Scripts;
 public class scr_ground : MonoBehaviour {
 
     TextMesh tm;
+    GameObject textHP;
 
     private int groundHP;
 
@@ -27,23 +28,26 @@ public class scr_ground : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GameObject textHP = Instantiate(objectFactory.pfb_DisplayTextNumber, this.transform.position, new Quaternion()) as GameObject;
-        tm = textHP.GetComponent<TextMesh>();
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
-        tm.text = groundHP.ToString();
+
+        //displayText();
     }
-    public void removeHP()
+    public void displayText()
     {
-        Destroy(this.gameObject);
+        if( textHP == null)
+        {
+            textHP = Instantiate(objectFactory.pfb_DisplayTextNumber, this.transform.position, new Quaternion()) as GameObject;
+        }
+        tm = textHP.GetComponent<TextMesh>();
+        tm.text = groundHP.ToString();
     }
 
     void disable()
     {
-        tm.text = "0";
         Destroy(this.gameObject);
     }
 }

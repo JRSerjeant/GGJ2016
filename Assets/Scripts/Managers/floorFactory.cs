@@ -24,7 +24,7 @@ public class floorFactory : MonoBehaviour {
     int b_hp = 2;
     int c_hp = 3;
     int r_hp = 4;
-    int l_hp = 999;
+    int l_hp = 9;
 
 
     GameObject[][] gridOfGameObjects;
@@ -32,7 +32,7 @@ public class floorFactory : MonoBehaviour {
     // Use this for initialization
     void Start () {
         loadSprits();
-        gridSize = new Vector2(70, 12);
+        gridSize = new Vector2(70, 13);
         startPosition = new Vector2(0,0);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
         for (int x = 0; x < gridSize.x; x++)

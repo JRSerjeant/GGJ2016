@@ -65,7 +65,7 @@ TextMesh:
   m_GameObject: {fileID: 147264}
   m_Text: 99
   m_OffsetZ: 0
-  m_CharacterSize: 0.01
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 0
@@ -101,7 +101,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_CharacterSize
-      value: 0.01
+      value: 0.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

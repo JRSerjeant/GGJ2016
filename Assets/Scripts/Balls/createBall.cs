@@ -75,7 +75,6 @@ public class createBall : MonoBehaviour {
         {
             objectFactory.createbloodParticle(transform.position);
             Destroy(otherObject.gameObject);
-            //}
         }  
     }
 

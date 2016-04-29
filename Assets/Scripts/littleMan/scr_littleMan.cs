@@ -100,7 +100,10 @@ public class scr_littleMan : MonoBehaviour {
             stateRunning = false;
             stateRaising = true;
         }
-
+        if (col.gameObject.name == "slope")
+        {
+            Debug.Log("Hello");
+        }
     }
 
     public void Initialize(Configuration.playerColourEnum ManColour)
