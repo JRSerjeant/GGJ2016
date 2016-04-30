@@ -102,7 +102,7 @@ public class scr_littleMan : MonoBehaviour {
         }
         if (col.gameObject.name == "slope")
         {
-            Debug.Log("Hello");
+            
         }
     }
 
