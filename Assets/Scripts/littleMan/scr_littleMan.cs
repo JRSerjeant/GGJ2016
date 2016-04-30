@@ -4,15 +4,13 @@ using System.Collections;
 
 public class scr_littleMan : MonoBehaviour {
 
-    //Vector3 redManStartPosition;
-    //Vector3 blueManStartPosition;
-
-    float redEndPoint;
-    float blueEndPoint;
     float redDirectionValue;
     float blueDirectionValue;
-    public float directionValue;
+    public float directionValueX;
+    public float directionValueY;
+    public float directionValueZ;
     float gameHeight;
+    public Vector3 rotation;
 
     public Sprite BlueSprite;
     public Sprite RedSprite;
@@ -20,75 +18,70 @@ public class scr_littleMan : MonoBehaviour {
     public Configuration.playerColourEnum manColour;
 
     public RuntimeAnimatorController manAnimation;
-    //public RuntimeAnimatorController manBlueAnimation;
-    //public RuntimeAnimatorController manRedAnimation;
 
-    bool stateRunning;
-    bool stateRaising;
-    bool stateDead;
-    bool stateColWithSlope;
-    bool stateAtEndPoint;
-    /*
-    bool isRed;
-    public bool IsRed
-    {
-        set
-        {
-            isRed = true;
-        }
-    }
 
-    bool isBlue;
-    public bool Isblue
-    {
-        set
-        {
-            isBlue = true;
-        }
-    } */
+    public enum manState{Running,Raising,Falling,Climbing,Flying,Dead,ColWithSlope,AtEndPoint};
+    public  manState currentState;
+
+
 
 
 
     // Use this for initialization
     void Awake() {
-        //redManStartPosition = new Vector3(9f, -1.4f);
-        //blueManStartPosition = new Vector3(-9f, -1.4f);
+        rotation = new Vector3(0, 0, 0);
         gameHeight = 5.5f;
-        redEndPoint = -0.1f;
-        blueEndPoint = 0.1f;
         redDirectionValue = Configuration.menVelocity;
         blueDirectionValue = -Configuration.menVelocity;
-        stateRunning = true;
-        stateRaising = false;
-        stateDead = false;
+        directionValueY = 0.0f;
+        directionValueZ = 0.0f;
+        currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
-
-        //setManRedorBlue();
         
     }
     void Update()
     {
-        //Stop men from rotating 
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        UpdateRotation(rotation);
+        
     }
 
 	void FixedUpdate () {
 
-	    if(stateRunning)
+        switch (currentState)
         {
-            //this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue,0.0f);
-            this.transform.position += new Vector3(directionValue, 0, 0) * Time.deltaTime;
-        }
-        if(stateRaising)
-        {
-            this.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
-            this.transform.position += new Vector3(0, 10, 0) * Time.deltaTime;
+            case manState.Running:
+                this.transform.position += new Vector3(directionValueX, directionValueY, directionValueZ) * Time.deltaTime;
+                rotation = new Vector3(0, 0, 0);
+                break;
+            case manState.Raising:
+                this.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 0.0f);
+                this.transform.position += new Vector3(0, 10, 0) * Time.deltaTime;
+                break;
+            case manState.Flying:
+                break;
+            case manState.Falling:
+                break;
+            case manState.Climbing:
+                break;
+            case manState.Dead:
+                break;
+            case manState.ColWithSlope:
+                //this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue, 0.0f);
+                this.transform.position += new Vector3(directionValueX, directionValueX * 2, 0) * Time.deltaTime;
+                rotation = new Vector3(0, 0, 45);
+
+                break;
+            case manState.AtEndPoint:
+                break;
+            default:
+                break;
         }
         if(this.transform.position.y > gameHeight)
-        {
-            addToScore();
-            Destroy(gameObject);
-        }
+                {
+                    //addToScore();
+                    Destroy(gameObject);
+                }
+        
                
 	}
 
@@ -97,12 +90,11 @@ public class scr_littleMan : MonoBehaviour {
         if (col.gameObject.name == "RaiseZone")
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
-            stateRunning = false;
-            stateRaising = true;
+            currentState = manState.Raising;
         }
         if (col.gameObject.name == "slope")
         {
-            
+            currentState = manState.ColWithSlope;
         }
     }
 
@@ -124,53 +116,18 @@ public class scr_littleMan : MonoBehaviour {
         }
     }
 
-    //void setManRedorBlue()
-    //{
-    //    if (!scr_LittleManGenerator.LastWasBlue)
-    //    {
-    //        //Isblue = true;
-
-    //        //set up position,sprite,ani,etc
-    //        setManProperties(BlueSprite,blueDirectionValue,manBlueAnimation);
-            
-
-    //        scr_LittleManGenerator.LastWasBlue = true;
-    //        scr_LittleManGenerator.LastWasRed = false;
-    //        return;
-    //    }
-    //    if (!scr_LittleManGenerator.LastWasRed)
-    //    {
-    //        //IsRed = true;
-
-    //        //set up position,sprite,ani,etc
-    //        setManProperties(RedSprite, redDirectionValue, manRedAnimation);
-
-    //        scr_LittleManGenerator.LastWasRed = true;
-    //        scr_LittleManGenerator.LastWasBlue = false;
-    //        return;
-    //    }
-    //}
-
     void setManProperties(Sprite s, float d /*, RuntimeAnimatorController a*/)
     {
-        //this.transform.position = p;
+
         this.GetComponent<SpriteRenderer>().sprite = s;
-        //this.GetComponent<Animator>().runtimeAnimatorController = a;
-        this.directionValue = d;
+
+        this.directionValueX = d;
         
     }
 
-    void addToScore()
+    void UpdateRotation(Vector3 rot)
     {
-        //if(isBlue)
-        //{
-        //    scoreController.addBluePlayerScore();
-        //}
-        //if(isRed)
-        //{
-        //    scoreController.addRedPlayerScore();
-        //}
-
+        transform.rotation = Quaternion.Euler(rot);
     }
 
 }
