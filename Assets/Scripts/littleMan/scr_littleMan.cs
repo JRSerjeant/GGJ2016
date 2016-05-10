@@ -19,12 +19,11 @@ public class scr_littleMan : MonoBehaviour {
 
     public RuntimeAnimatorController manAnimation;
 
-
     public enum manState{Running,Raising,Falling,Climbing,Flying,Dead,ColWithSlope,AtEndPoint};
     public  manState currentState;
 
-
-
+    GameObject frontCollider;
+    Renderer manRenderer;
 
 
     // Use this for initialization
@@ -37,12 +36,42 @@ public class scr_littleMan : MonoBehaviour {
         directionValueZ = 0.0f;
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
+        frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
+        manRenderer = GetComponent<Renderer>();
+
+
+
+    }
+
+    void Start()
+    {
         
     }
+
+    public void Initialize(Configuration.playerColourEnum ManColour)
+    {
+        this.manColour = ManColour;
+
+        switch (manColour)
+        {
+            case Configuration.playerColourEnum.Red:
+                setManProperties(BlueSprite, blueDirectionValue);
+                GetComponent<SpriteRenderer>().flipX = true;
+                break;
+            case Configuration.playerColourEnum.Blue:
+                setManProperties(RedSprite, redDirectionValue);
+                break;
+            default:
+                break;
+        }
+    }
+
+
     void Update()
     {
         UpdateRotation(rotation);
-        
+        frontCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y); 
     }
 
 	void FixedUpdate () {
@@ -95,24 +124,6 @@ public class scr_littleMan : MonoBehaviour {
         if (col.gameObject.name == "slope")
         {
             currentState = manState.ColWithSlope;
-        }
-    }
-
-    public void Initialize(Configuration.playerColourEnum ManColour)
-    {
-        this.manColour = ManColour;
-
-        switch (manColour)
-        {
-            case Configuration.playerColourEnum.Red:
-                setManProperties(BlueSprite, blueDirectionValue);
-                GetComponent<SpriteRenderer>().flipX = true;
-                break;
-            case Configuration.playerColourEnum.Blue:
-                setManProperties(RedSprite, redDirectionValue);
-                break;
-            default:
-                break;
         }
     }
 

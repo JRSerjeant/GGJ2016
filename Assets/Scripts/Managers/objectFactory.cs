@@ -8,6 +8,7 @@ public class objectFactory : MonoBehaviour
     public static GameObject pfb_Block;
     public static GameObject pfb_ground;
     public static GameObject pfb_littleMan;
+    public static GameObject pdf_ManMiniCollider;
     public static GameObject pfb_Ball;
     public static GameObject pfb_Cog;
     public static GameObject pfb_bloodParticle;
@@ -18,6 +19,7 @@ public class objectFactory : MonoBehaviour
         pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
         pfb_ground = (GameObject)Resources.Load("Prefabs/Objects/pfb_ground");
         pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
+        pdf_ManMiniCollider = (GameObject)Resources.Load("Prefabs/Objects/pdf_ManMiniCollider");
         pfb_Ball = (GameObject)Resources.Load("Prefabs/Objects/Ball");
         pfb_Cog = (GameObject)Resources.Load("Prefabs/Players/pfb_Cog");
         pfb_bloodParticle = (GameObject)Resources.Load("Particles/pfb_bloodParticle");
