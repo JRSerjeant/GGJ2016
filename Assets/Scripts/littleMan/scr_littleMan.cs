@@ -6,9 +6,8 @@ public class scr_littleMan : MonoBehaviour {
 
     float redDirectionValue;
     float blueDirectionValue;
-    public float directionValueX;
-    public float directionValueY;
-    public float directionValueZ;
+    public Vector3 running;
+    public Vector3 climbing;
     float gameHeight;
     public Vector3 rotation;
 
@@ -19,11 +18,13 @@ public class scr_littleMan : MonoBehaviour {
 
     public RuntimeAnimatorController manAnimation;
 
-    public enum manState{Running,Raising,Falling,Climbing,Flying,Dead,ColWithSlope,AtEndPoint};
+    public enum manState{Running,Raising,Falling,Climbing,Flying,Dead,ColWithSlope,AtEndPoint,Manual};
     public  manState currentState;
 
     GameObject frontCollider;
+    GameObject backCollider;
     Renderer manRenderer;
+    Rigidbody2D manRigidbody2D;
 
 
     // Use this for initialization
@@ -32,21 +33,24 @@ public class scr_littleMan : MonoBehaviour {
         gameHeight = 5.5f;
         redDirectionValue = Configuration.menVelocity;
         blueDirectionValue = -Configuration.menVelocity;
-        directionValueY = 0.0f;
-        directionValueZ = 0.0f;
+        running = new Vector3(0.2f,0.0f);
+        climbing = new Vector3(0.0f, 0.2f);
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
-        frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
-        frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
-        manRenderer = GetComponent<Renderer>();
-
-
-
+        manRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     void Start()
     {
-        
+        frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
+        //frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
+        frontCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
+
+        backCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
+        //backCollider.GetComponent<BoxCollider2D>().isTrigger = true;
+        backCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
+
+        manRenderer = GetComponent<Renderer>();
     }
 
     public void Initialize(Configuration.playerColourEnum ManColour)
@@ -70,16 +74,20 @@ public class scr_littleMan : MonoBehaviour {
 
     void Update()
     {
+
         UpdateRotation(rotation);
-        frontCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y); 
+        SetMiniManMiniColliderPOsitions();
     }
 
 	void FixedUpdate () {
 
         switch (currentState)
         {
+            case manState.Manual:
+                break;
             case manState.Running:
-                this.transform.position += new Vector3(directionValueX, directionValueY, directionValueZ) * Time.deltaTime;
+                //manRigidbody2D.isKinematic = false;
+                this.transform.position += running * Time.deltaTime;
                 rotation = new Vector3(0, 0, 0);
                 break;
             case manState.Raising:
@@ -91,14 +99,16 @@ public class scr_littleMan : MonoBehaviour {
             case manState.Falling:
                 break;
             case manState.Climbing:
+                manRigidbody2D.isKinematic = true;
+                this.transform.position += climbing * Time.deltaTime;
+                rotation = new Vector3(0, 0, 0);
                 break;
             case manState.Dead:
                 break;
             case manState.ColWithSlope:
                 //this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue, 0.0f);
-                this.transform.position += new Vector3(directionValueX, directionValueX * 2, 0) * Time.deltaTime;
+                this.transform.position += running * Time.deltaTime;
                 rotation = new Vector3(0, 0, 45);
-
                 break;
             case manState.AtEndPoint:
                 break;
@@ -106,16 +116,20 @@ public class scr_littleMan : MonoBehaviour {
                 break;
         }
         if(this.transform.position.y > gameHeight)
-                {
-                    //addToScore();
-                    Destroy(gameObject);
-                }
+        {
+            //addToScore();
+            Destroy(gameObject);
+        }
+
         
+        
+                
                
 	}
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        
         if (col.gameObject.name == "RaiseZone")
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
@@ -131,9 +145,7 @@ public class scr_littleMan : MonoBehaviour {
     {
 
         this.GetComponent<SpriteRenderer>().sprite = s;
-
-        this.directionValueX = d;
-        
+        running.x = d;
     }
 
     void UpdateRotation(Vector3 rot)
@@ -141,4 +153,25 @@ public class scr_littleMan : MonoBehaviour {
         transform.rotation = Quaternion.Euler(rot);
     }
 
+    void SetMiniManMiniColliderPOsitions()
+    {
+        switch (manColour)
+        {
+            case Configuration.playerColourEnum.Red:
+                {
+                    frontCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y);
+                    backCollider.transform.position = new Vector3(transform.position.x - (manRenderer.bounds.size.x / 2), transform.position.y);
+                    break;
+                }
+            case Configuration.playerColourEnum.Blue:
+                {
+                    frontCollider.transform.position = new Vector3(transform.position.x - (manRenderer.bounds.size.x / 2), transform.position.y);
+                    backCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y);
+                }
+                break;
+            default:
+                break;
+        }
+
+    }
 }
