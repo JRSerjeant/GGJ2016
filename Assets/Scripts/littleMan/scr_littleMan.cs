@@ -42,13 +42,13 @@ public class scr_littleMan : MonoBehaviour {
 
     void Start()
     {
-        frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
+        //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
-        frontCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
+        //frontCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
 
-        //backCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
+        backCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //backCollider.GetComponent<BoxCollider2D>().isTrigger = true;
-        //backCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
+        backCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
 
         manRenderer = GetComponent<Renderer>();
     }
@@ -160,14 +160,14 @@ public class scr_littleMan : MonoBehaviour {
         {
             case Configuration.playerColourEnum.Red:
                 {
-                    frontCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y);
-                    //backCollider.transform.position = new Vector3(transform.position.x - (manRenderer.bounds.size.x / 2), transform.position.y);
+                    //frontCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y);
+                    backCollider.transform.position = new Vector3(transform.position.x - (manRenderer.bounds.size.x / 2), transform.position.y);
                     break;
                 }
             case Configuration.playerColourEnum.Blue:
                 {
-                    frontCollider.transform.position = new Vector3(transform.position.x - (manRenderer.bounds.size.x / 2), transform.position.y);
-                    //backCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y);
+                    //frontCollider.transform.position = new Vector3(transform.position.x - (manRenderer.bounds.size.x / 2), transform.position.y);
+                    backCollider.transform.position = new Vector3(transform.position.x + (manRenderer.bounds.size.x / 2), transform.position.y);
                 }
                 break;
             default:
