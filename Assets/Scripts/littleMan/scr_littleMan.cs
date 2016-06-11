@@ -7,9 +7,11 @@ public class scr_littleMan : MonoBehaviour {
     float redDirectionValue;
     float blueDirectionValue;
     public Vector3 running;
+    public Vector3 runningSlop;
     public Vector3 climbing;
     public Vector3 falling;
     float gameHeight;
+    float directionValue;
     public Vector3 rotation;
     public bool allowFalling;
     public bool isGrounded;
@@ -42,11 +44,13 @@ public class scr_littleMan : MonoBehaviour {
         redDirectionValue = Configuration.menVelocity;
         blueDirectionValue = -Configuration.menVelocity;
         running = new Vector3(0.2f,0.0f);
+        runningSlop = new Vector3(0.2f, 0.2f);
         climbing = new Vector3(0.0f, Configuration.menClimbVelocity);
-        falling = new Vector3(0.0f, Configuration.menClimbVelocity);
+        falling = new Vector3(0.0f, -Configuration.menClimbVelocity);
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
         manRigidbody2D = GetComponent<Rigidbody2D>();
+        directionValue = 10.0f;
 
         //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
@@ -113,6 +117,7 @@ public class scr_littleMan : MonoBehaviour {
             case manState.Flying:
                 break;
             case manState.Falling:
+                manRigidbody2D.isKinematic = true;
                 this.transform.position += falling * Time.deltaTime;
                 rotation = new Vector3(0, 0, 0);
                 break;
@@ -125,7 +130,8 @@ public class scr_littleMan : MonoBehaviour {
                 break;
             case manState.ColWithSlope:
                 //this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue, 0.0f);
-                this.transform.position += running * Time.deltaTime;
+                manRigidbody2D.isKinematic = true;
+                this.transform.position += runningSlop * Time.deltaTime;
                 rotation = new Vector3(0, 0, 45);
                 break;
             case manState.AtEndPoint:

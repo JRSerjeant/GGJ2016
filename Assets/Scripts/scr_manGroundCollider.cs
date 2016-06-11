@@ -39,6 +39,7 @@ public class scr_manGroundCollider : MonoBehaviour {
         if(scr_myLittleMan.currentState == scr_littleMan.manState.Falling && colCount >= 1)
         {
             scr_myLittleMan.currentState = scr_littleMan.manState.Running;
+            scr_myLittleMan.setIsKinematicFalse();
         }
     }
 

@@ -15,7 +15,7 @@ namespace Assets.Scripts
         public static readonly float menVelocity = 0.5f;
         public static readonly float menClimbVelocity = 0.65f;
 
-        public const float PeoplePerSecond = 2f;
+        public const float PeoplePerSecond = 1f;
         public enum playerColourEnum { Red, Blue };
 
     }
