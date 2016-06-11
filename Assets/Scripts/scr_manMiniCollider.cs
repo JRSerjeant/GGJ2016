@@ -71,10 +71,12 @@ public class scr_manMiniCollider : MonoBehaviour
 
     IEnumerator setIsKinematic()
     {
-       
+        scr_myLittleMan.allowFallingFalse();
         yield return new WaitForSeconds(0.75f);
         scr_myLittleMan.setIsKinematicFalse();
         hasStoppedColliding = false;
+        scr_myLittleMan.allowFallingTrue();
+
     }
 
 }

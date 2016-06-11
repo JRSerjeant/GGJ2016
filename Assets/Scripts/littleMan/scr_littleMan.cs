@@ -8,8 +8,12 @@ public class scr_littleMan : MonoBehaviour {
     float blueDirectionValue;
     public Vector3 running;
     public Vector3 climbing;
+    public Vector3 falling;
     float gameHeight;
     public Vector3 rotation;
+    public bool allowFalling;
+    public bool isGrounded;
+    public int colTrggerCount;
 
     public Sprite BlueSprite;
     public Sprite RedSprite;
@@ -23,6 +27,7 @@ public class scr_littleMan : MonoBehaviour {
 
     GameObject frontCollider;
     GameObject backCollider;
+    GameObject groundCollider;
     Renderer manRenderer;
     Rigidbody2D manRigidbody2D;
 
@@ -30,27 +35,37 @@ public class scr_littleMan : MonoBehaviour {
     // Use this for initialization
     void Awake() {
         rotation = new Vector3(0, 0, 0);
+        isGrounded = true;
+        allowFalling = true;
+        colTrggerCount = 0;
         gameHeight = 5.5f;
         redDirectionValue = Configuration.menVelocity;
         blueDirectionValue = -Configuration.menVelocity;
         running = new Vector3(0.2f,0.0f);
-        climbing = new Vector3(0.0f, 0.2f);
+        climbing = new Vector3(0.0f, Configuration.menClimbVelocity);
+        falling = new Vector3(0.0f, Configuration.menClimbVelocity);
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
         manRigidbody2D = GetComponent<Rigidbody2D>();
-    }
 
-    void Start()
-    {
         //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
         //frontCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
+
+        groundCollider = Instantiate(objectFactory.pdf_ManGroundCollider) as GameObject;
+        groundCollider.GetComponent<scr_manGroundCollider>().Initialize(this.gameObject);
+
 
         backCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //backCollider.GetComponent<BoxCollider2D>().isTrigger = true;
         backCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
 
         manRenderer = GetComponent<Renderer>();
+    }
+
+    void Start()
+    {
+
     }
 
     public void Initialize(Configuration.playerColourEnum ManColour)
@@ -76,10 +91,11 @@ public class scr_littleMan : MonoBehaviour {
     {
 
         UpdateRotation(rotation);
-        SetMiniManMiniColliderPOsitions();
+        SetExtraColliderPositions();
+
     }
 
-	void FixedUpdate () {
+    void FixedUpdate () {
 
         switch (currentState)
         {
@@ -97,6 +113,8 @@ public class scr_littleMan : MonoBehaviour {
             case manState.Flying:
                 break;
             case manState.Falling:
+                this.transform.position += falling * Time.deltaTime;
+                rotation = new Vector3(0, 0, 0);
                 break;
             case manState.Climbing:
                 manRigidbody2D.isKinematic = true;
@@ -121,22 +139,18 @@ public class scr_littleMan : MonoBehaviour {
             //addToScore();
             Destroy(gameObject);
         }
-
-        
-        
-                
-               
+             
 	}
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D otherObject)
     {
         
-        if (col.gameObject.name == "RaiseZone")
+        if (otherObject.gameObject.name == "RaiseZone")
         {
             GetComponent<Rigidbody2D>().isKinematic = true;
             currentState = manState.Raising;
         }
-        if (col.gameObject.name == "slope")
+        if (otherObject.gameObject.name == "slope")
         {
             currentState = manState.ColWithSlope;
         }
@@ -154,7 +168,7 @@ public class scr_littleMan : MonoBehaviour {
         transform.rotation = Quaternion.Euler(rot);
     }
 
-    void SetMiniManMiniColliderPOsitions()
+    void SetExtraColliderPositions()
     {
         switch (manColour)
         {
@@ -173,11 +187,21 @@ public class scr_littleMan : MonoBehaviour {
             default:
                 break;
         }
+        groundCollider.transform.position = new Vector3(transform.position.x, transform.position.y - (manRenderer.bounds.size.y / 2));
 
     }
 
     public void setIsKinematicFalse()
     {
         manRigidbody2D.isKinematic = false;
+    }
+
+    public void allowFallingTrue()
+    {
+        allowFalling = true;
+    }
+    public void allowFallingFalse()
+    {
+        allowFalling = false;
     }
 }
