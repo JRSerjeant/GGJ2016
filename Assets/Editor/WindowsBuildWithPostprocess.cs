@@ -4,7 +4,7 @@ using UnityEditor;
 using System;
 using System.IO;
 
-public class ScriptBatch
+public class WindowsBuildWithPostprocess
 {
     [MenuItem("MyTools/Windows Build With Postprocess")]
     public static void BuildGame()
