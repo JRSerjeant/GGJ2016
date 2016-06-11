@@ -11,29 +11,64 @@ public class CreateNewAssetFolder : MonoBehaviour
     [MenuItem("MyTools/Create New Asset Folder")]
     public static void CreateFolders()
     {
+        String path;
+
         String resourcesDir = Application.dataPath + "/Resources";
         resourcesDir = resourcesDir.Replace("/", "\\");
+        String[] resourcesDirFolfers = Directory.GetDirectories(resourcesDir);
 
-        String newFolder = "_new";
-        String path;
         String tempDir = "\\__Template";
-        String[] dir = Directory.GetDirectories(resourcesDir + tempDir);
-        path = resourcesDir + "\\" + newFolder;
-        Directory.CreateDirectory(path.ToString());
-        foreach (var d in dir)
-        {
-            String[] ddir = Directory.GetDirectories(d);
-            path = resourcesDir + "\\" + newFolder + "\\" + Path.GetFileName(d);
-            UnityEngine.Debug.Log(path.ToString());
-            Directory.CreateDirectory(path.ToString());
+        String[] tempDirFolders = Directory.GetDirectories(resourcesDir + tempDir);
 
-            foreach (var dd in ddir)
+        foreach (var d in resourcesDirFolfers)
+        {
+            
+            if (Path.GetFileName(d).StartsWith("_") && Path.GetFileName(d) != "__Template")
             {
-                path = resourcesDir + "\\" + newFolder + "\\" + Path.GetFileName(d) + "\\" + Path.GetFileName(dd);
-                UnityEngine.Debug.Log(path.ToString());
-                Directory.CreateDirectory(path.ToString());
+                foreach (var dd in tempDirFolders)
+                {
+                    path = d + "\\" + Path.GetFileName(dd);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path.ToString());
+                        UnityEngine.Debug.Log(path);
+                    }
+
+                    String[] dddirFolfers = Directory.GetDirectories(dd);
+                    foreach (var ddd in dddirFolfers)
+                    {
+                        path = d + "\\" + Path.GetFileName(dd) + "\\" + Path.GetFileName(ddd);
+                        if (!Directory.Exists(path))
+                        {
+                            Directory.CreateDirectory(path.ToString());
+                            UnityEngine.Debug.Log(path);
+                        }
+                    }
+                }
+                
             }
         }
-
     }
+        //String newFolder = "_new";
+        //String path;
+        //String tempDir = "\\__Template";
+        //String[] dir = Directory.GetDirectories(resourcesDir + tempDir);
+        //path = resourcesDir + "\\" + newFolder;
+        //Directory.CreateDirectory(path.ToString());
+        //foreach (var d in dir)
+        //{
+        //    String[] ddir = Directory.GetDirectories(d);
+        //    path = resourcesDir + "\\" + newFolder + "\\" + Path.GetFileName(d);
+        //    UnityEngine.Debug.Log(path.ToString());
+        //    Directory.CreateDirectory(path.ToString());
+
+        //    foreach (var dd in ddir)
+        //    {
+        //        path = resourcesDir + "\\" + newFolder + "\\" + Path.GetFileName(d) + "\\" + Path.GetFileName(dd);
+        //        UnityEngine.Debug.Log(path.ToString());
+        //        Directory.CreateDirectory(path.ToString());
+        //    }
+        //}
+
 }
+

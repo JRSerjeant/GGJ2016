@@ -441,7 +441,7 @@ Transform:
   m_Children:
   - {fileID: 1972735014}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1001 &418583499
 Prefab:
   m_ObjectHideFlags: 0
@@ -624,7 +624,7 @@ Transform:
   - {fileID: 297361433}
   - {fileID: 988152758}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
 --- !u!1001 &850760399
 Prefab:
   m_ObjectHideFlags: 0
