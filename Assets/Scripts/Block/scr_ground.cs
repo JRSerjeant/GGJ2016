@@ -7,6 +7,7 @@ public class scr_ground : MonoBehaviour {
     TextMesh tm;
     GameObject textHP;
 
+
     private int groundHP;
 
     public int GroundHP
