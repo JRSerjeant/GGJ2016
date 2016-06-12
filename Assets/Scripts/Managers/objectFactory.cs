@@ -23,7 +23,7 @@ public class objectFactory : MonoBehaviour
         pdf_ManMiniCollider = (GameObject)Resources.Load("Prefabs/Objects/pdf_ManMiniCollider");
         pdf_ManGroundCollider = (GameObject)Resources.Load("Prefabs/Objects/pdf_ManGroundCollider");
         pfb_Ball = (GameObject)Resources.Load("_Ball/Prefabs/Ball");
-        pfb_Cog = (GameObject)Resources.Load("Prefabs/Players/pfb_Cog");
+        pfb_Cog = (GameObject)Resources.Load("_Cog/Prefabs/pfb_Cog");
         pfb_bloodParticle = (GameObject)Resources.Load("Particles/pfb_bloodParticle");
         pfb_DisplayTextNumber = (GameObject)Resources.Load("Prefabs/Objects/pfb_DisplayTextNumber");
     }
