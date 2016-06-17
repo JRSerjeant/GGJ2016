@@ -92,9 +92,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   running: {x: 0, y: 0, z: 0}
+  runningSlop: {x: 0, y: 0, z: 0}
   climbing: {x: 0, y: 0, z: 0}
   falling: {x: 0, y: 0, z: 0}
   rotation: {x: 0, y: 0, z: 0}
+  allowFalling: 0
   isGrounded: 0
   colTrggerCount: 0
   BlueSprite: {fileID: 21300000, guid: 9c6aa86ee1938114186727990ab92ecd, type: 3}
