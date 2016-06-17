@@ -17,7 +17,7 @@ public class objectFactory : MonoBehaviour
 
     void Awake()
     {
-        pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
+        pfb_Block = (GameObject)Resources.Load("_Block/Prefabs/pfb_Block");
         pfb_ground = (GameObject)Resources.Load("_Ground/Prefabs/pfb_ground");
         pfb_littleMan = (GameObject)Resources.Load("_LittleMen/Prefabs/pfb_littleMan");
         pdf_ManMiniCollider = (GameObject)Resources.Load("_LittleMen/Prefabs/pdf_ManMiniCollider");
