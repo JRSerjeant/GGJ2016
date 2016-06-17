@@ -119,18 +119,18 @@ public class floorFactory : MonoBehaviour {
 
     void loadSprits()
     {
-        A1 = Resources.Load<Sprite>("Sprites/A1");
-        A2 = Resources.Load<Sprite>("Sprites/A2");
-        B1 = Resources.Load<Sprite>("Sprites/B1");
-        B2 = Resources.Load<Sprite>("Sprites/B2");
-        B3 = Resources.Load<Sprite>("Sprites/B3");
-        B4 = Resources.Load<Sprite>("Sprites/B4");
-        C1 = Resources.Load<Sprite>("Sprites/C1");
-        C2 = Resources.Load<Sprite>("Sprites/C2");
-        C3 = Resources.Load<Sprite>("Sprites/C3");
-        R1 = Resources.Load<Sprite>("Sprites/R1");
-        R2 = Resources.Load<Sprite>("Sprites/R2");
-        R3 = Resources.Load<Sprite>("Sprites/R3");
-        L = Resources.Load<Sprite>("Sprites/L");
+        A1 = Resources.Load<Sprite>("_Ground/Sprites/A1");
+        A2 = Resources.Load<Sprite>("_Ground/Sprites/A2");
+        B1 = Resources.Load<Sprite>("_Ground/Sprites/B1");
+        B2 = Resources.Load<Sprite>("_Ground/Sprites/B2");
+        B3 = Resources.Load<Sprite>("_Ground/Sprites/B3");
+        B4 = Resources.Load<Sprite>("_Ground/Sprites/B4");
+        C1 = Resources.Load<Sprite>("_Ground/Sprites/C1");
+        C2 = Resources.Load<Sprite>("_Ground/Sprites/C2");
+        C3 = Resources.Load<Sprite>("_Ground/Sprites/C3");
+        R1 = Resources.Load<Sprite>("_Ground/Sprites/R1");
+        R2 = Resources.Load<Sprite>("_Ground/Sprites/R2");
+        R3 = Resources.Load<Sprite>("_Ground/Sprites/R3");
+        L = Resources.Load<Sprite>("_Ground/Sprites/L");
     }
 }
