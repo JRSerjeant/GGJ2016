@@ -19,8 +19,8 @@ public class objectFactory : MonoBehaviour
     {
         pfb_Block = (GameObject)Resources.Load("Prefabs/Objects/pfb_Block");
         pfb_ground = (GameObject)Resources.Load("_Ground/Prefabs/pfb_ground");
-        pfb_littleMan = (GameObject)Resources.Load("Prefabs/Objects/pfb_littleMan");
-        pdf_ManMiniCollider = (GameObject)Resources.Load("Prefabs/Objects/pdf_ManMiniCollider");
+        pfb_littleMan = (GameObject)Resources.Load("_LittleMen/Prefabs/pfb_littleMan");
+        pdf_ManMiniCollider = (GameObject)Resources.Load("_LittleMen/Prefabs/pdf_ManMiniCollider");
         pdf_ManGroundCollider = (GameObject)Resources.Load("_LittleMen/Prefabs/pdf_ManGroundCollider");
         pfb_Ball = (GameObject)Resources.Load("_Ball/Prefabs/Ball");
         pfb_Cog = (GameObject)Resources.Load("_Cog/Prefabs/pfb_Cog");
