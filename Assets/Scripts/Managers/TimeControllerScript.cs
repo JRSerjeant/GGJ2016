@@ -48,7 +48,7 @@ public class TimeControllerScript : MonoBehaviour
 			//Completed.SoundManager.instance.PlaySingle (audioFactory.Drum);
 			//Completed.SoundManager.instance.PlaySingle (Drum);
 			//Completed.SoundManager.instance.musicSource.time = (LoadTime);
-			Completed.SoundManager.instance.RestartMusic();
+			//Completed.SoundManager.instance.RestartMusic();
 			TimesPlayed = 0;
 
 			//Completed.SoundManager.instance.musicSource.volume = (0);
@@ -64,14 +64,14 @@ public class TimeControllerScript : MonoBehaviour
 		//Completed.SoundManager.instance.musicSource.Play ();
 		//Completed.SoundManager.instance.musicSource.volume = (1);
 
-		Completed.SoundManager.instance.SpeedUpMusic();
+		//Completed.SoundManager.instance.SpeedUpMusic();
 		//Completed.SoundManager.instance.musicSource.volume = (1);
 		}
 
 		if (timeRemaining < 0.5)
 		{
 
-			Completed.SoundManager.instance.StopMusic();
+			//Completed.SoundManager.instance.StopMusic();
 			TimesPlayed = (TimesPlayed + 1);
 			//add gong sound.
 			PlayGongSound();
@@ -124,7 +124,7 @@ public class TimeControllerScript : MonoBehaviour
 		if (TimesPlayed == 1 & !IsGameOver)  //and gameover = false?
 		{
 
-			Completed.SoundManager.instance.RandomizeSfx(audioFactory.Gong);
+			//Completed.SoundManager.instance.RandomizeSfx(audioFactory.Gong);
 			//TimesPlayed = (TimesPlayed + 1);
 			//TimesPlayed = 0;
 			//audioFactory.Gong.

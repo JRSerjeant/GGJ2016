@@ -3,7 +3,7 @@ using System.Collections;
 
 public class floorFactory : MonoBehaviour {
     Vector2 gridSize;
-    Vector2 startPosition;
+    //Vector2 startPosition;
     #region Sprite vars 
     private Sprite A1;
     private Sprite A2;
@@ -33,7 +33,7 @@ public class floorFactory : MonoBehaviour {
     void Start () {
         loadSprits();
         gridSize = new Vector2(70, 13);
-        startPosition = new Vector2(0,0);
+        //startPosition = new Vector2(0,0);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
         for (int x = 0; x < gridSize.x; x++)
         {

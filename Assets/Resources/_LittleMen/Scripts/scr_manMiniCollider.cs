@@ -7,7 +7,6 @@ public class scr_manMiniCollider : MonoBehaviour
     GameObject obj_lastCollidedGround;
     GameObject obj_myLittleMan;
     scr_littleMan scr_myLittleMan;
-    BoxCollider2D collider;
     public BoxCollider2D obj_lastCollidedGroundBoxCollider2D;
     public bool isColliding;
     public bool hasStoppedColliding;
@@ -16,7 +15,7 @@ public class scr_manMiniCollider : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        collider = this.GetComponent<BoxCollider2D>();
+
     }
 
     // Update is called once per frame

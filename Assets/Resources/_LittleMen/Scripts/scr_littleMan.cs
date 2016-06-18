@@ -11,7 +11,7 @@ public class scr_littleMan : MonoBehaviour {
     public Vector3 climbing;
     public Vector3 falling;
     float gameHeight;
-    float directionValue;
+    //float directionValue;
     public Vector3 rotation;
     public bool allowFalling;
     public bool isGrounded;
@@ -50,7 +50,7 @@ public class scr_littleMan : MonoBehaviour {
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
         manRigidbody2D = GetComponent<Rigidbody2D>();
-        directionValue = 10.0f;
+        //directionValue = 10.0f;
 
         //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;

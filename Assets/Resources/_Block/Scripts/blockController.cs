@@ -30,14 +30,8 @@ public class blockController : MonoBehaviour
         if (blocks.Count + 1 < blockLimit || blocks == null)
         {
             blocks.Add(objectFactory.createBlock(pos));
-            PlayBlockSound();
+
         }
 
     }    
-
-	private void PlayBlockSound()
-	{
-		Completed.SoundManager.instance.RandomizeSfx (audioFactory.Create1, audioFactory.Create2, audioFactory.Create3);
-
-	}
 }

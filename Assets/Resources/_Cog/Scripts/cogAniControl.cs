@@ -6,7 +6,7 @@ public class cogAniControl : MonoBehaviour {
     public string direction;
     Quaternion rotation;
     Quaternion fixedRotation;
-    private float zRotation = 0.0f;
+    //private float zRotation = 0.0f;
 
     //void Awake()
     //{
