@@ -52,14 +52,11 @@ public class scr_LittleManGenerator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!TimeControllerScript.IsGameOver)
-        {
             if ((Time.time > lastFired + 1 / Configuration.PeoplePerSecond))
             {
                 objectFactory.createlittleMan(redManStartPosition, Configuration.playerColourEnum.Red);
                 objectFactory.createlittleMan(blueManStartPosition, Configuration.playerColourEnum.Blue);
                 lastFired = Time.time;
             }
-        }
     }
 }
