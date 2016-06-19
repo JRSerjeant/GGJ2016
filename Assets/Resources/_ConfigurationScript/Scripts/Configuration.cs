@@ -4,7 +4,7 @@ namespace Assets.Scripts
     public static class Configuration
     {
         public static readonly int BlockLimit = 5;
-        public static readonly int BlockLife = 1;
+        public static readonly int BlockLife = 3;
         public static readonly int BlockRegenerationPerSecond = 2;
         public static readonly int GameLengthInSeconds = 30;
         public static readonly int MaxBalls = 10;

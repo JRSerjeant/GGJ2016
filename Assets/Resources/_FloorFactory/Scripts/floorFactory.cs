@@ -32,7 +32,7 @@ public class floorFactory : MonoBehaviour {
     // Use this for initialization
     void Start () {
         loadSprits();
-        gridSize = new Vector2(70, 13);
+        gridSize = new Vector2(64, 13);
         //startPosition = new Vector2(0,0);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
         for (int x = 0; x < gridSize.x; x++)
@@ -45,7 +45,7 @@ public class floorFactory : MonoBehaviour {
                 SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
                 scr_ground scr = go.GetComponent<scr_ground>();
                 t.position = new Vector3(-9.463f + (x * sr.bounds.size.x), -1.603f - ( y * sr.bounds.size.y));
-                go.GetComponent<Rigidbody2D>().isKinematic = true;
+                //go.GetComponent<Rigidbody2D>().isKinematic = true;
                 gridOfGameObjects[x][y] = go;
 
                 switch (y)

@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using Assets.Scripts;
 
 public class scr_ground : MonoBehaviour {
 
     TextMesh tm;
     GameObject textHP;
-
+    public List<GameObject> collidingManList;
 
     private int groundHP;
 
@@ -29,7 +30,7 @@ public class scr_ground : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
+        collidingManList = new List<GameObject>();
     }
 	
 	// Update is called once per frame
@@ -50,5 +51,10 @@ public class scr_ground : MonoBehaviour {
     void disable()
     {
         Destroy(this.gameObject);
+        foreach (var item in collidingManList)
+        {
+            objectFactory.createbloodParticle(item.gameObject.transform.position);
+            Destroy(item.gameObject);
+        }
     }
 }

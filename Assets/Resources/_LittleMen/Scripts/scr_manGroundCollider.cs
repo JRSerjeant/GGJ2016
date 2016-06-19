@@ -36,18 +36,21 @@ public class scr_manGroundCollider : MonoBehaviour {
                 }
             }
         }
-        if(scr_myLittleMan.currentState == scr_littleMan.manState.Falling && colCount >= 1)
+        if (scr_myLittleMan.currentState == scr_littleMan.manState.Falling && colCount >= 1)
         {
+
             scr_myLittleMan.currentState = scr_littleMan.manState.Running;
-            scr_myLittleMan.setIsKinematicFalse();
+            //scr_myLittleMan.setIsKinematicFalse();
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D otherObject)
     {
-        //Debug.Log("OnTriggerStay2D");
+        //Debug.Log("OnTriggerEnter2D");
         if (otherObject.gameObject.tag == "ground")
         {
+            otherObject.gameObject.GetComponent<scr_ground>().collidingManList.Add(obj_myLittleMan);
             colCount++;
         }
     }
@@ -57,6 +60,7 @@ public class scr_manGroundCollider : MonoBehaviour {
         //Debug.Log("OnTriggerExit2D");
         if (otherObject.gameObject.tag == "ground")
         {
+            otherObject.gameObject.GetComponent<scr_ground>().collidingManList.Remove(obj_myLittleMan);
             colCount--;
         }
     }

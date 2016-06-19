@@ -25,7 +25,7 @@ public class objectFactory : MonoBehaviour
         pfb_Ball = (GameObject)Resources.Load("_Ball/Prefabs/Ball");
         pfb_Cog = (GameObject)Resources.Load("_Cog/Prefabs/pfb_Cog");
         pfb_bloodParticle = (GameObject)Resources.Load("_Blood/Prefabs/pfb_bloodParticle");
-        pfb_DisplayTextNumber = (GameObject)Resources.Load("Prefabs/Objects/pfb_DisplayTextNumber");
+        pfb_DisplayTextNumber = (GameObject)Resources.Load("_DisplayTextNumber/Prefabs/pfb_DisplayTextNumber");
     }
 
     void Start()

@@ -70,15 +70,18 @@ public class createBall : MonoBehaviour {
         {
             otherObject.gameObject.GetComponent<scr_ground>().GroundHP = 0;
         }
-        //check if the object collied with has the tag of "LittleMen"
+    }
+
+    void OnTriggerEnter2D(Collider2D otherObject)
+    {
         if (otherObject.gameObject.tag == "LittleMen")
         {
             objectFactory.createbloodParticle(transform.position);
             Destroy(otherObject.gameObject);
-        }  
+        }
     }
 
-    IEnumerator DestroyBall()
+        IEnumerator DestroyBall()
     {
         yield return new WaitForSeconds(3.5f);
         Destroy(this.gameObject);

@@ -11,7 +11,7 @@ GameObject:
   - 212: {fileID: 21273462}
   - 61: {fileID: 6190104}
   - 114: {fileID: 11418330}
-  - 50: {fileID: 5094676}
+  - 50: {fileID: 5023448}
   m_Layer: 0
   m_Name: pfb_Ground
   m_TagString: ground
@@ -31,7 +31,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!50 &5094676
+--- !u!50 &5023448
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 1
@@ -117,7 +117,7 @@ Prefab:
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Size.x

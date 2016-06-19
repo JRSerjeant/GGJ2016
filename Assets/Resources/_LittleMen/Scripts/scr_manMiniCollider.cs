@@ -40,7 +40,8 @@ public class scr_manMiniCollider : MonoBehaviour
             //Debug.Log("Col with: " + otherObject.gameObject.name);
            
             if (otherObject.gameObject.tag == "ground")
-            {   
+            {
+                otherObject.gameObject.GetComponent<scr_ground>().collidingManList.Add(obj_myLittleMan);
                 isColliding = true;
                 colCount++;
                 if (otherObject.transform.position.y > obj_myLittleMan.transform.position.y)
@@ -57,6 +58,7 @@ public class scr_manMiniCollider : MonoBehaviour
             
             if (otherObject.gameObject.tag == "ground")
             {
+                otherObject.gameObject.GetComponent<scr_ground>().collidingManList.Remove(obj_myLittleMan);
                 colCount--;
                 if (colCount == 0)
                 {
@@ -72,10 +74,9 @@ public class scr_manMiniCollider : MonoBehaviour
     {
         scr_myLittleMan.allowFallingFalse();
         yield return new WaitForSeconds(0.75f);
-        scr_myLittleMan.setIsKinematicFalse();
+        //scr_myLittleMan.setIsKinematicFalse();
         hasStoppedColliding = false;
         scr_myLittleMan.allowFallingTrue();
-
     }
 
-}
+    }

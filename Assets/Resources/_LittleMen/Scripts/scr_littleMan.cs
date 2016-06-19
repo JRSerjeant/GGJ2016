@@ -6,8 +6,12 @@ public class scr_littleMan : MonoBehaviour {
 
     float redDirectionValue;
     float blueDirectionValue;
+
+    private EdgeCollider2D slopeObject;
+    private bool passedTop;
+
     public Vector3 running;
-    public Vector3 runningSlop;
+    public Vector3 runningSlope;
     public Vector3 climbing;
     public Vector3 falling;
     float gameHeight;
@@ -36,6 +40,7 @@ public class scr_littleMan : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
+        passedTop = false;
         rotation = new Vector3(0, 0, 0);
         isGrounded = true;
         allowFalling = true;
@@ -44,7 +49,7 @@ public class scr_littleMan : MonoBehaviour {
         redDirectionValue = Configuration.menVelocity;
         blueDirectionValue = -Configuration.menVelocity;
         running = new Vector3(0.2f,0.0f);
-        runningSlop = new Vector3(0.2f, 0.2f);
+        runningSlope = new Vector3(0.5f, 0.5f);
         climbing = new Vector3(0.0f, Configuration.menClimbVelocity);
         falling = new Vector3(0.0f, -Configuration.menClimbVelocity);
         currentState = manState.Running;
@@ -95,7 +100,11 @@ public class scr_littleMan : MonoBehaviour {
     {
 
         UpdateRotation(rotation);
-        SetExtraColliderPositions();
+        if (currentState != manState.ColWithSlope)
+        {
+            SetExtraColliderPositions();
+        }
+        
 
     }
 
@@ -117,12 +126,12 @@ public class scr_littleMan : MonoBehaviour {
             case manState.Flying:
                 break;
             case manState.Falling:
-                manRigidbody2D.isKinematic = true;
+                //manRigidbody2D.isKinematic = true;
                 this.transform.position += falling * Time.deltaTime;
                 rotation = new Vector3(0, 0, 0);
                 break;
             case manState.Climbing:
-                manRigidbody2D.isKinematic = true;
+                //manRigidbody2D.isKinematic = true;
                 this.transform.position += climbing * Time.deltaTime;
                 rotation = new Vector3(0, 0, 0);
                 break;
@@ -130,8 +139,31 @@ public class scr_littleMan : MonoBehaviour {
                 break;
             case manState.ColWithSlope:
                 //this.GetComponent<Rigidbody2D>().velocity = new Vector2(directionValue, 0.0f);
-                manRigidbody2D.isKinematic = true;
-                this.transform.position += runningSlop * Time.deltaTime;
+                //manRigidbody2D.isKinematic = true;
+                //Debug.Log("Coll with SLope");
+                Destroy(backCollider);
+                Destroy(groundCollider);
+                //this.transform.position += runningSlope * Time.deltaTime;
+
+                if (!passedTop)
+                {
+                    this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[1], 1 * Time.deltaTime);
+                    if(new Vector2(this.transform.position.x, this.transform.position.y) == slopeObject.points[1])
+                    {
+                        passedTop = true;
+                    }
+                }
+                if(passedTop)
+                {
+                    this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[2], 1 * Time.deltaTime);
+                    if (new Vector2(this.transform.position.x, this.transform.position.y) == slopeObject.points[2])
+                    {
+                        objectFactory.createbloodParticle(transform.position);
+                        Destroy(gameObject);
+                    }
+                }
+
+
                 rotation = new Vector3(0, 0, 45);
                 break;
             case manState.AtEndPoint:
@@ -148,6 +180,12 @@ public class scr_littleMan : MonoBehaviour {
              
 	}
 
+
+    void OnDestroy()
+    {
+        
+    }
+
     void OnCollisionEnter2D(Collision2D otherObject)
     {
         
@@ -156,13 +194,19 @@ public class scr_littleMan : MonoBehaviour {
             GetComponent<Rigidbody2D>().isKinematic = true;
             currentState = manState.Raising;
         }
-        if (otherObject.gameObject.name == "slope")
+    }
+
+    void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        if (otherObject.gameObject.name == "slope" || otherObject.gameObject.name == "slope 1")
         {
+           // Debug.Log(otherObject.gameObject.GetComponent<EdgeCollider2D>().points[1] + " " + manColour);
+            slopeObject = otherObject.gameObject.GetComponent<EdgeCollider2D>();
             currentState = manState.ColWithSlope;
         }
     }
 
-    void setManProperties(Sprite s, float d /*, RuntimeAnimatorController a*/)
+        void setManProperties(Sprite s, float d /*, RuntimeAnimatorController a*/)
     {
 
         this.GetComponent<SpriteRenderer>().sprite = s;
@@ -197,10 +241,10 @@ public class scr_littleMan : MonoBehaviour {
 
     }
 
-    public void setIsKinematicFalse()
-    {
-        manRigidbody2D.isKinematic = false;
-    }
+    //public void setIsKinematicFalse()
+    //{
+    //    manRigidbody2D.isKinematic = false;
+    //}
 
     public void allowFallingTrue()
     {

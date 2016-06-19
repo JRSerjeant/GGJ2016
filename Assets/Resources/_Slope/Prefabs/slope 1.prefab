@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 476310}
   - 50: {fileID: 5025552}
-  - 68: {fileID: 6803564}
+  - 68: {fileID: 6893556}
   m_Layer: 0
-  m_Name: slope
-  m_TagString: slope
+  m_Name: slope 1
+  m_TagString: slope1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +46,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &6803564
+--- !u!68 &6893556
 EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -59,9 +59,9 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -1.70119, y: -1.4539878}
-  - {x: -0.3575709, y: 0.8928496}
-  - {x: 0.005091548, y: 0.99839246}
+  - {x: 1.6192751, y: -1.457536}
+  - {x: 0.30145732, y: 0.8735109}
+  - {x: -0.00646922, y: 1.0219167}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -72,6 +72,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: slope1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
