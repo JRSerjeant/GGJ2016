@@ -53,8 +53,11 @@ public class scr_ground : MonoBehaviour {
         Destroy(this.gameObject);
         foreach (var item in collidingManList)
         {
-            objectFactory.createbloodParticle(item.gameObject.transform.position);
-            Destroy(item.gameObject);
+            if (item.gameObject != null)
+            {
+                objectFactory.createbloodParticle(item.gameObject.transform.position);
+                Destroy(item.gameObject);
+            }
         }
     }
 }
