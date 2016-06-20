@@ -16,7 +16,13 @@ public class scr_littleMan : MonoBehaviour {
     public Vector3 falling;
     float gameHeight;
     //float directionValue;
+
     public Vector3 rotation;
+    private Vector3 myRotation;
+    private Vector3 blueClimbRotation;
+    private Vector3 redClimbRotation;
+
+
     public bool allowFalling;
     public bool isGrounded;
     public int colTrggerCount;
@@ -42,6 +48,8 @@ public class scr_littleMan : MonoBehaviour {
     void Awake() {
         passedTop = false;
         rotation = new Vector3(0, 0, 0);
+        blueClimbRotation = new Vector3(0, 0, -45);
+        redClimbRotation = new Vector3(0, 0, 45);
         isGrounded = true;
         allowFalling = true;
         colTrggerCount = 0;
@@ -84,11 +92,11 @@ public class scr_littleMan : MonoBehaviour {
         switch (manColour)
         {
             case Configuration.playerColourEnum.Red:
-                setManProperties(BlueSprite, blueDirectionValue);
+                setManProperties(BlueSprite, blueDirectionValue, blueClimbRotation);
                 GetComponent<SpriteRenderer>().flipX = true;
                 break;
             case Configuration.playerColourEnum.Blue:
-                setManProperties(RedSprite, redDirectionValue);
+                setManProperties(RedSprite, redDirectionValue, redClimbRotation);
                 break;
             default:
                 break;
@@ -164,7 +172,7 @@ public class scr_littleMan : MonoBehaviour {
                 }
 
 
-                rotation = new Vector3(0, 0, 45);
+                rotation = myRotation;
                 break;
             case manState.AtEndPoint:
                 break;
@@ -206,11 +214,12 @@ public class scr_littleMan : MonoBehaviour {
         }
     }
 
-        void setManProperties(Sprite s, float d /*, RuntimeAnimatorController a*/)
+        void setManProperties(Sprite s, float d , Vector3 r)
     {
 
         this.GetComponent<SpriteRenderer>().sprite = s;
         running.x = d;
+        myRotation = r;
     }
 
     void UpdateRotation(Vector3 rot)

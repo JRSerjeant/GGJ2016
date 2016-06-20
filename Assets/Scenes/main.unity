@@ -134,10 +134,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 492390, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.57290596
@@ -169,38 +165,6 @@ Prefab:
     - target: {fileID: 492390, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
       propertyPath: m_RootOrder
       value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[0].x
-      value: -10.172631
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[0].y
-      value: -2.15308
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[1].x
-      value: -10.173623
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[1].y
-      value: 5.0472803
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[2].x
-      value: 9.027065
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[2].y
-      value: 5.0476446
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[3].x
-      value: 9.024598
-      objectReference: {fileID: 0}
-    - target: {fileID: 6842092, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
-      propertyPath: m_Points.Array.data[3].y
-      value: -2.1527014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1ad5746d0716ce143b88d5e1fcb500b0, type: 2}
