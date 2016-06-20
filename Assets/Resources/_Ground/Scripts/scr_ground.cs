@@ -9,8 +9,10 @@ public class scr_ground : MonoBehaviour {
     GameObject textHP;
     public List<GameObject> collidingManList;
 
-    private int groundHP;
+    public enum groundState { Falling, Static };
+    public groundState currentState;
 
+    private int groundHP;
     public int GroundHP
     {
         get { return groundHP; }
@@ -35,7 +37,16 @@ public class scr_ground : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        switch (currentState)
+        {
+            case groundState.Falling:
+                this.transform.position += Vector3.down * Time.deltaTime;
+                break;
+            case groundState.Static:
+                break;
+            default:
+                break;
+        }
         //displayText();
     }
     public void displayText()

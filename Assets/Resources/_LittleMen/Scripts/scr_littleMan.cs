@@ -41,8 +41,6 @@ public class scr_littleMan : MonoBehaviour {
     GameObject backCollider;
     GameObject groundCollider;
     Renderer manRenderer;
-    Rigidbody2D manRigidbody2D;
-
 
     // Use this for initialization
     void Awake() {
@@ -62,7 +60,6 @@ public class scr_littleMan : MonoBehaviour {
         falling = new Vector3(0.0f, -Configuration.menClimbVelocity);
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
-        manRigidbody2D = GetComponent<Rigidbody2D>();
         //directionValue = 10.0f;
 
         //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;

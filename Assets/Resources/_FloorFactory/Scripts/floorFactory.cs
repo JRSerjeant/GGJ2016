@@ -45,7 +45,7 @@ public class floorFactory : MonoBehaviour {
                 SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
                 scr_ground scr = go.GetComponent<scr_ground>();
                 t.position = new Vector3(-9.463f + (x * sr.bounds.size.x), -1.603f - ( y * sr.bounds.size.y));
-                //go.GetComponent<Rigidbody2D>().isKinematic = true;
+                scr.currentState = scr_ground.groundState.Static;
                 gridOfGameObjects[x][y] = go;
 
                 switch (y)

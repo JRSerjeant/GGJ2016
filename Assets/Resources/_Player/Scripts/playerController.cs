@@ -165,7 +165,12 @@ public class playerController : MonoBehaviour {
         {
             if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
             {
-                blockController.generateBlock(this.transform.position);
+                GameObject go = Instantiate(objectFactory.pfb_ground) as GameObject;
+                Transform t = go.GetComponent<Transform>();
+                t.position = transform.position;
+                scr_ground scr = go.GetComponent<scr_ground>();
+                scr.currentState = scr_ground.groundState.Falling;
+                //blockController.generateBlock(this.transform.position);
             }
         }
     }
