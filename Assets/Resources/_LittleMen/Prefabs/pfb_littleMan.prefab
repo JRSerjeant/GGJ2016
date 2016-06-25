@@ -12,7 +12,7 @@ GameObject:
   - 95: {fileID: 9575134}
   - 58: {fileID: 5890016}
   - 114: {fileID: 11430490}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pfb_littleMan
   m_TagString: LittleMen
   m_Icon: {fileID: 0}
@@ -210,6 +210,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_CollisionDetection
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

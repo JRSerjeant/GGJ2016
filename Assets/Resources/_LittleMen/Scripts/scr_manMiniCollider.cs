@@ -11,11 +11,12 @@ public class scr_manMiniCollider : MonoBehaviour
     public bool isColliding;
     public bool hasStoppedColliding;
     public int colCount;
+    public float waitforSec;
 
     // Use this for initialization
     void Start()
     {
-
+        waitforSec = 0.5f;
     }
 
     // Update is called once per frame
@@ -41,7 +42,15 @@ public class scr_manMiniCollider : MonoBehaviour
            
             if (otherObject.gameObject.tag == "ground")
             {
-                otherObject.gameObject.GetComponent<scr_ground>().collidingManList.Add(obj_myLittleMan);
+                scr_ground groundScript = otherObject.gameObject.GetComponent<scr_ground>();
+                if(groundScript.currentState == scr_ground.groundState.Falling)
+                {
+                    Destroy(obj_myLittleMan);
+                    Destroy(gameObject);
+                }
+
+                groundScript.collidingManList.Add(obj_myLittleMan);
+
                 isColliding = true;
                 colCount++;
                 if (otherObject.transform.position.y > obj_myLittleMan.transform.position.y)
@@ -73,7 +82,7 @@ public class scr_manMiniCollider : MonoBehaviour
     IEnumerator setIsKinematic()
     {
         scr_myLittleMan.allowFallingFalse();
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(waitforSec);
         //scr_myLittleMan.setIsKinematicFalse();
         hasStoppedColliding = false;
         scr_myLittleMan.allowFallingTrue();

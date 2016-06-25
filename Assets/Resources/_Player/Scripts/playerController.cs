@@ -24,6 +24,8 @@ public class playerController : MonoBehaviour {
     private float myCannonRotationSpeed;
 
     private int speed;
+    private float lastTimeGroundCreated;
+
        
     // Use this for initialization
     void Start () {
@@ -31,6 +33,7 @@ public class playerController : MonoBehaviour {
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
         blockController = GetComponent<blockController>();
         myCog = objectFactory.createCog();
+        lastTimeGroundCreated = Time.fixedTime;
 
         switch (playerColour)
         {
@@ -165,12 +168,23 @@ public class playerController : MonoBehaviour {
         {
             if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
             {
-                GameObject go = Instantiate(objectFactory.pfb_ground) as GameObject;
-                Transform t = go.GetComponent<Transform>();
-                t.position = transform.position;
-                scr_ground scr = go.GetComponent<scr_ground>();
-                scr.currentState = scr_ground.groundState.Falling;
-                //blockController.generateBlock(this.transform.position);
+
+                if (lastTimeGroundCreated + 0.25f <= Time.fixedTime)
+                {
+                    lastTimeGroundCreated = Time.fixedTime;
+                    GameObject go = Instantiate(objectFactory.pfb_ground) as GameObject;
+
+                    Transform t = go.GetComponent<Transform>();
+                    t.position = transform.position;
+
+
+                    BoxCollider2D bc2d = go.GetComponent<BoxCollider2D>();
+                    bc2d.isTrigger = true;
+
+                    scr_ground scr = go.GetComponent<scr_ground>();
+                    scr.currentState = scr_ground.groundState.Falling;
+                    //blockController.generateBlock(this.transform.position);
+                }
             }
         }
     }

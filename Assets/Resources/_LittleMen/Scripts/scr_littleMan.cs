@@ -205,13 +205,22 @@ public class scr_littleMan : MonoBehaviour {
     {
         if (otherObject.gameObject.name == "slope" || otherObject.gameObject.name == "slope 1")
         {
-           // Debug.Log(otherObject.gameObject.GetComponent<EdgeCollider2D>().points[1] + " " + manColour);
+            // Debug.Log(otherObject.gameObject.GetComponent<EdgeCollider2D>().points[1] + " " + manColour);
             slopeObject = otherObject.gameObject.GetComponent<EdgeCollider2D>();
             currentState = manState.ColWithSlope;
         }
+        if (otherObject.gameObject.tag == "ground")
+        {
+            scr_ground groundScript = otherObject.gameObject.GetComponent<scr_ground>();
+            if (groundScript.currentState == scr_ground.groundState.Falling)
+            {
+                Destroy(backCollider);
+                Destroy(gameObject);
+            }
+        }
     }
 
-        void setManProperties(Sprite s, float d , Vector3 r)
+    void setManProperties(Sprite s, float d , Vector3 r)
     {
 
         this.GetComponent<SpriteRenderer>().sprite = s;

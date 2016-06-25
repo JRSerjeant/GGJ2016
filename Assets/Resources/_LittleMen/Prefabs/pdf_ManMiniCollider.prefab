@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 467628}
   - 61: {fileID: 6123200}
   - 114: {fileID: 11465206}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pdf_ManMiniCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,6 +84,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: isColliding
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
