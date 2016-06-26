@@ -16,6 +16,7 @@ TagManager:
   - ground
   - slope
   - slope1
+  - scoreText
   layers:
   - Default
   - TransparentFX

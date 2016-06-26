@@ -13,7 +13,7 @@ public class CreateNewAssetFolder : MonoBehaviour
     {
         String path;
 
-        String resourcesDir = Application.dataPath + "/Resources";
+        String resourcesDir = Application.dataPath + "/xResources";
         resourcesDir = resourcesDir.Replace("/", "\\");
         String[] resourcesDirFolfers = Directory.GetDirectories(resourcesDir);
 

@@ -22,6 +22,7 @@ public class scr_littleMan : MonoBehaviour {
     private Vector3 blueClimbRotation;
     private Vector3 redClimbRotation;
 
+    ScoreManager scoreText;
 
     public bool allowFalling;
     public bool isGrounded;
@@ -44,6 +45,7 @@ public class scr_littleMan : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
+        scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent<ScoreManager>();
         passedTop = false;
         rotation = new Vector3(0, 0, 0);
         blueClimbRotation = new Vector3(0, 0, -45);
@@ -188,7 +190,17 @@ public class scr_littleMan : MonoBehaviour {
 
     void OnDestroy()
     {
-        
+        switch (manColour)
+        {
+            case Configuration.playerColourEnum.Red:
+                scoreText.RedScore ++;
+                break;
+            case Configuration.playerColourEnum.Blue:
+                scoreText.BlueScore ++;
+                break;
+            default:
+                break;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D otherObject)
