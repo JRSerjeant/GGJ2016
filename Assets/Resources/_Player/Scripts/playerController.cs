@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour {
     public scr_SnakeCanon SnakeCanon_Script;
 
     public GameObject myCog;
+    cogAniControl myCogScript;
     public GameObject myCannon;
     private blockController blockController;
 
@@ -32,17 +33,20 @@ public class playerController : MonoBehaviour {
         speed = Configuration.PlayerSpeed;
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
         blockController = GetComponent<blockController>();
+
         myCog = objectFactory.createCog();
+        myCogScript = myCog.GetComponent<cogAniControl>();
+
         lastTimeGroundCreated = Time.fixedTime;
 
         switch (playerColour)
         {
             case Configuration.playerColourEnum.Red:
-                myCog.transform.position = new Vector3(myCannon.transform.position.x + 0.088f, myCannon.transform.position.y + 0.03399998f);
+                myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
                 myCog.GetComponent<SpriteRenderer>().flipX = true;
                 break;
             case Configuration.playerColourEnum.Blue:
-                myCog.transform.position = new Vector3(myCannon.transform.position.x - 0.066f, myCannon.transform.position.y + 0.013f);
+                myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
                 break;
             default:
                 break;
@@ -50,8 +54,11 @@ public class playerController : MonoBehaviour {
 
     }
     void Update() {
+
+        // Up [KEY UP] Fires a ball
         if (Input.GetKeyUp(moveUpKey))
         {
+            //Create a ball 
             switch(playerColour)
                 {
                     case Configuration.playerColourEnum.Red:
@@ -65,105 +72,63 @@ public class playerController : MonoBehaviour {
             }
         }
 
-        switch (playerColour)
-        {
-            case Configuration.playerColourEnum.Red:
-                myCog.transform.position = new Vector3(myCannon.transform.position.x + 0.088f, myCannon.transform.position.y + 0.03399998f);
-                break;
-            case Configuration.playerColourEnum.Blue:
-                myCog.transform.position = new Vector3(myCannon.transform.position.x - 0.066f, myCannon.transform.position.y + 0.013f);
-                break;
-            default:
-                break;
-        }
-    }
-	void FixedUpdate () {
-    if (Input.GetKey(moveLeftKey))
-        {
-            this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
-        }
-        
-        if (Input.GetKey(moveRightKey))
-        {
-            this.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
-        }
+        // UP [KEY PRESSED]
         if (Input.GetKey(moveUpKey))
         {
-            myCannon.transform.position += new Vector3(0, speed, 0) * Time.deltaTime;
-            if (myCannon.transform.position.y > 1.6f)
-            {
-                myCannon.transform.position = new Vector2(myCannon.transform.position.x, 1.59f);
-                
-            }
-            if(myCannon.transform.position != new Vector3(myCannon.transform.position.x, 1.59f))
-            {
-                switch (playerColour)
-                {
-                    case Configuration.playerColourEnum.Red:
-                        myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
-                        break;
-                    case Configuration.playerColourEnum.Blue:
-                        myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
-                        break;
-                    default:
-                        break;
-                }                
-                myCog.GetComponent<cogAniControl>().direction = "up";
-            }
-            
-
-        }
-        else if (myCannon.transform.position.y > -1.0f)
-            //myCog.transform.position.y > -1.0f)
-        {
-            myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-           
-            myCog.GetComponent<cogAniControl>().direction = "down";
-
             switch (playerColour)
             {
                 case Configuration.playerColourEnum.Red:
-                    myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                    myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+                    myCogScript.direction = "up";
                     break;
                 case Configuration.playerColourEnum.Blue:
-                    myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+                    myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                    myCogScript.direction = "up";
                     break;
                 default:
                     break;
             }
-
         }
-
-        if (myCannon.transform.position.y <= -1.0f)
+        else if (myCannon.transform.rotation.z != 0.0f)
         {
-            myCannon.transform.rotation = new Quaternion(0, 0, 0, 0);
-            myCog.GetComponent<cogAniControl>().direction = "";
+            switch (playerColour)
+            {
+                case Configuration.playerColourEnum.Red:
+                    if (myCannon.transform.rotation.z < 0.0f)
+                    {
+                        myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                        myCogScript.direction = "down";
+                    }
+                    break;
+                case Configuration.playerColourEnum.Blue:
+                    if (myCannon.transform.rotation.z > 0.0f)
+                    {
+                        myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+                        myCogScript.direction = "down";
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (myCannon.transform.rotation.z <= 0.0f)
+        {
+            myCogScript.direction = "idle";
         }
 
+            // LEFT [KEY PRESSED]
+            if (Input.GetKey(moveLeftKey))
+            {
+                this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+            }
 
+        // RIGHT [KEY PRESSED]
+        if (Input.GetKey(moveRightKey))
+        {
+            this.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+        }
 
-
-        //if (Input.GetKey(moveDownKey))
-        //{
-        //    myCannon.transform.position += new Vector3(0, -speed, 0) * Time.deltaTime;
-        //    if (myCannon.transform.position.y < -1.05f)
-        //    {
-        //        myCannon.transform.position = new Vector2(myCannon.transform.position.x, -1.04f);
-        //    }
-        //    myCog.GetComponent<cogAniControl>().direction = "down";
-
-        //}
-        //if (!Input.GetKey(moveDownKey) && !Input.GetKey(moveUpKey))
-        //{
-        //    myCog.GetComponent<cogAniControl>().direction = "";
-        //}
-
-
-        //    if (Input.GetKeyDown(fireCannon))
-        //{
-        //    objectFactory.createBall(myCannon.transform.position, playerColour.ToString());
-        //}
-
+        // DOWN [KEY DOWN]
         if (Input.GetKeyDown(dropBlock))
         {
             if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
@@ -188,6 +153,4 @@ public class playerController : MonoBehaviour {
             }
         }
     }
-
-
 }
