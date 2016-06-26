@@ -435,7 +435,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 457094, guid: 0e1a79bf402a54d408541f9dc957dcfc, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 11454508, guid: 0e1a79bf402a54d408541f9dc957dcfc, type: 2}
       propertyPath: m_Enabled
@@ -623,21 +623,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400404, guid: c3f05344a8f02f14381ff25ce7046564, type: 2}
   m_PrefabInternal: {fileID: 1151228380}
---- !u!1 &1054194634 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 141354, guid: d6726fa05c7011349a4954b5355ec7e5, type: 2}
-  m_PrefabInternal: {fileID: 1840289001}
---- !u!114 &1054194636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1054194634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ee9d17e4f9c43e469966864af2a4ac3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1059995689
 Prefab:
   m_ObjectHideFlags: 0
