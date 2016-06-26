@@ -166,6 +166,17 @@ public class scr_littleMan : MonoBehaviour {
                     if (new Vector2(this.transform.position.x, this.transform.position.y) == slopeObject.points[2])
                     {
                         objectFactory.createbloodParticle(transform.position);
+                        switch (manColour)
+                        {
+                            case Configuration.playerColourEnum.Red:
+                                scoreText.RedScore++;
+                                break;
+                            case Configuration.playerColourEnum.Blue:
+                                scoreText.BlueScore++;
+                                break;
+                            default:
+                                break;
+                        }
                         Destroy(gameObject);
                     }
                 }
@@ -190,17 +201,8 @@ public class scr_littleMan : MonoBehaviour {
 
     void OnDestroy()
     {
-        switch (manColour)
-        {
-            case Configuration.playerColourEnum.Red:
-                scoreText.RedScore ++;
-                break;
-            case Configuration.playerColourEnum.Blue:
-                scoreText.BlueScore ++;
-                break;
-            default:
-                break;
-        }
+        Destroy(backCollider);
+        Destroy(groundCollider);
     }
 
     void OnCollisionEnter2D(Collision2D otherObject)
@@ -226,7 +228,6 @@ public class scr_littleMan : MonoBehaviour {
             scr_ground groundScript = otherObject.gameObject.GetComponent<scr_ground>();
             if (groundScript.currentState == scr_ground.groundState.Falling)
             {
-                Destroy(backCollider);
                 Destroy(gameObject);
             }
         }

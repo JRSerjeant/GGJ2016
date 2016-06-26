@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Assets.Scripts;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -151,6 +152,10 @@ public class playerController : MonoBehaviour {
                     //blockController.generateBlock(this.transform.position);
                 }
             }
+        }
+        if(Input.GetKey(KeyCode.Space))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 }

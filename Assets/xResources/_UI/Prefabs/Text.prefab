@@ -31,6 +31,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RedScore: 0
   BlueScore: 0
+  gameover: 0
 --- !u!114 &11447398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61,7 +62,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: '0 : 0'
 --- !u!222 &22248204
@@ -97,6 +98,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: scoreText
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BlueScore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: gameover
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
