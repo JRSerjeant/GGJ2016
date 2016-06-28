@@ -118,10 +118,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRightKey: 100
+  joy_moveRightKeyButton: 0
   moveLeftKey: 97
+  joy_moveLeftKeyButton: 0
   moveUpKey: 119
   moveDownKey: 115
+  joy_fireCannonButton: 350
   fireCannon: 113
+  joy_dropBlockButton: 351
   dropBlock: 101
   playerColour: 1
   SnakeCanon_Script: {fileID: 0}

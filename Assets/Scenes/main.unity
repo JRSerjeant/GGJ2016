@@ -691,14 +691,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
-      propertyPath: myCannon
-      value: 
-      objectReference: {fileID: 311296814}
     - target: {fileID: 9519112, guid: 8246917c94ccc504a9643202999f54af, type: 2}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: c28497acd822445a8a64018615786d75, type: 2}
+    - target: {fileID: 11470074, guid: 8246917c94ccc504a9643202999f54af, type: 2}
+      propertyPath: myCannon
+      value: 
+      objectReference: {fileID: 311296814}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8246917c94ccc504a9643202999f54af, type: 2}
   m_IsPrefabParent: 0
@@ -799,14 +799,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9550750, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 032e9fd6e42c6436cabc0881fdaf7d51, type: 2}
     - target: {fileID: 11491950, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
       propertyPath: myCannon
       value: 
       objectReference: {fileID: 940499481}
+    - target: {fileID: 9550750, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 032e9fd6e42c6436cabc0881fdaf7d51, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b65f1d715c393d14480afc4ba63f90f2, type: 2}
   m_IsPrefabParent: 0

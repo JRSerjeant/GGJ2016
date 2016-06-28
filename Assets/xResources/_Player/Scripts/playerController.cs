@@ -6,11 +6,18 @@ using System.Collections;
 
 public class playerController : MonoBehaviour {
 
+    
     public KeyCode moveRightKey;
     public KeyCode moveLeftKey;
+    private float axisLeftRight;
+
     public KeyCode moveUpKey;
     public KeyCode moveDownKey;
+
+    public KeyCode joy_fireCannonButton;
     public KeyCode fireCannon;
+
+    public KeyCode joy_dropBlockButton;
     public KeyCode dropBlock;
 
     //public enum Configuration.playerColourEnum {Red,Blue};
@@ -55,9 +62,21 @@ public class playerController : MonoBehaviour {
 
     }
     void Update() {
+        switch (playerColour)
+        {
+            case Configuration.playerColourEnum.Red:
+                axisLeftRight = Input.GetAxis("RedHorizontal");
+                break;
+            case Configuration.playerColourEnum.Blue:
+                axisLeftRight = Input.GetAxis("BlueHorizontal");
+                break;
+            default:
+                break;
+        }
+        
 
         // Up [KEY UP] Fires a ball
-        if (Input.GetKeyUp(moveUpKey))
+        if (Input.GetKeyUp(moveUpKey) || Input.GetKeyUp(joy_fireCannonButton))
         {
             //Create a ball 
             switch(playerColour)
@@ -74,7 +93,7 @@ public class playerController : MonoBehaviour {
         }
 
         // UP [KEY PRESSED]
-        if (Input.GetKey(moveUpKey))
+        if (Input.GetKey(moveUpKey) || Input.GetKey(joy_fireCannonButton))
         {
             switch (playerColour)
             {
@@ -112,25 +131,42 @@ public class playerController : MonoBehaviour {
                     break;
             }
         }
-        if (myCannon.transform.rotation.z <= 0.0f)
+
+        switch (playerColour)
         {
-            myCogScript.direction = "idle";
+            case Configuration.playerColourEnum.Red:
+                if (myCannon.transform.rotation.z >= 0.0f)
+                {
+                    myCogScript.direction = "idle";
+                }
+                break;
+            case Configuration.playerColourEnum.Blue:
+                 if (myCannon.transform.rotation.z <= 0.0f)
+                        {
+                            myCogScript.direction = "idle";
+                        }
+                break;
+            default:
+                break;
         }
 
-            // LEFT [KEY PRESSED]
-            if (Input.GetKey(moveLeftKey))
-            {
-                this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
-            }
+
+       
+
+        // LEFT [KEY PRESSED]
+        if (Input.GetKey(moveLeftKey) || axisLeftRight == -1)
+        {
+            this.transform.position += new Vector3(-speed, 0, 0) * Time.deltaTime;
+        }
 
         // RIGHT [KEY PRESSED]
-        if (Input.GetKey(moveRightKey))
+        if (Input.GetKey(moveRightKey) || axisLeftRight == 1)
         {
             this.transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
         }
 
         // DOWN [KEY DOWN]
-        if (Input.GetKeyDown(dropBlock))
+        if (Input.GetKeyDown(dropBlock) || Input.GetKeyDown(joy_dropBlockButton))
         {
             if (!(this.transform.position.x > -0.70f && this.transform.position.x < 0.70f))
             {
@@ -153,7 +189,7 @@ public class playerController : MonoBehaviour {
                 }
             }
         }
-        if(Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.JoystickButton7))
         {
             SceneManager.LoadScene(0);
         }

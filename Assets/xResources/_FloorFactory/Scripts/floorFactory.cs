@@ -20,11 +20,11 @@ public class floorFactory : MonoBehaviour {
     public Sprite L;
     #endregion
 
-    int a_hp = 1;
-    int b_hp = 2;
-    int c_hp = 3;
-    int r_hp = 4;
-    int l_hp = 9;
+    int a_hp = 2;
+    int b_hp = 4;
+    int c_hp = 6;
+    int r_hp = 8;
+    int l_hp = 99;
 
 
     GameObject[][] gridOfGameObjects;
