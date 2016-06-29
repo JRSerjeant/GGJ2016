@@ -14,6 +14,7 @@ public class createBall : MonoBehaviour {
     private Quaternion rotation;
     private int ballForce; //Reference to ball force.
     private int ballLife; 
+    private objectFactory scr_ObjectFactory;
 
     //This needs to be called when creating a new ball to get its direction 
     public void Initialize(string Direction)
@@ -23,6 +24,7 @@ public class createBall : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
         ballRigidbody2D = GetComponent<Rigidbody2D>(); //get the reference to Rigidbody2D of the ball.prefab
         ballForce = Configuration.ballForce; //Get the ball fore from the 
         ballLife = Configuration.BallLife;
@@ -76,7 +78,7 @@ public class createBall : MonoBehaviour {
     {
         if (otherObject.gameObject.tag == "LittleMen")
         {
-            objectFactory.createbloodParticle(transform.position);
+            scr_ObjectFactory.createbloodParticle(transform.position);
             Destroy(otherObject.gameObject);
         }
     }

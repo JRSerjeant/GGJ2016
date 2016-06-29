@@ -7,12 +7,13 @@ public class blockController : MonoBehaviour
 {
     private int blockLimit;
     private List<GameObject> blocks;
-
+    private objectFactory scr_ObjectFactory;
     // Use this for initialization
     void Start()
     {
         blockLimit = Configuration.BlockLimit;
         blocks = new List<GameObject>();
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
     }
 
     // Update is called once per frame
@@ -29,8 +30,7 @@ public class blockController : MonoBehaviour
     {
         if (blocks.Count + 1 < blockLimit || blocks == null)
         {
-            blocks.Add(objectFactory.createBlock(pos));
-
+            blocks.Add(scr_ObjectFactory.createBlock(pos));
         }
 
     }    

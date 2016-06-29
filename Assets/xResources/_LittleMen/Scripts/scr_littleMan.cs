@@ -3,6 +3,7 @@ using Assets.Scripts;
 using System.Collections;
 
 public class scr_littleMan : MonoBehaviour {
+    private objectFactory scr_ObjectFactory;
 
     float redDirectionValue;
     float blueDirectionValue;
@@ -45,6 +46,8 @@ public class scr_littleMan : MonoBehaviour {
 
     // Use this for initialization
     void Awake() {
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
+
         scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent<ScoreManager>();
         passedTop = false;
         rotation = new Vector3(0, 0, 0);
@@ -67,21 +70,21 @@ public class scr_littleMan : MonoBehaviour {
         //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
         //frontCollider.GetComponent<BoxCollider2D>().isTrigger = true;
         //frontCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
-
-        groundCollider = Instantiate(objectFactory.pdf_ManGroundCollider) as GameObject;
+        groundCollider = Instantiate(scr_ObjectFactory.pdf_ManGroundCollider) as GameObject;
         groundCollider.GetComponent<scr_manGroundCollider>().Initialize(this.gameObject);
 
 
-        backCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
-        //backCollider.GetComponent<BoxCollider2D>().isTrigger = true;
+        backCollider = Instantiate(scr_ObjectFactory.pdf_ManMiniCollider) as GameObject;
         backCollider.GetComponent<scr_manMiniCollider>().Initialize(this.gameObject);
+
 
         manRenderer = GetComponent<Renderer>();
     }
 
     void Start()
     {
-
+        
+        
     }
 
     public void Initialize(Configuration.playerColourEnum ManColour)
@@ -165,7 +168,7 @@ public class scr_littleMan : MonoBehaviour {
                     this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[2], 1 * Time.deltaTime);
                     if (new Vector2(this.transform.position.x, this.transform.position.y) == slopeObject.points[2])
                     {
-                        objectFactory.createbloodParticle(transform.position);
+                        scr_ObjectFactory.createbloodParticle(transform.position);
                         switch (manColour)
                         {
                             case Configuration.playerColourEnum.Red:

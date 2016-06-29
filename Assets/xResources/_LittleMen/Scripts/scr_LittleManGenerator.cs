@@ -4,6 +4,7 @@ using System.Collections;
 
 public class scr_LittleManGenerator : MonoBehaviour
 {
+    private objectFactory scr_ObjectFactory;
 
     float lastFired;
 
@@ -40,6 +41,8 @@ public class scr_LittleManGenerator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
+
         lastFired = 0.0f;
         LastWasBlue = false;
         LastWasRed = false;
@@ -54,8 +57,8 @@ public class scr_LittleManGenerator : MonoBehaviour
     {
             if ((Time.time > lastFired + 1 / Configuration.PeoplePerSecond))
             {
-                objectFactory.createlittleMan(redManStartPosition, Configuration.playerColourEnum.Red);
-                objectFactory.createlittleMan(blueManStartPosition, Configuration.playerColourEnum.Blue);
+                scr_ObjectFactory.createlittleMan(redManStartPosition, Configuration.playerColourEnum.Red);
+                scr_ObjectFactory.createlittleMan(blueManStartPosition, Configuration.playerColourEnum.Blue);
                 lastFired = Time.time;
             }
     }

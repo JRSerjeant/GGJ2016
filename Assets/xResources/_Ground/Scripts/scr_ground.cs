@@ -14,12 +14,11 @@ public class scr_ground : MonoBehaviour {
     public GameObject RayObject;
     public float RayDistance;
 
-    Collider2D collider;
-
     public enum groundState { Falling, Static };
     public groundState currentState;
+    private objectFactory scr_ObjectFactory;
 
-    
+
 
     private int groundHP;
     public int GroundHP
@@ -41,8 +40,8 @@ public class scr_ground : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
         collidingManList = new List<GameObject>();
-        collider = GetComponent<Collider2D>();
     }
 	
 	// Update is called once per frame
@@ -53,12 +52,12 @@ public class scr_ground : MonoBehaviour {
             case groundState.Falling:
                 gameObject.layer = 2;
                 this.transform.position += Vector3.down * Time.deltaTime;
-                RayStartLocation = new Vector2(transform.position.x, transform.position.y - (collider.bounds.size.y / 2));
-                collider.enabled = false;
+                RayStartLocation = new Vector2(transform.position.x, transform.position.y - (GetComponent<BoxCollider2D>().bounds.size.y / 2));
+                GetComponent<BoxCollider2D>().enabled = false;
                 hit = Physics2D.Raycast(RayStartLocation, Vector2.down);
                 RayObject = hit.transform.gameObject;
                 RayDistance = hit.distance;
-                collider.enabled = true;
+                GetComponent<BoxCollider2D>().enabled = true;
                 this.transform.position = new Vector3 (RayObject.transform.position.x, this.transform.position.y);
 
                 break;
@@ -81,10 +80,10 @@ public class scr_ground : MonoBehaviour {
             {
                 gameObject.layer = 0;
 
-                this.transform.position = new Vector3(RayObject.transform.position.x, RayObject.transform.position.y + collider.bounds.size.y);
+                this.transform.position = new Vector3(RayObject.transform.position.x, RayObject.transform.position.y + GetComponent<BoxCollider2D>().bounds.size.y);
 
                 currentState = groundState.Static;
-                collider.isTrigger = false;
+                GetComponent<BoxCollider2D>().isTrigger = false;
             }
         }
     }
@@ -93,7 +92,7 @@ public class scr_ground : MonoBehaviour {
     {
         if( textHP == null)
         {
-            textHP = Instantiate(objectFactory.pfb_DisplayTextNumber, this.transform.position, new Quaternion()) as GameObject;
+            textHP = Instantiate(scr_ObjectFactory.pfb_DisplayTextNumber, this.transform.position, new Quaternion()) as GameObject;
         }
         tm = textHP.GetComponent<TextMesh>();
         tm.text = groundHP.ToString();
@@ -106,7 +105,7 @@ public class scr_ground : MonoBehaviour {
         {
             if (item.gameObject != null)
             {
-                objectFactory.createbloodParticle(item.gameObject.transform.position);
+                scr_ObjectFactory.createbloodParticle(item.gameObject.transform.position);
                 Destroy(item.gameObject);
             } 
         }

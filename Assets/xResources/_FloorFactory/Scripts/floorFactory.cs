@@ -26,11 +26,13 @@ public class floorFactory : MonoBehaviour {
     int r_hp = 8;
     int l_hp = 99;
 
+    private objectFactory scr_ObjectFactory;
 
     GameObject[][] gridOfGameObjects;
 
     // Use this for initialization
     void Start () {
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
         gridSize = new Vector2(64, 13);
         //startPosition = new Vector2(0,0);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
@@ -39,7 +41,7 @@ public class floorFactory : MonoBehaviour {
             gridOfGameObjects[x] = new GameObject[(int)gridSize.y];
             for (int y = 0; y < gridSize.y; y++)
             {
-                GameObject go = Instantiate(objectFactory.pfb_ground) as GameObject;
+                GameObject go = Instantiate(scr_ObjectFactory.pfb_ground) as GameObject;
                 Transform t = go.GetComponent<Transform>();
                 SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
                 scr_ground scr = go.GetComponent<scr_ground>();

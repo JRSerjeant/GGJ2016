@@ -28,21 +28,22 @@ public class playerController : MonoBehaviour {
     public GameObject myCog;
     cogAniControl myCogScript;
     public GameObject myCannon;
-    private blockController blockController;
 
     private float myCannonRotationSpeed;
 
     private int speed;
     private float lastTimeGroundCreated;
 
-       
+    private objectFactory scr_ObjectFactory;
+
     // Use this for initialization
     void Start () {
+        scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
+
         speed = Configuration.PlayerSpeed;
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
-        blockController = GetComponent<blockController>();
 
-        myCog = objectFactory.createCog();
+        myCog = scr_ObjectFactory.createCog();
         myCogScript = myCog.GetComponent<cogAniControl>();
 
         lastTimeGroundCreated = Time.fixedTime;
@@ -82,10 +83,10 @@ public class playerController : MonoBehaviour {
             switch(playerColour)
                 {
                     case Configuration.playerColourEnum.Red:
-                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation);
+                        scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation);
                         break;
                     case Configuration.playerColourEnum.Blue:
-                        objectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                    scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
                     break;
                     default:
                     break;
@@ -174,11 +175,11 @@ public class playerController : MonoBehaviour {
                 if (lastTimeGroundCreated + 0.25f <= Time.fixedTime)
                 {
                     lastTimeGroundCreated = Time.fixedTime;
-                    GameObject go = Instantiate(objectFactory.pfb_ground) as GameObject;
+                    GameObject go = Instantiate(scr_ObjectFactory.pfb_ground) as GameObject;
 
                     Transform t = go.GetComponent<Transform>();
                     t.position = transform.position;
-
+                     
 
                     BoxCollider2D bc2d = go.GetComponent<BoxCollider2D>();
                     bc2d.isTrigger = true;

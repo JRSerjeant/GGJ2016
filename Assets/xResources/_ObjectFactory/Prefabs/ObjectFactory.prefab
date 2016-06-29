@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11441360}
   m_Layer: 0
   m_Name: ObjectFactory
-  m_TagString: Untagged
+  m_TagString: ObjectFactory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.21535683, y: 0.25374278, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,6 +64,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff8f768e13e82c34ea31123deb15b731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pfb_Block: {fileID: 186572, guid: 024b852de77e227429116bcadc21f015, type: 2}
+  pfb_ground: {fileID: 165392, guid: 468bd066be2124b4c9df30170a691a98, type: 2}
+  pfb_littleMan: {fileID: 164050, guid: a70d23d583812e1478d572a8b3a0ebc2, type: 2}
+  pdf_ManMiniCollider: {fileID: 100226, guid: 29f2e69d6d4909e48a2e21b6d96049c9, type: 2}
+  pdf_ManGroundCollider: {fileID: 100226, guid: a3c6736e1d8e1bb4da6e6408744ece03,
+    type: 2}
+  pfb_Ball: {fileID: 163922, guid: 806e9e04b9a34aa418fdb9ca8cd4e0ec, type: 2}
+  pfb_Cog: {fileID: 137502, guid: 761dbb9e0f1490b4d8608b3fdba28152, type: 2}
+  pfb_bloodParticle: {fileID: 194192, guid: 603e61e84a889214d823977e7ce622e7, type: 2}
+  pfb_DisplayTextNumber: {fileID: 147264, guid: 55f4bb1f1fd64304fbf537db398a13d3,
+    type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -17,6 +17,7 @@ TagManager:
   - slope
   - slope1
   - scoreText
+  - ObjectFactory
   layers:
   - Default
   - TransparentFX

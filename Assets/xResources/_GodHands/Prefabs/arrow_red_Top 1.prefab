@@ -107,9 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRightKey: 108
-  joy_moveRightKeyButton: 0
   moveLeftKey: 106
-  joy_moveLeftKeyButton: 0
   moveUpKey: 105
   moveDownKey: 107
   joy_fireCannonButton: 370
