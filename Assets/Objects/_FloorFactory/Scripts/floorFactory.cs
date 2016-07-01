@@ -3,7 +3,7 @@ using System.Collections;
 
 public class floorFactory : MonoBehaviour {
     Vector2 gridSize;
-    //Vector2 startPosition;
+    public Vector2 startPosition;
     #region Sprite vars 
     public Sprite A1;
     public Sprite A2;
@@ -34,7 +34,7 @@ public class floorFactory : MonoBehaviour {
     void Start () {
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
         gridSize = new Vector2(64, 13);
-        //startPosition = new Vector2(0,0);
+        startPosition = new Vector2(-9.445f, -1.65f);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
         for (int x = 0; x < gridSize.x; x++)
         {
@@ -45,7 +45,7 @@ public class floorFactory : MonoBehaviour {
                 Transform t = go.GetComponent<Transform>();
                 SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
                 scr_ground scr = go.GetComponent<scr_ground>();
-                t.position = new Vector3(-9.463f + (x * sr.bounds.size.x), -1.603f - ( y * sr.bounds.size.y));
+                t.position = new Vector3(startPosition.x + (x * sr.bounds.size.x), startPosition.y - ( y * sr.bounds.size.y));
                 scr.currentState = scr_ground.groundState.Static;
                 gridOfGameObjects[x][y] = go;
 
