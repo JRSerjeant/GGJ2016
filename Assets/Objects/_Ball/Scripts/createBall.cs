@@ -15,6 +15,7 @@ public class createBall : MonoBehaviour {
     private int ballForce; //Reference to ball force.
     private int ballLife; 
     private objectFactory scr_ObjectFactory;
+    public GameObject ball_Explode;
 
     //This needs to be called when creating a new ball to get its direction 
     public void Initialize(string Direction)
@@ -86,6 +87,7 @@ public class createBall : MonoBehaviour {
         IEnumerator DestroyBall()
     {
         yield return new WaitForSeconds(3.5f);
+        Instantiate(ball_Explode, this.transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }
