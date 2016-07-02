@@ -20,7 +20,11 @@ public class playerController : MonoBehaviour {
     public KeyCode joy_dropBlockButton;
     public KeyCode dropBlock;
 
-    
+    public float upRotationSpeed;
+    public float downRotationSpeed;
+
+    Vector3 cannonUpRotation;
+    Vector3 cannonDownRotation;
 
     //public enum Configuration.playerColourEnum {Red,Blue};
     public Configuration.playerColourEnum playerColour;
@@ -42,6 +46,9 @@ public class playerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
+
+        cannonDownRotation = new Vector3(0, 0, -downRotationSpeed);
+        cannonUpRotation = new Vector3(0, 0, upRotationSpeed);
 
         speed = Configuration.PlayerSpeed;
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
@@ -104,45 +111,39 @@ public class playerController : MonoBehaviour {
         {
             if(myCannon.transform.rotation.eulerAngles.z < 90.0f)
             {
-                myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                myCannon.transform.Rotate(cannonUpRotation, Time.deltaTime * myCannonRotationSpeed);
                 myCogScript.direction = "up";
             }
         }
 
         else if (myCannon.transform.rotation.eulerAngles.z > 0.0f)
         {
-            if (playerColour == Configuration.playerColourEnum.Blue)
-            {
-                Debug.Log("eulerAngles.z: " + myCannon.transform.eulerAngles.z);
-                Debug.Log("localEulerAngles.z: " + myCannon.transform.localEulerAngles.z);
-            }
-
-            myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+            myCannon.transform.Rotate(cannonDownRotation, Time.deltaTime * myCannonRotationSpeed);
             myCogScript.direction = "down";
 
-           if(myCannon.transform.rotation.eulerAngles.z < 360.0f && myCannon.transform.rotation.eulerAngles.z > 359.0f)
+           if(myCannon.transform.rotation.eulerAngles.z < 360.0f && myCannon.transform.rotation.eulerAngles.z > 350.0f)
             {
                 myCannon.transform.rotation = new Quaternion(0.0f, myCannonYDirection, 0.0f, 0.0f);
             }
         }
 
-        switch (playerColour)
-        {
-            case Configuration.playerColourEnum.Red:
-                if (myCannon.transform.rotation.eulerAngles.z >= 0.0f)
-                {
-                    myCogScript.direction = "idle";
-                }
-                break;
-            case Configuration.playerColourEnum.Blue:
-                 if (myCannon.transform.rotation.eulerAngles.z <= 0.0f)
-                        {
-                            myCogScript.direction = "idle";
-                        }
-                break;
-            default:
-                break;
-        }
+        //switch (playerColour)
+        //{
+        //    case Configuration.playerColourEnum.Red:
+        //        if (myCannon.transform.rotation.eulerAngles.z >= 0.0f)
+        //        {
+        //            myCogScript.direction = "idle";
+        //        }
+        //        break;
+        //    case Configuration.playerColourEnum.Blue:
+        //         if (myCannon.transform.rotation.eulerAngles.z <= 0.0f)
+        //                {
+        //                    myCogScript.direction = "idle";
+        //                }
+        //        break;
+        //    default:
+        //        break;
+        //}
 
         // LEFT [KEY PRESSED]
         if (Input.GetKey(moveLeftKey) || axisLeftRight == -1)
