@@ -20,6 +20,8 @@ public class playerController : MonoBehaviour {
     public KeyCode joy_dropBlockButton;
     public KeyCode dropBlock;
 
+    
+
     //public enum Configuration.playerColourEnum {Red,Blue};
     public Configuration.playerColourEnum playerColour;
 
@@ -30,6 +32,7 @@ public class playerController : MonoBehaviour {
     public GameObject myCannon;
 
     private float myCannonRotationSpeed;
+    float myCannonYDirection;
 
     private int speed;
     private float lastTimeGroundCreated;
@@ -52,10 +55,13 @@ public class playerController : MonoBehaviour {
         {
             case Configuration.playerColourEnum.Red:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
-                myCog.GetComponent<SpriteRenderer>().flipX = true;
+                //myCog.GetComponent<SpriteRenderer>().flipX = true;
+                myCannon.transform.Rotate(new Vector3(0, 180, 0));
+                myCannonYDirection = 180.0f;
                 break;
             case Configuration.playerColourEnum.Blue:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
+                myCannonYDirection = 0.0f;
                 break;
             default:
                 break;
@@ -80,15 +86,15 @@ public class playerController : MonoBehaviour {
         if (Input.GetKeyUp(moveUpKey) || Input.GetKeyUp(joy_fireCannonButton))
         {
             //Create a ball 
-            switch(playerColour)
-                {
-                    case Configuration.playerColourEnum.Red:
-                        scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y) , playerColour.ToString(), myCannon.transform.rotation);
-                        break;
-                    case Configuration.playerColourEnum.Blue:
+            switch (playerColour)
+            {
+                case Configuration.playerColourEnum.Red:
                     scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
                     break;
-                    default:
+                case Configuration.playerColourEnum.Blue:
+                    scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                    break;
+                default:
                     break;
             }
         }
@@ -96,53 +102,40 @@ public class playerController : MonoBehaviour {
         // UP [KEY PRESSED]
         if (Input.GetKey(moveUpKey) || Input.GetKey(joy_fireCannonButton))
         {
-            switch (playerColour)
+            if(myCannon.transform.rotation.eulerAngles.z < 90.0f)
             {
-                case Configuration.playerColourEnum.Red:
-                    myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
-                    myCogScript.direction = "up";
-                    break;
-                case Configuration.playerColourEnum.Blue:
-                    myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
-                    myCogScript.direction = "up";
-                    break;
-                default:
-                    break;
+                myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
+                myCogScript.direction = "up";
             }
         }
-        else if (myCannon.transform.rotation.z != 0.0f)
+
+        else if (myCannon.transform.rotation.eulerAngles.z > 0.0f)
         {
-            switch (playerColour)
+            if (playerColour == Configuration.playerColourEnum.Blue)
             {
-                case Configuration.playerColourEnum.Red:
-                    if (myCannon.transform.rotation.z < 0.0f)
-                    {
-                        myCannon.transform.Rotate(Vector3.forward, Time.deltaTime * myCannonRotationSpeed);
-                        myCogScript.direction = "down";
-                    }
-                    break;
-                case Configuration.playerColourEnum.Blue:
-                    if (myCannon.transform.rotation.z > 0.0f)
-                    {
-                        myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
-                        myCogScript.direction = "down";
-                    }
-                    break;
-                default:
-                    break;
+                Debug.Log("eulerAngles.z: " + myCannon.transform.eulerAngles.z);
+                Debug.Log("localEulerAngles.z: " + myCannon.transform.localEulerAngles.z);
+            }
+
+            myCannon.transform.Rotate(Vector3.back, Time.deltaTime * myCannonRotationSpeed);
+            myCogScript.direction = "down";
+
+           if(myCannon.transform.rotation.eulerAngles.z < 360.0f && myCannon.transform.rotation.eulerAngles.z > 359.0f)
+            {
+                myCannon.transform.rotation = new Quaternion(0.0f, myCannonYDirection, 0.0f, 0.0f);
             }
         }
 
         switch (playerColour)
         {
             case Configuration.playerColourEnum.Red:
-                if (myCannon.transform.rotation.z >= 0.0f)
+                if (myCannon.transform.rotation.eulerAngles.z >= 0.0f)
                 {
                     myCogScript.direction = "idle";
                 }
                 break;
             case Configuration.playerColourEnum.Blue:
-                 if (myCannon.transform.rotation.z <= 0.0f)
+                 if (myCannon.transform.rotation.eulerAngles.z <= 0.0f)
                         {
                             myCogScript.direction = "idle";
                         }
@@ -150,9 +143,6 @@ public class playerController : MonoBehaviour {
             default:
                 break;
         }
-
-
-       
 
         // LEFT [KEY PRESSED]
         if (Input.GetKey(moveLeftKey) || axisLeftRight == -1)

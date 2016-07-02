@@ -34,7 +34,7 @@ public class createBall : MonoBehaviour {
         if (direction == "Red")
             //ballRigidbody2D.velocity = new Vector2(-ballForce, 0);
  
-        ballRigidbody2D.AddForce(- transform.right * ballForce);
+        ballRigidbody2D.AddForce(transform.right * ballForce);
         //set direction if player is blue
         if (direction == "Blue")
             //ballRigidbody2D.velocity = new Vector2(ballForce, 0);
