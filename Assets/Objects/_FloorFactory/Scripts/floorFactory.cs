@@ -33,7 +33,7 @@ public class floorFactory : MonoBehaviour {
     // Use this for initialization
     void Start () {
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
-        gridSize = new Vector2(64, 13);
+        gridSize = new Vector2(64, 12);
         startPosition = new Vector2(-9.445f, -1.65f);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
         for (int x = 0; x < gridSize.x; x++)
