@@ -63,6 +63,7 @@ public class playerController : MonoBehaviour {
             case Configuration.playerColourEnum.Red:
                 myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
                 //myCog.GetComponent<SpriteRenderer>().flipX = true;
+                myCog.transform.Rotate(new Vector3(0, 180, 0));
                 myCannon.transform.Rotate(new Vector3(0, 180, 0));
                 myCannonYDirection = 180.0f;
                 break;
@@ -127,23 +128,10 @@ public class playerController : MonoBehaviour {
             }
         }
 
-        //switch (playerColour)
-        //{
-        //    case Configuration.playerColourEnum.Red:
-        //        if (myCannon.transform.rotation.eulerAngles.z >= 0.0f)
-        //        {
-        //            myCogScript.direction = "idle";
-        //        }
-        //        break;
-        //    case Configuration.playerColourEnum.Blue:
-        //         if (myCannon.transform.rotation.eulerAngles.z <= 0.0f)
-        //                {
-        //                    myCogScript.direction = "idle";
-        //                }
-        //        break;
-        //    default:
-        //        break;
-        //}
+        if (myCannon.transform.rotation.eulerAngles.z == 0.0f)
+        {
+            myCogScript.direction = "idle";
+        }
 
         // LEFT [KEY PRESSED]
         if (Input.GetKey(moveLeftKey) || axisLeftRight == -1)
