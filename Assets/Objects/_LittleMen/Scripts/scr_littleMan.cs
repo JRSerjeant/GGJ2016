@@ -11,10 +11,16 @@ public class scr_littleMan : MonoBehaviour {
     private EdgeCollider2D slopeObject;
     private bool passedTop;
 
-    public Vector3 running;
-    public Vector3 runningSlope;
-    public Vector3 climbing;
-    public Vector3 falling;
+    public float runningSpeed;
+    public float slopeRunningSpeed;
+    public float fallingSpeed;
+    public float climbingSpeed;
+
+    Vector3 running;
+    Vector3 runningSlope;
+    Vector3 climbing;
+    Vector3 falling;
+
     float gameHeight;
     //float directionValue;
 
@@ -57,12 +63,12 @@ public class scr_littleMan : MonoBehaviour {
         allowFalling = true;
         colTrggerCount = 0;
         gameHeight = 5.5f;
-        redDirectionValue = Configuration.menVelocity;
-        blueDirectionValue = -Configuration.menVelocity;
-        running = new Vector3(0.2f,0.0f);
-        runningSlope = new Vector3(0.5f, 0.5f);
-        climbing = new Vector3(0.0f, Configuration.menClimbVelocity);
-        falling = new Vector3(0.0f, -Configuration.menClimbVelocity);
+        redDirectionValue = runningSpeed;
+        blueDirectionValue = -runningSpeed;
+        running = new Vector3(runningSpeed,0.0f);
+        runningSlope = new Vector3(slopeRunningSpeed, slopeRunningSpeed);
+        climbing = new Vector3(0.0f, climbingSpeed);
+        falling = new Vector3(0.0f, -climbingSpeed);
         currentState = manState.Running;
         this.GetComponent<SpriteRenderer>().sortingOrder = 0;
         //directionValue = 10.0f;
