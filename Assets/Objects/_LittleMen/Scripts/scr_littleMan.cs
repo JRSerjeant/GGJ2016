@@ -57,8 +57,8 @@ public class scr_littleMan : MonoBehaviour {
         scoreText = GameObject.FindGameObjectWithTag("scoreText").GetComponent<ScoreManager>();
         passedTop = false;
         rotation = new Vector3(0, 0, 0);
-        blueClimbRotation = new Vector3(0, 0, -45);
-        redClimbRotation = new Vector3(0, 0, 45);
+        blueClimbRotation = new Vector3(0, 0, 0);
+        redClimbRotation = new Vector3(0, 0, 0);
         isGrounded = true;
         allowFalling = true;
         colTrggerCount = 0;
