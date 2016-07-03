@@ -3,7 +3,7 @@ using System.Collections;
 
 public class floorFactory : MonoBehaviour {
     Vector2 gridSize;
-    public Vector2 startPosition;
+    Vector2 startPosition;
     #region Sprite vars 
     public Sprite A1;
     public Sprite A2;
@@ -20,11 +20,11 @@ public class floorFactory : MonoBehaviour {
     public Sprite L;
     #endregion
 
-    int a_hp = 2;
-    int b_hp = 4;
-    int c_hp = 6;
-    int r_hp = 8;
-    int l_hp = 99;
+    public int a_hp;
+    public int b_hp;
+    public int c_hp;
+    public int r_hp;
+    public int l_hp;
 
     private objectFactory scr_ObjectFactory;
 
