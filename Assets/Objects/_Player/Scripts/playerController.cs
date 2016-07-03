@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using Assets.Scripts;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
@@ -93,6 +94,8 @@ public class playerController : MonoBehaviour {
         // Up [KEY UP] Fires a ball
         if (Input.GetKeyUp(moveUpKey) || Input.GetKeyUp(joy_fireCannonButton))
         {
+            Debug.Log(playerColour + "[UP KEY]");
+            //EditorApplication.isPaused = true;
             //Create a ball 
             switch (playerColour)
             {

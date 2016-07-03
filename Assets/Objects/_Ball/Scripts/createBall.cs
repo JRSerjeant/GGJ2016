@@ -32,16 +32,12 @@ public class createBall : MonoBehaviour {
 
         //set direction if player is red
         if (direction == "Red")
-            //ballRigidbody2D.velocity = new Vector2(-ballForce, 0);
- 
-        ballRigidbody2D.AddForce(transform.right * ballForce);
+            ballRigidbody2D.AddForce(transform.right * ballForce);
         //set direction if player is blue
         if (direction == "Blue")
-            //ballRigidbody2D.velocity = new Vector2(ballForce, 0);
             ballRigidbody2D.AddForce(transform.right * ballForce);
         StartCoroutine(DestroyBall());
-        //Debug.Log("Ball Rotation: " + this.transform.eulerAngles);
-        //Debug.Log("Ball ballRigidbody2D Rotation: " + ballRigidbody2D.rotation);
+
     }
 	
 	// Update is called once per frame

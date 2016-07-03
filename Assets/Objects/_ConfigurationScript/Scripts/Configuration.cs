@@ -9,7 +9,7 @@ namespace Assets.Scripts
         public static readonly int GameLengthInSeconds = 30;
         public static readonly int MaxBalls = 10;
         public static readonly int BallLife = 3;
-        public static readonly int PlayerSpeed = 2;
+        public static readonly int PlayerSpeed = 200;
         public static readonly int ballForce = 600;
         public static readonly float CannonRotationSpeed = 60;
         public static readonly float menVelocity = 0.5f;
