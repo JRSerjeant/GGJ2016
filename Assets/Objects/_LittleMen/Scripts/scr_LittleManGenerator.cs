@@ -47,8 +47,8 @@ public class scr_LittleManGenerator : MonoBehaviour
         LastWasBlue = false;
         LastWasRed = false;
 
-        redManStartPosition = new Vector3(9.5f, -1.334f);
-        blueManStartPosition = new Vector3(-9.5f, -1.334f);
+        redManStartPosition = new Vector3(951f, -130f);
+        blueManStartPosition = new Vector3(-951f, -130f);
 
     }
 

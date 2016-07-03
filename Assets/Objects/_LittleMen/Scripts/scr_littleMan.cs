@@ -8,7 +8,7 @@ public class scr_littleMan : MonoBehaviour {
     float redDirectionValue;
     float blueDirectionValue;
 
-    private EdgeCollider2D slopeObject;
+    public EdgeCollider2D slopeObject;
     private bool passedTop;
 
     public float runningSpeed;
@@ -20,9 +20,6 @@ public class scr_littleMan : MonoBehaviour {
     Vector3 runningSlope;
     Vector3 climbing;
     Vector3 falling;
-
-    float gameHeight;
-    //float directionValue;
 
     public Vector3 rotation;
     private Vector3 myRotation;
@@ -62,7 +59,6 @@ public class scr_littleMan : MonoBehaviour {
         isGrounded = true;
         allowFalling = true;
         colTrggerCount = 0;
-        gameHeight = 5.5f;
         redDirectionValue = runningSpeed;
         blueDirectionValue = -runningSpeed;
         running = new Vector3(runningSpeed,0.0f);
@@ -163,7 +159,7 @@ public class scr_littleMan : MonoBehaviour {
 
                 if (!passedTop)
                 {
-                    this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[1], 1 * Time.deltaTime);
+                    this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[1], climbingSpeed * Time.deltaTime);
                     if(new Vector2(this.transform.position.x, this.transform.position.y) == slopeObject.points[1])
                     {
                         passedTop = true;
@@ -171,7 +167,7 @@ public class scr_littleMan : MonoBehaviour {
                 }
                 if(passedTop)
                 {
-                    this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[2], 1 * Time.deltaTime);
+                    this.transform.position = Vector2.MoveTowards(this.transform.position, slopeObject.points[2], runningSpeed * Time.deltaTime);
                     if (new Vector2(this.transform.position.x, this.transform.position.y) == slopeObject.points[2])
                     {
                         scr_ObjectFactory.createbloodParticle(transform.position);
@@ -197,14 +193,7 @@ public class scr_littleMan : MonoBehaviour {
                 break;
             default:
                 break;
-        }
-        //Debug.Log(currentState);
-        if(this.transform.position.y > gameHeight)
-        {
-            //addToScore();
-            Destroy(gameObject);
-        }
-             
+        }             
 	}
 
 
