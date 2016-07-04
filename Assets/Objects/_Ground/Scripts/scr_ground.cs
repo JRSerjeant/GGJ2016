@@ -18,7 +18,8 @@ public class scr_ground : MonoBehaviour {
     public groundState currentState;
     private objectFactory scr_ObjectFactory;
 
-
+    public float fallSpeed;
+    Vector3 fallDirection;
 
     private int groundHP;
     public int GroundHP
@@ -42,6 +43,7 @@ public class scr_ground : MonoBehaviour {
     void Start () {
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
         collidingManList = new List<GameObject>();
+        fallDirection = new Vector3(0, -fallSpeed, 0);
     }
 	
 	// Update is called once per frame
@@ -51,7 +53,7 @@ public class scr_ground : MonoBehaviour {
         {
             case groundState.Falling:
                 gameObject.layer = 2;
-                this.transform.position += Vector3.down * Time.deltaTime;
+                this.transform.position += fallDirection * Time.deltaTime;
                 RayStartLocation = new Vector2(transform.position.x, transform.position.y - (GetComponent<BoxCollider2D>().bounds.size.y / 2));
                 GetComponent<BoxCollider2D>().enabled = false;
                 hit = Physics2D.Raycast(RayStartLocation, Vector2.down);
