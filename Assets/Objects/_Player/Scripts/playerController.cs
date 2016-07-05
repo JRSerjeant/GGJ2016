@@ -54,7 +54,7 @@ public class playerController : MonoBehaviour {
         speed = Configuration.PlayerSpeed;
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
 
-        myCog = scr_ObjectFactory.createCog();
+        //myCog = scr_ObjectFactory.createCog();
         myCogScript = myCog.GetComponent<cogAniControl>();
 
         lastTimeGroundCreated = Time.fixedTime;
@@ -62,14 +62,14 @@ public class playerController : MonoBehaviour {
         switch (playerColour)
         {
             case Configuration.playerColourEnum.Red:
-                myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
+                //myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
                 //myCog.GetComponent<SpriteRenderer>().flipX = true;
-                myCog.transform.Rotate(new Vector3(0, 180, 0));
+                //myCog.transform.Rotate(new Vector3(0, 180, 0));
                 myCannon.transform.Rotate(new Vector3(0, 180, 0));
                 myCannonYDirection = 180.0f;
                 break;
             case Configuration.playerColourEnum.Blue:
-                myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
+                //myCog.transform.position = new Vector3(myCannon.transform.position.x, myCannon.transform.position.y);
                 myCannonYDirection = 0.0f;
                 break;
             default:
