@@ -42,10 +42,14 @@ public class playerController : MonoBehaviour {
     private int speed;
     private float lastTimeGroundCreated;
 
+    public bool allowFire;
+
     private objectFactory scr_ObjectFactory;
 
     // Use this for initialization
     void Start () {
+        allowFire = true;
+
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
 
         cannonDownRotation = new Vector3(0, 0, -downRotationSpeed);
@@ -94,20 +98,22 @@ public class playerController : MonoBehaviour {
         // Up [KEY UP] Fires a ball
         if (Input.GetKeyUp(moveUpKey) || Input.GetKeyUp(joy_fireCannonButton))
         {
-            Debug.Log(playerColour + "[UP KEY]");
-            //EditorApplication.isPaused = true;
-            //Create a ball 
-            switch (playerColour)
+            if(allowFire)
             {
-                case Configuration.playerColourEnum.Red:
-                    scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
-                    break;
-                case Configuration.playerColourEnum.Blue:
-                    scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
-                    break;
-                default:
-                    break;
+                switch (playerColour)
+                            {
+                                case Configuration.playerColourEnum.Red:
+                                    scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                                    break;
+                                case Configuration.playerColourEnum.Blue:
+                                    scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                                    break;
+                                default:
+                                    break;
+                            }
+                allowFire = false;
             }
+            
         }
 
         // UP [KEY PRESSED]
@@ -133,6 +139,7 @@ public class playerController : MonoBehaviour {
 
         if (myCannon.transform.rotation.eulerAngles.z == 0.0f)
         {
+            allowFire = true;
             myCogScript.direction = "idle";
         }
 
