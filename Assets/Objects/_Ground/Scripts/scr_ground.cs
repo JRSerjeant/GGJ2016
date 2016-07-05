@@ -62,6 +62,10 @@ public class scr_ground : MonoBehaviour {
                 hit = Physics2D.Raycast(RayStartLocation, Vector2.down);
                 RayObject = hit.transform.gameObject;
                 RayDistance = hit.distance;
+                if(RayObject.tag != "ground")
+                {
+                    Destroy(gameObject);
+                }
                 GetComponent<BoxCollider2D>().enabled = true;
                 this.transform.position = new Vector3 (RayObject.transform.position.x, this.transform.position.y);
 
