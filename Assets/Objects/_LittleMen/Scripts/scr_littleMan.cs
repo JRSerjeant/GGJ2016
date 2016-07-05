@@ -66,7 +66,6 @@ public class scr_littleMan : MonoBehaviour {
         climbing = new Vector3(0.0f, climbingSpeed);
         falling = new Vector3(0.0f, -climbingSpeed);
         currentState = manState.Running;
-        this.GetComponent<SpriteRenderer>().sortingOrder = 0;
         //directionValue = 10.0f;
 
         //frontCollider = Instantiate(objectFactory.pdf_ManMiniCollider) as GameObject;
