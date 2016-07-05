@@ -42,13 +42,15 @@ public class playerController : MonoBehaviour {
     private int speed;
     private float lastTimeGroundCreated;
 
-    public bool allowFire;
+    bool allowFire;
+    public bool allowFireOverride;
 
     private objectFactory scr_ObjectFactory;
 
     // Use this for initialization
     void Start () {
         allowFire = true;
+        allowFireOverride = false;
 
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
 
@@ -82,6 +84,10 @@ public class playerController : MonoBehaviour {
 
     }
     void Update() {
+        if(allowFireOverride)
+        {
+            allowFire = true;
+        }
         switch (playerColour)
         {
             case Configuration.playerColourEnum.Red:
