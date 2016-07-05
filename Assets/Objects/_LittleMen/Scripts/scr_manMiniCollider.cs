@@ -16,7 +16,7 @@ public class scr_manMiniCollider : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        waitforSec = 0.5f;
+        waitforSec = 0.25f;
     }
 
     // Update is called once per frame
