@@ -17,9 +17,11 @@ public class scr_ground : MonoBehaviour {
     public enum groundState { Falling, Static };
     public groundState currentState;
     private objectFactory scr_ObjectFactory;
-
+    public Vector2 position;
     public float fallSpeed;
     Vector3 fallDirection;
+
+    public bool indestructible;
 
     private int groundHP;
     public int GroundHP
@@ -28,8 +30,9 @@ public class scr_ground : MonoBehaviour {
         set
         {
             groundHP--;
-            if(groundHP <= 0)
-                disable();
+            if(!indestructible)
+                if(groundHP <= 0)
+                    disable();
         }
 
     }

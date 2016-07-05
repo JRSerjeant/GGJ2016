@@ -26,6 +26,8 @@ public class floorFactory : MonoBehaviour {
     public int r_hp;
     public int l_hp;
 
+    
+
     private objectFactory scr_ObjectFactory;
 
     GameObject[][] gridOfGameObjects;
@@ -33,11 +35,12 @@ public class floorFactory : MonoBehaviour {
     // Use this for initialization
     void Start () {
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
-        gridSize = new Vector2(64, 12);
+        gridSize = new Vector2(64, 13);
         startPosition = new Vector2(-945f, -165f);
         gridOfGameObjects = new GameObject[(int)gridSize.x][];
         for (int x = 0; x < gridSize.x; x++)
         {
+            
             gridOfGameObjects[x] = new GameObject[(int)gridSize.y];
             for (int y = 0; y < gridSize.y; y++)
             {
@@ -46,9 +49,13 @@ public class floorFactory : MonoBehaviour {
                 SpriteRenderer sr = go.GetComponent<SpriteRenderer>();
                 scr_ground scr = go.GetComponent<scr_ground>();
                 t.position = new Vector3(startPosition.x + (x * sr.bounds.size.x), startPosition.y - ( y * sr.bounds.size.y));
+                scr.position = new Vector2(x, y);
                 scr.currentState = scr_ground.groundState.Static;
                 gridOfGameObjects[x][y] = go;
-
+                if(x >= 25 && x <= 38)
+                {
+                    scr.indestructible = true;
+                }
                 switch (y)
                 {
                     case 0:
@@ -102,7 +109,8 @@ public class floorFactory : MonoBehaviour {
                         scr.InitializeGroundHP = r_hp;
                         break;
                     case 12:
-                        sr.sprite = L;
+                        sr.sprite = null;
+                        scr.indestructible = true;
                         scr.InitializeGroundHP = l_hp;
                         break;
                     default:
