@@ -3,20 +3,16 @@ using System.Collections;
 
 public class scr_BallExplode : MonoBehaviour {
 
-    Animation ani;
+    Animator ani;
 
 	// Use this for initialization
 	void Start () {
-        ani.wrapMode = WrapMode.Once;
+        ani = GetComponent<Animator>();
         ani.Play("Ball_Explode");
     }
 
     void Update()
     {
-        if( ! ani.isPlaying)
-        {
-            Destroy(gameObject);
-        }
-
+        
     }
 }

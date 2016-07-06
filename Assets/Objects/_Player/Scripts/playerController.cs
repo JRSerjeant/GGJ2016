@@ -35,6 +35,8 @@ public class playerController : MonoBehaviour {
     public GameObject myCog;
     cogAniControl myCogScript;
     public GameObject myCannon;
+    public GameObject myDirtMagic;
+    scr_DirtMagic myDirtMagicScript;
 
     private float myCannonRotationSpeed;
     float myCannonYDirection;
@@ -53,6 +55,7 @@ public class playerController : MonoBehaviour {
         allowFireOverride = false;
 
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
+        myDirtMagicScript = myDirtMagic.GetComponent<scr_DirtMagic>();
 
         cannonDownRotation = new Vector3(0, 0, -downRotationSpeed);
         cannonUpRotation = new Vector3(0, 0, upRotationSpeed);
@@ -110,9 +113,13 @@ public class playerController : MonoBehaviour {
                             {
                                 case Configuration.playerColourEnum.Red:
                                     scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                                    myDirtMagicScript.settransform(myCannon.transform);
+                                    myDirtMagicScript.playAnimation();
                                     break;
                                 case Configuration.playerColourEnum.Blue:
                                     scr_ObjectFactory.createBall(new Vector2(myCannon.transform.position.x, myCannon.transform.position.y), playerColour.ToString(), myCannon.transform.rotation);
+                                    myDirtMagicScript.settransform(myCannon.transform);
+                                    myDirtMagicScript.playAnimation();
                                     break;
                                 default:
                                     break;
