@@ -32,6 +32,10 @@ public class playerController : MonoBehaviour {
 
     public scr_SnakeCanon SnakeCanon_Script;
 
+    public GameObject myGroundHit;
+    public scr_groundHit myGroundHitScript;
+    bool playGroundHitAnimation;
+
     public GameObject myCog;
     cogAniControl myCogScript;
     public GameObject myCannon;
@@ -53,9 +57,12 @@ public class playerController : MonoBehaviour {
     void Start () {
         allowFire = true;
         allowFireOverride = false;
+        playGroundHitAnimation = false;
 
         scr_ObjectFactory = GameObject.FindGameObjectWithTag("ObjectFactory").GetComponent<objectFactory>();
         myDirtMagicScript = myDirtMagic.GetComponent<scr_DirtMagic>();
+
+        myGroundHitScript = myGroundHit.GetComponent<scr_groundHit>();
 
         cannonDownRotation = new Vector3(0, 0, -downRotationSpeed);
         cannonUpRotation = new Vector3(0, 0, upRotationSpeed);
@@ -136,6 +143,7 @@ public class playerController : MonoBehaviour {
             {
                 myCannon.transform.Rotate(cannonUpRotation, Time.deltaTime * myCannonRotationSpeed);
                 myCogScript.direction = "up";
+                playGroundHitAnimation = true;
             }
         }
 
@@ -153,6 +161,11 @@ public class playerController : MonoBehaviour {
         if (myCannon.transform.rotation.eulerAngles.z == 0.0f)
         {
             allowFire = true;
+            if(playGroundHitAnimation)
+            {
+                myGroundHitScript.playHitAnimation();
+                playGroundHitAnimation = false;
+            }
             myCogScript.direction = "idle";
         }
 
