@@ -209,6 +209,7 @@ public class playerController : MonoBehaviour {
 
                     scr_ground scr = go.GetComponent<scr_ground>();
                     scr.currentState = scr_ground.groundState.Falling;
+                    scr.createSFX.Play();
                     //blockController.generateBlock(this.transform.position);
                 }
             }

@@ -9,6 +9,7 @@ public class scr_bloodParticle : MonoBehaviour {
        GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingLayerName = "Foreground";
        GetComponent<ParticleSystem>().GetComponent<Renderer>().sortingOrder = 3;
         PS = GetComponent<ParticleSystem>();
+        //UnityEditor.EditorApplication.isPaused = true;
     }
 	
 	// Update is called once per frame
