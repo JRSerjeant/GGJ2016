@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
 
+
 public class playerController : MonoBehaviour {
 
     
@@ -38,7 +39,10 @@ public class playerController : MonoBehaviour {
 
     public GameObject myCog;
     cogAniControl myCogScript;
+
     public GameObject myCannon;
+    AudioSource myCannonAudioSource;
+
     public GameObject myDirtMagic;
     scr_DirtMagic myDirtMagicScript;
 
@@ -68,6 +72,9 @@ public class playerController : MonoBehaviour {
         cannonUpRotation = new Vector3(0, 0, upRotationSpeed);
 
         speed = Configuration.PlayerSpeed;
+
+        myCannonAudioSource = myCannon.GetComponent<AudioSource>();
+
         myCannonRotationSpeed = Configuration.CannonRotationSpeed;
 
         //myCog = scr_ObjectFactory.createCog();
@@ -131,6 +138,7 @@ public class playerController : MonoBehaviour {
                                 default:
                                     break;
                             }
+                myCannonAudioSource.Play();
                 allowFire = false;
             }
             
