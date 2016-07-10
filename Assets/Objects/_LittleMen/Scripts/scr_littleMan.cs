@@ -181,6 +181,7 @@ public class scr_littleMan : MonoBehaviour {
                             default:
                                 break;
                         }
+                        scoreText.audio.Play();
                         Destroy(gameObject);
                     }
                 }

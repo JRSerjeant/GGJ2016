@@ -12,24 +12,24 @@ public class cogAniControl : MonoBehaviour {
         switch (direction)
         {
             case "up":
-                Audio_cogDownSparks.Stop();
-                if (!Audio_cogUpGrind.isPlaying)
-                {
-                    Audio_cogUpGrind.Play();
-                }
+                //Audio_cogDownSparks.Stop();
+                //if (!Audio_cogUpGrind.isPlaying)
+                //{
+                //    Audio_cogUpGrind.Play();
+                //}
                 this.GetComponent<Animator>().Play("Cog_GoingUp");
                 break;
             case "down":
-                Audio_cogUpGrind.Stop();
-                if (!Audio_cogDownSparks.isPlaying)
-                {
-                    Audio_cogDownSparks.Play();
-                }
+                //Audio_cogUpGrind.Stop();
+                //if (!Audio_cogDownSparks.isPlaying)
+                //{
+                //    Audio_cogDownSparks.Play();
+                //}
                 this.GetComponent<Animator>().Play("Cog_Falling");
                 break;
             case "idle":
-                Audio_cogDownSparks.Stop();
-                Audio_cogUpGrind.Stop();
+                //Audio_cogDownSparks.Stop();
+                //Audio_cogUpGrind.Stop();
                 this.GetComponent<Animator>().Play("Cog_Idle");
                 break;
             default:

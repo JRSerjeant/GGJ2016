@@ -138,8 +138,11 @@ public class playerController : MonoBehaviour {
                                 default:
                                     break;
                             }
+                myCannon.GetComponent<AudioSource>().Play();
                 allowFire = false;
+
             }
+
             
         }
 

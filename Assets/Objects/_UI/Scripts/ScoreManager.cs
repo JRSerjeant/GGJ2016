@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour {
     public int BlueScore;
     Text score;
     public bool gameover;
+    public AudioSource audio;
+
 
 
 	// Use this for initialization
