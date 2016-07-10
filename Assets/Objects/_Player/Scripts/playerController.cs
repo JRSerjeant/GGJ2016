@@ -121,7 +121,6 @@ public class playerController : MonoBehaviour {
         // Up [KEY UP] Fires a ball
         if (Input.GetKeyUp(moveUpKey) || Input.GetKeyUp(joy_fireCannonButton))
         {
-            myCogScript.Audio_cogUpGrind.Stop();
             if(allowFire)
             {
                 switch (playerColour)
@@ -139,7 +138,6 @@ public class playerController : MonoBehaviour {
                                 default:
                                     break;
                             }
-                myCannonAudioSource.Play();
                 allowFire = false;
             }
             
@@ -148,10 +146,7 @@ public class playerController : MonoBehaviour {
         // UP [KEY PRESSED]
         if (Input.GetKey(moveUpKey) || Input.GetKey(joy_fireCannonButton))
         {
-            if(! myCogScript.Audio_cogUpGrind.isPlaying)
-            {
-                myCogScript.Audio_cogUpGrind.Play();
-            }
+
 
             if(myCannon.transform.rotation.eulerAngles.z < 90.0f)
             {
@@ -168,6 +163,7 @@ public class playerController : MonoBehaviour {
 
            if(myCannon.transform.rotation.eulerAngles.z < 360.0f && myCannon.transform.rotation.eulerAngles.z > 350.0f)
             {
+                myCogScript.Audio_cogDownSparks.Stop();
                 myCannon.transform.rotation = new Quaternion(0.0f, myCannonYDirection, 0.0f, 0.0f);
             }
         }
