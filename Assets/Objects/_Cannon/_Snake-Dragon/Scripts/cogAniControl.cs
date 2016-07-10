@@ -4,7 +4,7 @@ using System.Collections;
 public class cogAniControl : MonoBehaviour {
 
     public string direction;
-
+    public AudioSource Audio_cogUpGrind;
     // Update is called once per frame
     void Update () {
 
